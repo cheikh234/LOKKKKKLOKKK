@@ -51,7 +51,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .tb-btn:hover{background:var(--b6);color:#fff;border-color:var(--b6);}
 .tb-btn i{font-size:.88rem;}
 
-/* BOTTOM NAV PILL */
+/* BOTTOM NAV */
 .bnav{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:100;background:var(--b1);border-radius:50px;display:flex;align-items:center;padding:7px 10px;gap:2px;box-shadow:0 10px 40px rgba(4,16,30,.42);width:calc(100% - 28px);max-width:398px;}
 .ni{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:7px 6px;border-radius:40px;transition:all .28s cubic-bezier(.4,0,.2,1);border:none;background:transparent;}
 .ni i{font-size:1rem;color:rgba(255,255,255,.28);transition:all .28s;}
@@ -64,65 +64,312 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .page.on{display:block;animation:fadeup .3s ease;}
 @keyframes fadeup{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
-/* ═══ PAGE 1 ACCUEIL ═══ */
-.hero{position:relative;height:400px;overflow:hidden;display:flex;flex-direction:column;}
-.hero-bg{position:absolute;inset:0;background-image:url("diouma.jpg");background-size:cover;background-position:center 20%;}.hero-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,16,30,.4) 0%,rgba(4,16,30,.2) 25%,rgba(4,16,30,.65) 60%,rgba(4,16,30,.98) 100%);}
-.hero-pat{position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70'%3E%3Cpath d='M35 7L63 35L35 63L7 35Z' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3C/svg%3E");background-size:70px 70px;}
-.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;padding:14px 18px 20px;}
-.hero-titre{text-align:center;padding:8px 0 10px;flex-shrink:0;}
-.hero-crescent{font-size:1.3rem;color:var(--gold2);display:block;margin-bottom:2px;filter:drop-shadow(0 0 8px rgba(200,168,75,.5));}
-.hero-orn{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px;}
-.hero-orn::before,.hero-orn::after{content:'';flex:1;max-width:50px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));}
-.hero-orn::after{background:linear-gradient(90deg,var(--gold),transparent);}
-.hero-orn-d{width:5px;height:5px;background:var(--gold);transform:rotate(45deg);}
-.hero-lbl{font-family:'Cinzel',serif;font-size:.58rem;color:var(--gold2);letter-spacing:.38em;text-transform:uppercase;margin-bottom:2px;}
-.hero-ttl{font-family:'Cinzel',serif;font-size:1.7rem;color:#fff;font-weight:700;letter-spacing:.08em;line-height:1;text-shadow:0 2px 16px rgba(0,0,0,.5);}
-.hero-today{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:7px;color:var(--gold2);font-size:.62rem;letter-spacing:.18em;font-weight:700;}
-.hero-today::before,.hero-today::after{content:'✦';font-size:.5rem;}
-/* Prayer rows */
-.prayer-rows{flex:1;display:flex;flex-direction:column;gap:5px;margin-bottom:8px;}
-.prow{background:rgba(4,16,30,.52);border:1px solid rgba(200,168,75,.2);border-radius:11px;padding:7px 11px;display:flex;align-items:center;gap:10px;backdrop-filter:blur(8px);position:relative;overflow:hidden;}
-.prow::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2.5px;background:rgba(200,168,75,.25);border-radius:2px 0 0 2px;}
-.prow.now{background:rgba(35,104,168,.4);border-color:rgba(200,168,75,.5);box-shadow:0 0 0 1px rgba(200,168,75,.18),0 6px 20px rgba(4,16,30,.35);}
-.prow.now::before{background:linear-gradient(to bottom,var(--gold),var(--gold2));}
-.prow-icon{width:32px;height:32px;border-radius:9px;background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.16);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.prow-icon i{font-size:.9rem;color:var(--gold2);}
-.prow-names{flex:1;}
-.prow-fr{font-family:'Cinzel',serif;font-size:.72rem;font-weight:700;color:#fff;letter-spacing:.06em;}
-.prow-ar{font-family:'Amiri',serif;font-size:.6rem;color:rgba(200,168,75,.7);direction:rtl;}
-.prow-sep{width:1px;height:24px;background:rgba(200,168,75,.18);flex-shrink:0;}
-.prow-time{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#fff;min-width:48px;text-align:center;}
-.prow.now .prow-time{color:var(--gold2);}
-.prow-bell{width:24px;height:24px;border-radius:7px;background:rgba(255,255,255,.05);border:1px solid rgba(200,168,75,.18);display:flex;align-items:center;justify-content:center;cursor:pointer;}
-.prow-bell i{font-size:.65rem;color:rgba(200,168,75,.55);}
-/* Date bar */
-.hero-datebar{background:rgba(4,16,30,.58);border:1px solid rgba(200,168,75,.16);border-radius:11px;padding:7px 12px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(6px);}
-.hdb-item{display:flex;align-items:center;gap:6px;}
-.hdb-item i{font-size:.8rem;color:var(--gold2);}
-.hdb-txt{font-size:.6rem;color:rgba(255,255,255,.65);line-height:1.4;}
-.hdb-txt strong{color:#fff;display:block;font-size:.62rem;}
-.hdb-sep{width:1px;height:24px;background:rgba(200,168,75,.18);}
+/* ═══════════════════════════════════════
+   PAGE 1 ACCUEIL — HERO PRIÈRES
+═══════════════════════════════════════ */
+.hero{
+  position:relative;
+  height:390px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background-image:url("diouma.jpg");
+  background-size:cover;
+  background-position: center 90%;
+  background-repeat:no-repeat;
+}
+.hero-ov{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(4,16,30,.25) 0%,
+rgba(4,16,30,.10) 30%,
+rgba(4,16,30,.55) 65%,
+rgba(4,16,30,.92) 88%,
+  );
+}
+.hero-inner{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  padding:14px 20px 0;
+}
 
-/* Section header */
-.sh{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 10px;}
+/* ── Ligne haut : heure + date/loc ── */
+.hero-clock-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  margin-bottom:0;
+}
+.hero-time-big{
+  font-family:'Cinzel',serif;
+  font-size:3.2rem;
+  font-weight:700;
+  color:var(--gold2);
+  line-height:1;
+  text-shadow:0 2px 16px rgba(200,168,75,.3);
+  letter-spacing:-.02em;
+}
+.hero-date-block{
+  text-align:right;
+  padding-top:4px;
+}
+.hero-hijri{
+  font-family:'Nunito',sans-serif;
+  font-size:.72rem;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:6px;
+}
+.hero-location-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  background:rgba(20,40,70,.55);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:20px;
+  padding:5px 11px;
+  font-size:.65rem;
+  color:rgba(255,255,255,.8);
+  font-weight:700;
+  backdrop-filter:blur(10px);
+}
+.hero-location-pill i{font-size:.7rem;color:rgba(255,255,255,.65);}
+
+/* Compte à rebours */
+.hero-next-prayer{
+  font-family:'Nunito',sans-serif;
+  font-size:.78rem;
+  font-weight:700;
+  color:rgba(255,255,255,.65);
+  margin-top:4px;
+}
+.hero-next-prayer span{color:var(--gold2);}
+
+/* ── Spacer minimal — juste assez pour voir la mosquée ── */
+.hero-spacer{flex:1;}
+
+/* ── 5 colonnes prières ── */
+.prayer-cols{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 10px 20px;
+  gap:0;
+}
+.pcol{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  flex:1;
+  padding:10px 2px 12px;
+  border-radius:18px;
+  cursor:pointer;
+  transition:all .22s;
+  border:1.5px solid transparent;
+}
+.pcol.now{
+  background:rgba(20,45,90,.52);
+  border-color:rgba(100,160,255,.28);
+  box-shadow:0 4px 22px rgba(20,60,140,.5);
+  backdrop-filter:blur(10px);
+}
+.pcol-name{
+  font-family:'Nunito',sans-serif;
+  font-size:.62rem;
+  font-weight:800;
+  color:rgba(255,255,255,.65);
+  letter-spacing:.01em;
+}
+.pcol.now .pcol-name{color:#fff;}
+.pcol-icon{
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+}
+.pcol-icon svg{width:36px;height:36px;}
+.pcol-time{
+  font-family:'Cinzel',serif;
+  font-size:.68rem;
+  font-weight:700;
+  color:rgba(255,255,255,.65);
+}
+.pcol.now .pcol-time{color:#fff;font-size:.7rem;}
+
+/* ═══ CALENDRIER ISLAMIQUE (accueil) ═══ */
+.islamic-cal{
+  margin:18px 18px 0;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 14px 40px rgba(4,16,30,.32);
+  position:relative;
+  background:linear-gradient(135deg,var(--b1) 0%,var(--b3) 50%,var(--b4) 100%);
+}
+/* Motif géométrique arabe en SVG background */
+.islamic-cal-pat{
+  position:absolute;inset:0;
+  opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3Cpath d='M40 10L70 40L40 70L10 40Z' fill='none' stroke='%23c8a84b' stroke-width='.7'/%3E%3Ccircle cx='40' cy='40' r='12' fill='none' stroke='%23c8a84b' stroke-width='.7'/%3E%3Cpath d='M40 0L40 10M80 40L70 40M40 80L40 70M0 40L10 40' stroke='%23c8a84b' stroke-width='.7'/%3E%3C/svg%3E");
+  background-size:80px 80px;
+}
+/* Lueur dorée en haut à droite */
+.islamic-cal-glow{
+  position:absolute;top:-20px;right:-20px;
+  width:140px;height:140px;
+  border-radius:50%;
+  background:radial-gradient(rgba(200,168,75,.28),transparent);
+  pointer-events:none;
+}
+.islamic-cal-inner{position:relative;z-index:2;padding:18px 20px 16px;}
+/* En-tête calendrier */
+.ical-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.ical-title-block{display:flex;align-items:center;gap:10px;}
+.ical-icon{width:38px;height:38px;border-radius:11px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;}
+.ical-icon i{font-size:.95rem;color:var(--gold2);}
+.ical-month-ar{font-family:'Amiri',serif;font-size:1.1rem;color:#fff;direction:rtl;line-height:1;}
+.ical-month-fr{font-size:.6rem;color:rgba(255,255,255,.45);margin-top:1px;}
+.ical-year-pill{background:rgba(200,168,75,.12);border:1px solid rgba(200,168,75,.25);border-radius:20px;padding:4px 12px;font-size:.65rem;color:var(--gold2);font-weight:800;}
+/* Jours de semaine */
+.ical-days-head{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:6px;}
+.ical-dh{font-size:.52rem;font-weight:900;color:rgba(255,255,255,.35);text-align:center;letter-spacing:.04em;}
+/* Grille jours */
+.ical-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+.ical-day{
+  aspect-ratio:1;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Cinzel',serif;
+  font-size:.62rem;
+  font-weight:700;
+  color:rgba(255,255,255,.55);
+  cursor:pointer;
+  transition:all .18s;
+}
+.ical-day:hover{background:rgba(255,255,255,.08);}
+.ical-day.empty{pointer-events:none;}
+.ical-day.today{
+  background:linear-gradient(135deg,var(--b5),var(--b7));
+  color:#fff;
+  box-shadow:0 4px 12px rgba(35,104,168,.45);
+}
+.ical-day.event{color:var(--gold2);}
+.ical-day.event::after{
+  content:'';
+  position:absolute;
+  bottom:3px;left:50%;
+  transform:translateX(-50%);
+  width:4px;height:4px;
+  border-radius:50%;
+  background:var(--gold2);
+}
+.ical-day.event{position:relative;}
+/* Séparateur doré */
+.ical-sep{height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.2),transparent);margin:12px 0;}
+/* Prochain événement */
+.ical-next{display:flex;align-items:center;gap:10px;}
+.ical-next-dot{width:8px;height:8px;border-radius:50%;background:var(--gold2);flex-shrink:0;box-shadow:0 0 6px rgba(200,168,75,.5);}
+.ical-next-txt{font-size:.62rem;color:rgba(255,255,255,.55);}
+.ical-next-txt strong{color:var(--gold2);display:block;font-size:.68rem;margin-bottom:1px;}
+
+/* ═══ XASSIDA DU JOUR (nouveau bloc accueil) ═══ */
+.xassida-jour{
+  margin:18px 18px 0;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 14px 40px rgba(4,16,30,.32);
+  position:relative;
+  background:linear-gradient(135deg,var(--b1) 0%,var(--b3) 50%,var(--b4) 100%);
+}
+.xassida-jour-pat{
+  position:absolute;inset:0;
+  opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 2L58 30L30 58L2 30Z' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23c8a84b' stroke-width='.6'/%3E%3Ccircle cx='30' cy='30' r='8' fill='none' stroke='%23c8a84b' stroke-width='.6'/%3E%3C/svg%3E");
+  background-size:60px 60px;
+}
+.xassida-jour-glow{
+  position:absolute;bottom:-20px;left:-20px;
+  width:160px;height:160px;
+  border-radius:50%;
+  background:radial-gradient(rgba(61,142,240,.22),transparent);
+  pointer-events:none;
+}
+.xassida-jour-inner{position:relative;z-index:2;padding:18px 20px;}
+/* Titre section */
+.xj-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.xj-title-block{display:flex;align-items:center;gap:10px;}
+.xj-icon{width:38px;height:38px;border-radius:11px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;}
+.xj-icon i{font-size:.95rem;color:var(--gold2);}
+.xj-title{font-size:.9rem;font-weight:900;color:#fff;}
+.xj-sub{font-size:.58rem;color:rgba(255,255,255,.4);margin-top:1px;}
+.xj-see-all{font-size:.62rem;color:var(--gold2);font-weight:800;cursor:pointer;display:flex;align-items:center;gap:3px;opacity:.8;}
+/* Cards Xassida */
+.xj-list{display:flex;flex-direction:column;gap:8px;}
+.xj-item{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(200,168,75,.12);
+  border-radius:14px;
+  padding:12px 14px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
+  transition:all .22s;
+}
+.xj-item:hover{background:rgba(255,255,255,.09);transform:translateX(3px);}
+.xj-num{
+  width:28px;height:28px;
+  border-radius:50%;
+  background:rgba(200,168,75,.12);
+  border:1.5px solid rgba(200,168,75,.22);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cinzel',serif;
+  font-size:.6rem;
+  font-weight:700;
+  color:var(--gold2);
+  flex-shrink:0;
+}
+.xj-info{flex:1;}
+.xj-name-ar{font-family:'Amiri',serif;font-size:.95rem;color:#fff;direction:rtl;margin-bottom:1px;}
+.xj-name-fr{font-size:.58rem;color:rgba(255,255,255,.4);}
+.xj-play{
+  width:34px;height:34px;
+  border-radius:50%;
+  background:rgba(200,168,75,.15);
+  border:1.5px solid rgba(200,168,75,.28);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  cursor:pointer;
+  transition:all .2s;
+}
+.xj-play:hover{background:rgba(200,168,75,.28);transform:scale(1.08);}
+.xj-play i{font-size:.72rem;color:var(--gold2);margin-left:2px;}
 .sh-title{font-size:.92rem;font-weight:800;color:var(--t1);display:flex;align-items:center;gap:6px;}
 .sh-title i{color:var(--b6);}
 .sh-more{font-size:.68rem;color:var(--b6);font-weight:800;cursor:pointer;display:flex;align-items:center;gap:3px;}
 
-/* News big */
+/* Section header */
+.sh{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 10px;}
 .big-news{margin:0 18px;border-radius:var(--rl);overflow:hidden;height:210px;position:relative;cursor:pointer;box-shadow:var(--sh3);transition:transform .25s;}
 .big-news:hover{transform:translateY(-3px);}
-.bn-img{position:absolute;inset:0;background-image:url("scheikh.jpg");background-size:cover;background-position:center top;}.bn-grad{position:absolute;inset:0;background:linear-gradient(160deg,rgba(4,16,30,.1) 0%,rgba(4,16,30,.88) 100%);}
+.bn-img{position:absolute;inset:0;background-image:url("scheikh.jpg");background-size:cover;background-position:center top;}
+.bn-grad{position:absolute;inset:0;background:linear-gradient(160deg,rgba(4,16,30,.1) 0%,rgba(4,16,30,.88) 100%);}
 .bn-body{position:absolute;bottom:0;left:0;right:0;padding:16px;z-index:2;}
 .bn-tag{display:inline-flex;align-items:center;gap:4px;background:var(--b6);color:#fff;font-size:.58rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:7px;}
 .bn-title{font-family:'Amiri',serif;font-size:1.1rem;color:#fff;direction:rtl;line-height:1.4;margin-bottom:5px;}
 .bn-meta{font-size:.6rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px;}
 
 /* Mini Player */
-.mp-wrap{margin:18px 18px 0;}
-.sh-sub{padding:0 18px 10px;font-size:.9rem;font-weight:800;color:var(--t1);display:flex;align-items:center;gap:6px;}
-.sh-sub i{color:var(--b6);}
-.mini-player{background:linear-gradient(145deg,var(--b1),var(--b3));border-radius:22px;padding:15px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 36px rgba(4,16,30,.28);position:relative;overflow:hidden;}
+.mini-player{margin:0 18px;background:linear-gradient(145deg,var(--b1),var(--b3));border-radius:22px;padding:15px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 36px rgba(4,16,30,.28);position:relative;overflow:hidden;}
 .mini-player::before{content:'';position:absolute;right:-16px;top:-16px;width:100px;height:100px;background:radial-gradient(circle,rgba(46,128,208,.2) 0%,transparent 70%);border-radius:50%;}
 .mp-disc{width:52px;height:52px;border-radius:50%;background:conic-gradient(from 0deg,#1a3a5c,#0d2640,#1e5080,#0a1e35,#2368a8,#0a1e35);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px rgba(200,168,75,.15);flex-shrink:0;}
 .mp-disc.spinning{animation:spin 4s linear infinite;}
@@ -141,7 +388,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .mp-c:hover i{color:#fff;}
 .mp-main{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--b5),var(--b7));box-shadow:0 4px 16px rgba(35,104,168,.5),0 0 0 4px rgba(35,104,168,.12);}
 .mp-main i{font-size:1rem;color:#fff;margin-left:2px;}
-.mp-main.playing i{margin-left:0;}
 
 /* Daily reading */
 .daily-wrap{margin:14px 18px 0;background:var(--milk);border-radius:20px;overflow:hidden;box-shadow:0 6px 22px rgba(4,16,30,.1);border:1px solid rgba(35,104,168,.06);}
@@ -177,53 +423,51 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .wq-play i{color:#fff;font-size:.82rem;margin-left:2px;}
 .wq-play.playing i{margin-left:0;}
 
-/* ═══ PAGE 2 CORAN XASSIDA ═══ */
+/* ═══════════════════════════════════════
+   PAGE 2 CORAN & XASSIDA — 2 cards seulement
+═══════════════════════════════════════ */
 .p2-head{background:linear-gradient(155deg,var(--b1),var(--b3));padding:26px 18px 22px;}
 .p2-ht{font-family:'Amiri',serif;font-size:1.8rem;color:#fff;direction:rtl;margin-bottom:2px;}
 .p2-hs{font-size:.7rem;color:rgba(255,255,255,.4);}
-.main-cards{display:flex;flex-direction:column;gap:12px;padding:18px 18px;}
-.mc{border-radius:var(--rl);overflow:hidden;cursor:pointer;box-shadow:var(--sh3);transition:transform .25s;}
-.mc:hover{transform:translateY(-4px);}
-.mc-inner{height:138px;display:flex;align-items:center;padding:0 20px;position:relative;overflow:hidden;}
-.mc-coran{background:linear-gradient(135deg,#04251a,#0a6035);}
-.mc-xassida{background:linear-gradient(135deg,var(--b1),var(--b4));}
-.mc-sass{background:linear-gradient(135deg,#180a38,#3c1580);}
-.mc-glow{position:absolute;right:-20px;top:-20px;width:160px;height:160px;border-radius:50%;opacity:.2;}
-.mc-coran .mc-glow{background:radial-gradient(#00ff88,transparent);}
-.mc-xassida .mc-glow{background:radial-gradient(#3d8ef0,transparent);}
-.mc-sass .mc-glow{background:radial-gradient(#9b6bff,transparent);}
-.mc-iw{width:62px;height:62px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin-right:16px;flex-shrink:0;}
-.mc-coran .mc-iw{background:rgba(0,255,136,.12);}
-.mc-xassida .mc-iw{background:rgba(61,142,240,.12);}
-.mc-sass .mc-iw{background:rgba(155,107,255,.12);}
-.mc-iw i{font-size:1.75rem;}
-.mc-coran .mc-iw i{color:#5dffa6;}
-.mc-xassida .mc-iw i{color:#7ab8ff;}
-.mc-sass .mc-iw i{color:#c4a0ff;}
-.mc-txt{flex:1;}
-.mc-lbl{font-size:1rem;font-weight:900;color:#fff;margin-bottom:3px;}
-.mc-sub{font-size:.64rem;color:rgba(255,255,255,.38);}
-.mc-arr{position:absolute;right:18px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.85rem;}
-.mc-badge{position:absolute;top:12px;right:58px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:.54rem;font-weight:900;padding:2px 8px;border-radius:20px;}
 
-/* ═══ PAGE 3 XAM-XAM ═══ */
-.xam-hero{position:relative;height:140px;overflow:hidden;display:flex;align-items:flex-end;}
-.xam-hbg{position:absolute;inset:0;background:linear-gradient(135deg,var(--b1),var(--b4));}
-.xam-hov{position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 5L55 30L30 55L5 30Z' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3C/svg%3E");background-size:60px 60px;}
-.xam-hc{position:relative;z-index:2;padding:16px 18px 18px;width:100%;display:flex;align-items:center;gap:14px;}
-.xam-hic{width:48px;height:48px;border-radius:14px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.xam-hic i{font-size:1.4rem;color:var(--gold2);}
-.xam-ht{font-family:'Amiri',serif;font-size:1.6rem;color:#fff;direction:rtl;line-height:1;}
-.xam-hs{font-size:.65rem;color:rgba(255,255,255,.42);margin-top:2px;}
+/* 2 cards en grille */
+.main-cards-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:18px;}
 
-/* Tabs */
-.xam-tabswrap{background:var(--milk);border-bottom:1px solid rgba(35,104,168,.07);box-shadow:0 2px 10px rgba(4,16,30,.05);}
-.xam-tabs{display:flex;}
-.xtab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 6px 11px;border:none;background:transparent;font-size:.62rem;font-weight:800;color:var(--t3);cursor:pointer;transition:all .22s;border-bottom:2.5px solid transparent;margin-bottom:-1px;}
-.xtab i{font-size:1rem;}
-.xtab.on{color:var(--b6);border-bottom-color:var(--b6);}
-.xtc{display:none;padding:16px 18px 18px;}
-.xtc.on{display:block;}
+.mc2{border-radius:var(--rl);overflow:hidden;cursor:pointer;box-shadow:0 12px 36px rgba(4,16,30,.28);transition:transform .25s;}
+.mc2:hover{transform:translateY(-5px);}
+.mc2-inner{height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 12px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--b1),var(--b4));}
+.mc2-glow{position:absolute;top:-20px;right:-20px;width:140px;height:140px;border-radius:50%;background:radial-gradient(#3d8ef0,transparent);opacity:.2;}
+.mc2-iw{width:56px;height:56px;border-radius:16px;background:rgba(61,142,240,.15);border:1.5px solid rgba(61,142,240,.25);display:flex;align-items:center;justify-content:center;margin-bottom:12px;box-shadow:0 4px 16px rgba(35,104,168,.3);}
+.mc2-iw i{font-size:1.6rem;color:#7ab8ff;}
+.mc2-lbl{font-size:.96rem;font-weight:900;color:#fff;margin-bottom:3px;text-align:center;}
+.mc2-sub{font-size:.6rem;color:rgba(255,255,255,.38);text-align:center;line-height:1.4;}
+.mc2-badge{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:.5rem;font-weight:900;padding:2px 8px;border-radius:20px;}
+
+/* ═══════════════════════════════════════
+   PAGE 3 XAM-XAM — 3 cards cliquables remplaçant tabs
+═══════════════════════════════════════ */
+.xam-head-new{background:linear-gradient(135deg,var(--b1),var(--b4));padding:28px 18px 22px;}
+.xam-head-new .xam-hic{width:48px;height:48px;border-radius:14px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.xam-head-new .xam-hic i{font-size:1.4rem;color:var(--gold2);}
+.xam-ht{font-family:'Amiri',serif;font-size:1.8rem;color:#fff;direction:rtl;line-height:1;}
+.xam-hs-new{font-size:.65rem;color:rgba(255,255,255,.42);margin-top:4px;}
+
+/* 3 cards Xam-Xam */
+.xam-cards{display:flex;flex-direction:column;gap:14px;padding:18px;}
+.xam-card{border-radius:var(--rl);overflow:hidden;cursor:pointer;box-shadow:0 10px 32px rgba(4,16,30,.24);transition:transform .25s,box-shadow .25s;}
+.xam-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(4,16,30,.36);}
+.xam-card-inner{height:110px;display:flex;align-items:center;gap:16px;padding:0 20px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--b1),var(--b4));}
+.xam-card-glow{position:absolute;right:-20px;top:-20px;width:130px;height:130px;border-radius:50%;opacity:.22;}
+.xam-card-iw{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(61,142,240,.14);border:1.5px solid rgba(61,142,240,.25);box-shadow:0 4px 16px rgba(35,104,168,.28);}
+.xam-card-iw i{font-size:1.45rem;color:#7ab8ff;}
+.xam-card-txt{flex:1;}
+.xam-card-lbl{font-size:1rem;font-weight:900;color:#fff;margin-bottom:3px;}
+.xam-card-sub{font-size:.62rem;color:rgba(255,255,255,.4);line-height:1.4;}
+.xam-card-arr{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.82rem;flex-shrink:0;}
+
+/* Sections Xam-Xam (maintenant affichées directement dans la page) */
+.xam-section{display:none;padding:0 18px 18px;}
+.xam-section.on{display:block;animation:fadeup .3s ease;}
 
 /* MAJALIS */
 .maj-intro{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--b1),var(--b3));border-radius:12px;padding:11px 14px;margin-bottom:14px;color:rgba(255,255,255,.65);font-size:.7rem;font-weight:700;}
@@ -273,7 +517,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .kchip-n{font-family:'Amiri',serif;font-size:.68rem;color:var(--t1);direction:rtl;line-height:1.3;margin-bottom:2px;}
 .kchip-s{font-size:.55rem;color:var(--t3);}
 
-/* Makk */
 .makk-card{background:linear-gradient(135deg,var(--b2),var(--b4));border-radius:16px;padding:15px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;box-shadow:0 6px 20px rgba(4,16,30,.18);transition:transform .22s;}
 .makk-card:hover{transform:translateY(-2px);}
 .makk-ic{width:44px;height:44px;border-radius:12px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -283,7 +526,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .makk-d{font-size:.62rem;color:rgba(255,255,255,.45);}
 .makk-q{background:var(--b6);color:#fff;font-size:.6rem;font-weight:900;padding:5px 11px;border-radius:20px;white-space:nowrap;box-shadow:0 4px 12px rgba(35,104,168,.38);}
 
-/* WAXTAN */
+/* WAXTAN section */
 .wax-hdr{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--b1),var(--b3));border-radius:16px;padding:14px 16px;margin-bottom:14px;box-shadow:0 6px 20px rgba(4,16,30,.18);}
 .wax-hdr-ic{width:44px;height:44px;border-radius:12px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .wax-hdr-ic i{font-size:1.2rem;color:var(--gold2);}
@@ -314,6 +557,10 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .wax-play i{color:#fff;font-size:.85rem;margin-left:2px;}
 .wax-play.playing i{margin-left:0;}
 
+/* Back button in xam section */
+.xam-back-btn{display:flex;align-items:center;gap:6px;background:rgba(35,104,168,.1);border:1px solid rgba(35,104,168,.2);border-radius:10px;padding:7px 12px;font-size:.72rem;font-weight:800;color:var(--b5);cursor:pointer;margin-bottom:14px;width:fit-content;font-family:'Nunito',sans-serif;}
+.xam-back-btn i{font-size:.8rem;}
+
 /* SUB-PANELS */
 .sp{position:fixed;inset:0;z-index:200;background:var(--bg);transform:translateX(100%);transition:transform .38s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding-bottom:40px;max-width:430px;margin:0 auto;left:0;right:0;}
 .sp.on{transform:translateX(0);}
@@ -334,12 +581,32 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 
 /* XASSIDA sub */
 .xsc-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:18px;}
-.xsc{background:var(--milk);border-radius:var(--r);padding:20px 12px;cursor:pointer;box-shadow:var(--sh2);border:1.5px solid transparent;transition:all .22s;text-align:center;}
-.xsc:hover{border-color:var(--b6);box-shadow:var(--shb);transform:translateY(-3px);}
-.xsc-ic{width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,var(--b3),var(--b5));display:flex;align-items:center;justify-content:center;margin:0 auto 9px;box-shadow:0 4px 12px rgba(35,104,168,.26);}
-.xsc-ic i{color:#fff;font-size:1.25rem;}
-.xsc-n{font-family:'Amiri',serif;font-size:.96rem;color:var(--t1);direction:rtl;margin-bottom:2px;}
-.xsc-s{font-size:.6rem;color:var(--t3);}
+.xsc{
+  background:linear-gradient(135deg,var(--b1),var(--b4));
+  border-radius:var(--r);
+  padding:20px 12px;
+  cursor:pointer;
+  box-shadow:0 10px 28px rgba(4,16,30,.32);
+  border:1.5px solid rgba(61,142,240,.12);
+  transition:all .22s;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.xsc::before{
+  content:'';
+  position:absolute;
+  top:-18px;right:-18px;
+  width:80px;height:80px;
+  border-radius:50%;
+  background:radial-gradient(#3d8ef0,transparent);
+  opacity:.18;
+}
+.xsc:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(4,16,30,.4);border-color:rgba(61,142,240,.28);}
+.xsc-ic{width:50px;height:50px;border-radius:14px;background:rgba(61,142,240,.15);border:1.5px solid rgba(61,142,240,.22);display:flex;align-items:center;justify-content:center;margin:0 auto 9px;box-shadow:0 4px 12px rgba(35,104,168,.26);}
+.xsc-ic i{color:#7ab8ff;font-size:1.25rem;}
+.xsc-n{font-family:'Amiri',serif;font-size:.96rem;color:#fff;direction:rtl;margin-bottom:2px;}
+.xsc-s{font-size:.6rem;color:rgba(255,255,255,.4);}
 
 /* SASS */
 .sass-w{padding:18px;}
@@ -407,7 +674,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .smconf{background:linear-gradient(135deg,var(--b5),var(--b7));color:#fff;box-shadow:var(--shb);}
 .smcanc{background:var(--bg);color:var(--t2);}
 
-/* Scroll animations */
 .sa{opacity:0;transform:translateY(22px);transition:opacity .5s ease var(--d,0s),transform .5s ease var(--d,0s);}
 .sa.vis{opacity:1;transform:translateY(0);}
 
@@ -448,67 +714,136 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 
   <!-- ══ PAGE ACCUEIL ══ -->
   <div class="page on" id="pg0">
-    <!-- HERO PRIÈRES -->
+    <!-- HERO PRIÈRES — style image référence -->
     <div class="hero">
       <div class="hero-bg"></div>
       <div class="hero-ov"></div>
-      <div class="hero-pat"></div>
       <div class="hero-inner">
-        <div class="hero-titre">
-          <span class="hero-crescent">☽</span>
-          <div class="hero-orn"><div class="hero-orn-d"></div></div>
-          <div class="hero-lbl">Heures de</div>
-          <div class="hero-ttl">PRIÈRE</div>
-          <div class="hero-today">Aujourd'hui</div>
-        </div>
-        <div class="prayer-rows">
-          <div class="prow">
-            <div class="prow-icon"><i class="fas fa-sun"></i></div>
-            <div class="prow-names"><div class="prow-fr">FAJR</div><div class="prow-ar">الفجر</div></div>
-            <div class="prow-sep"></div>
-            <div class="prow-time">05:18</div>
-            <div class="prow-bell"><i class="fas fa-bell"></i></div>
+
+        <!-- Haut : heure + date/localisation -->
+        <div class="hero-clock-row">
+          <div>
+            <div class="hero-time-big" id="hero-time">19:53</div>
+            <div class="hero-next-prayer" id="hero-next">Timiss dans <span id="hero-countdown">00:33:24</span></div>
           </div>
-          <div class="prow">
-            <div class="prow-icon"><i class="fas fa-circle-dot"></i></div>
-            <div class="prow-names"><div class="prow-fr">DOHR</div><div class="prow-ar">الظهر</div></div>
-            <div class="prow-sep"></div>
-            <div class="prow-time">13:04</div>
-            <div class="prow-bell"><i class="fas fa-bell"></i></div>
-          </div>
-          <div class="prow now">
-            <div class="prow-icon"><i class="fas fa-cloud-sun"></i></div>
-            <div class="prow-names"><div class="prow-fr">ASR</div><div class="prow-ar">العصر</div></div>
-            <div class="prow-sep"></div>
-            <div class="prow-time">16:37</div>
-            <div class="prow-bell"><i class="fas fa-bell"></i></div>
-          </div>
-          <div class="prow">
-            <div class="prow-icon"><i class="fas fa-sun-plant-wilt"></i></div>
-            <div class="prow-names"><div class="prow-fr">MAGHREB</div><div class="prow-ar">المغرب</div></div>
-            <div class="prow-sep"></div>
-            <div class="prow-time">19:48</div>
-            <div class="prow-bell"><i class="fas fa-bell"></i></div>
-          </div>
-          <div class="prow">
-            <div class="prow-icon"><i class="fas fa-moon"></i></div>
-            <div class="prow-names"><div class="prow-fr">ISHA</div><div class="prow-ar">العشاء</div></div>
-            <div class="prow-sep"></div>
-            <div class="prow-time">21:12</div>
-            <div class="prow-bell"><i class="fas fa-bell"></i></div>
+          <div class="hero-date-block">
+            <div class="hero-hijri" id="hero-hijri">Dhū al-Hijjah 22, 1447 AH</div>
+            <div class="hero-location-pill"><i class="fas fa-map-location-dot"></i> Dakar, Sénégal</div>
           </div>
         </div>
-        <div class="hero-datebar">
-          <div class="hdb-item">
-            <i class="fas fa-calendar-alt"></i>
-            <div class="hdb-txt"><strong id="greg-date">Lundi 9 Juin 2025</strong>٢٦ ذو القعدة ١٤٤٦</div>
+
+        <!-- Espace central : l'image de la mosquée est visible ici -->
+        <div class="hero-spacer"></div>
+
+        <!-- Bas : 5 prières -->
+        <div class="prayer-cols">
+
+          <!-- Fadiar : soleil levant + vagues -->
+          <div class="pcol" id="pc0">
+            <div class="pcol-name">Fadiar</div>
+            <div class="pcol-icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- soleil -->
+                <circle cx="22" cy="18" r="7" fill="#f5a623" opacity=".95"/>
+                <!-- rayons -->
+                <line x1="22" y1="4" x2="22" y2="8" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="22" y1="28" x2="22" y2="30" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="8" y1="18" x2="12" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="32" y1="18" x2="36" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="11.5" y1="7.5" x2="14.3" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="29.7" y1="25.7" x2="32.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="32.5" y1="7.5" x2="29.7" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="14.3" y1="25.7" x2="11.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <!-- vagues -->
+                <path d="M6 34 Q10 31 14 34 Q18 37 22 34 Q26 31 30 34 Q34 37 38 34" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M6 39 Q10 36 14 39 Q18 42 22 39 Q26 36 30 39 Q34 42 38 39" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/>
+              </svg>
+            </div>
+            <div class="pcol-time">05:54</div>
           </div>
-          <div class="hdb-sep"></div>
-          <div class="hdb-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <div class="hdb-txt"><strong>Dakar, Sénégal</strong>Lat. 14.7167</div>
+
+          <!-- Tisbar : soleil + vagues -->
+          <div class="pcol" id="pc1">
+            <div class="pcol-name">Tisbar</div>
+            <div class="pcol-icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="18" r="7" fill="#f5a623" opacity=".95"/>
+                <line x1="22" y1="4" x2="22" y2="8" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="22" y1="28" x2="22" y2="30" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="8" y1="18" x2="12" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="32" y1="18" x2="36" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="11.5" y1="7.5" x2="14.3" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="29.7" y1="25.7" x2="32.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="32.5" y1="7.5" x2="29.7" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="14.3" y1="25.7" x2="11.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M6 34 Q10 31 14 34 Q18 37 22 34 Q26 31 30 34 Q34 37 38 34" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M6 39 Q10 36 14 39 Q18 42 22 39 Q26 36 30 39 Q34 42 38 39" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/>
+              </svg>
+            </div>
+            <div class="pcol-time">13:00</div>
           </div>
+
+          <!-- Takussan : nuage + soleil partiel + vagues -->
+          <div class="pcol" id="pc2">
+            <div class="pcol-name">Takussan</div>
+            <div class="pcol-icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- soleil derrière -->
+                <circle cx="15" cy="16" r="6" fill="#f5a623" opacity=".8"/>
+                <line x1="15" y1="4" x2="15" y2="7" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/>
+                <line x1="4" y1="16" x2="7" y2="16" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/>
+                <line x1="7.5" y1="8.5" x2="9.6" y2="10.6" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/>
+                <line x1="22.5" y1="8.5" x2="20.4" y2="10.6" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/>
+                <!-- nuage -->
+                <path d="M13 28 Q13 22 20 22 Q22 18 27 20 Q33 20 33 26 Q36 26 36 30 Q36 33 32 33 L14 33 Q10 33 10 29 Q10 26 13 26 Z" fill="white" opacity=".88"/>
+                <!-- vagues -->
+                <path d="M6 37 Q10 34 14 37 Q18 40 22 37 Q26 34 30 37 Q34 40 38 37" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M6 42 Q10 39 14 42 Q18 45 22 42 Q26 39 30 42 Q34 45 38 42" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".5"/>
+              </svg>
+            </div>
+            <div class="pcol-time">17:30</div>
+          </div>
+
+          <!-- Timiss : soleil levant + vagues (actif) -->
+          <div class="pcol now" id="pc3">
+            <div class="pcol-name">Timiss</div>
+            <div class="pcol-icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="18" r="7" fill="#f5a623" opacity=".95"/>
+                <line x1="22" y1="4" x2="22" y2="8" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="22" y1="28" x2="22" y2="30" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="8" y1="18" x2="12" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="32" y1="18" x2="36" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="11.5" y1="7.5" x2="14.3" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="29.7" y1="25.7" x2="32.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="32.5" y1="7.5" x2="29.7" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <line x1="14.3" y1="25.7" x2="11.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M6 34 Q10 31 14 34 Q18 37 22 34 Q26 31 30 34 Q34 37 38 34" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M6 39 Q10 36 14 39 Q18 42 22 39 Q26 36 30 39 Q34 42 38 39" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/>
+              </svg>
+            </div>
+            <div class="pcol-time">19:53</div>
+          </div>
+
+          <!-- Guéé : lune + étoile + vagues -->
+          <div class="pcol" id="pc4">
+            <div class="pcol-name">Guéé</div>
+            <div class="pcol-icon">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- lune -->
+                <path d="M26 8 A12 12 0 1 0 26 32 A8 8 0 1 1 26 8 Z" fill="#f5c842" opacity=".92"/>
+                <!-- étoile -->
+                <path d="M33 10 L34.2 13.5 L38 13.5 L35 15.8 L36.2 19.3 L33 17 L29.8 19.3 L31 15.8 L28 13.5 L31.8 13.5 Z" fill="#f5c842" opacity=".85"/>
+                <!-- vagues -->
+                <path d="M6 34 Q10 31 14 34 Q18 37 22 34 Q26 31 30 34 Q34 37 38 34" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <path d="M6 39 Q10 36 14 39 Q18 42 22 39 Q26 36 30 39 Q34 42 38 39" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/>
+              </svg>
+            </div>
+            <div class="pcol-time">20:53</div>
+          </div>
+
         </div>
+
       </div>
     </div>
 
@@ -526,7 +861,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
       </div>
     </div>
 
-    <!-- MINI PLAYER XASSIDA -->
+    <!-- MINI PLAYER -->
     <div class="sh" style="margin-top:6px">
       <div class="sh-title"><i class="fas fa-music"></i> Xassida du Jour</div>
     </div>
@@ -584,26 +919,93 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
       </div>
     </div>
 
-    <!-- WAXTAN RAPIDE -->
+    <!-- CALENDRIER ISLAMIQUE -->
     <div class="sh" style="margin-top:14px">
-      <div class="sh-title"><i class="fas fa-microphone"></i> Waxtan — Écouter</div>
-      <div class="sh-more" onclick="navTo(2)">Tout voir <i class="fas fa-chevron-right"></i></div>
+      <div class="sh-title"><i class="fas fa-calendar-alt"></i> Calendrier Islamique</div>
     </div>
-    <div class="wax-quick">
-      <div class="wq-card">
-        <div class="wq-av">🎙️</div>
-        <div class="wq-info"><div class="wq-name">سرين باس خالكوم</div><div class="wq-sub">S. Bass Xelcom • 12 conférences</div></div>
-        <button class="wq-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button>
+    <div class="islamic-cal">
+      <div class="islamic-cal-pat"></div>
+      <div class="islamic-cal-glow"></div>
+      <div class="islamic-cal-inner">
+        <!-- En-tête -->
+        <div class="ical-header">
+          <div class="ical-title-block">
+            <div class="ical-icon"><i class="fas fa-moon"></i></div>
+            <div>
+              <div class="ical-month-ar">ذو الحجة</div>
+              <div class="ical-month-fr">Dhū al-Hijjah</div>
+            </div>
+          </div>
+          <div class="ical-year-pill">1447 AH</div>
+        </div>
+        <!-- Jours de semaine -->
+        <div class="ical-days-head">
+          <div class="ical-dh">Dim</div>
+          <div class="ical-dh">Lun</div>
+          <div class="ical-dh">Mar</div>
+          <div class="ical-dh">Mer</div>
+          <div class="ical-dh">Jeu</div>
+          <div class="ical-dh">Ven</div>
+          <div class="ical-dh">Sam</div>
+        </div>
+        <!-- Grille jours (Dhū al-Hijjah 1447 commence un mardi) -->
+        <div class="ical-grid" id="ical-grid"></div>
+        <div class="ical-sep"></div>
+        <!-- Prochain événement -->
+        <div class="ical-next">
+          <div class="ical-next-dot"></div>
+          <div class="ical-next-txt">
+            <strong>Aïd el-Adha — عيد الأضحى</strong>
+            10 Dhū al-Hijjah · Dans 18 jours
+          </div>
+        </div>
       </div>
-      <div class="wq-card">
-        <div class="wq-av">🌟</div>
-        <div class="wq-info"><div class="wq-name">سرين سام مباي</div><div class="wq-sub">S. Sam Mbaye • 20 conférences</div></div>
-        <button class="wq-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button>
-      </div>
-      <div class="wq-card">
-        <div class="wq-av">✨</div>
-        <div class="wq-info"><div class="wq-name">سرين أحمدو مباكي</div><div class="wq-sub">S. Ahmadou Mbacké • 15 conférences</div></div>
-        <button class="wq-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button>
+    </div>
+
+    <!-- XASSIDA DU JOUR -->
+    <div class="sh" style="margin-top:18px">
+      <div class="sh-title"><i class="fas fa-scroll"></i> Xassida du Jour</div>
+    </div>
+    <div class="xassida-jour">
+      <div class="xassida-jour-pat"></div>
+      <div class="xassida-jour-glow"></div>
+      <div class="xassida-jour-inner">
+        <div class="xj-header">
+          <div class="xj-title-block">
+            <div class="xj-icon"><i class="fas fa-star-and-crescent"></i></div>
+            <div>
+              <div class="xj-title">Lecture du Jour</div>
+              <div class="xj-sub">Cheikh Ahmadou Bamba</div>
+            </div>
+          </div>
+          <div class="xj-see-all" onclick="navTo(1)">Voir tout <i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="xj-list">
+          <div class="xj-item">
+            <div class="xj-num">١</div>
+            <div class="xj-info">
+              <div class="xj-name-ar">مسالك الجنان</div>
+              <div class="xj-name-fr">Massalik al-Jinan</div>
+            </div>
+            <button class="xj-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button>
+          </div>
+          <div class="xj-item">
+            <div class="xj-num">٢</div>
+            <div class="xj-info">
+              <div class="xj-name-ar">تزوّد الشاكر</div>
+              <div class="xj-name-fr">Tazawwudu Shikhar</div>
+            </div>
+            <button class="xj-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button>
+          </div>
+          <div class="xj-item">
+            <div class="xj-num">٣</div>
+            <div class="xj-info">
+              <div class="xj-name-ar">الجوهر النفيس</div>
+              <div class="xj-name-fr">Jawhar an-Nafis</div>
+            </div>
+            <button class="xj-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -612,72 +1014,104 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
   <div class="page" id="pg1">
     <div class="p2-head">
       <div class="p2-ht">القرآن والخصائد</div>
-      <div class="p2-hs">Coran, Xassida &amp; Planning de lecture</div>
+      <div class="p2-hs">Coran & Sass Wi — Programme de lecture</div>
     </div>
-    <div class="main-cards">
-      <div class="mc" onclick="openSP('sp-coran')">
-        <div class="mc-inner mc-coran">
-          <div class="mc-glow"></div>
-          <div class="mc-iw"><i class="fas fa-quran"></i></div>
-          <div class="mc-txt"><div class="mc-lbl">Coran</div><div class="mc-sub">30 Juz • Téléchargement PDF</div></div>
-          <div class="mc-arr"><i class="fas fa-chevron-right"></i></div>
-          <div class="mc-badge">30 JUZ</div>
+    <!-- 2 cards seulement : Coran + Sass Wi, même couleur que Xassida d'origine -->
+    <div class="main-cards-2">
+      <div class="mc2" onclick="openSP('sp-coran')">
+        <div class="mc2-inner">
+          <div class="mc2-glow"></div>
+          <div class="mc2-badge">30 JUZ</div>
+          <div class="mc2-iw"><i class="fas fa-quran" style="color:#7ab8ff;font-size:1.6rem;"></i></div>
+          <div class="mc2-lbl">Coran</div>
+          <div class="mc2-sub">30 Juz<br>Téléchargement PDF</div>
         </div>
       </div>
-      <div class="mc" onclick="openSP('sp-xassida')">
-        <div class="mc-inner mc-xassida">
-          <div class="mc-glow"></div>
-          <div class="mc-iw"><i class="fas fa-scroll"></i></div>
-          <div class="mc-txt"><div class="mc-lbl">Xassida</div><div class="mc-sub">PDF · Rajass · Maharidj · Kourel</div></div>
-          <div class="mc-arr"><i class="fas fa-chevron-right"></i></div>
-          <div class="mc-badge">COLLECTIONS</div>
+      <div class="mc2" onclick="openSP('sp-sass')">
+        <div class="mc2-inner">
+          <div class="mc2-glow"></div>
+          <div class="mc2-badge">PLANNING</div>
+          <div class="mc2-iw"><i class="fas fa-calendar-check" style="color:#7ab8ff;font-size:1.5rem;"></i></div>
+          <div class="mc2-lbl">Sass Wi</div>
+          <div class="mc2-sub">Mon programme<br>de lecture quotidien</div>
         </div>
       </div>
-      <div class="mc" onclick="openSP('sp-sass')">
-        <div class="mc-inner mc-sass">
-          <div class="mc-glow"></div>
-          <div class="mc-iw"><i class="fas fa-calendar-check"></i></div>
-          <div class="mc-txt"><div class="mc-lbl">Sass Wi</div><div class="mc-sub">Mon programme de lecture quotidien</div></div>
-          <div class="mc-arr"><i class="fas fa-chevron-right"></i></div>
-          <div class="mc-badge">PLANNING</div>
-        </div>
-      </div>
+    </div>
+
+    <!-- Xassida section en dessous -->
+    <div class="sh" style="margin-top:4px;">
+      <div class="sh-title"><i class="fas fa-scroll"></i> Xassida</div>
+    </div>
+    <div class="xsc-grid">
+      <div class="xsc" onclick="openSP('sp-xpdf')"><div class="xsc-ic"><i class="fas fa-file-pdf"></i></div><div class="xsc-n">خصائد PDF</div><div class="xsc-s">Xassida PDF</div></div>
+      <div class="xsc" onclick="openSP('sp-rajass')"><div class="xsc-ic"><i class="fas fa-music"></i></div><div class="xsc-n">رجاس</div><div class="xsc-s">Rajass</div></div>
+      <div class="xsc" onclick="openSP('sp-maharidj')"><div class="xsc-ic"><i class="fas fa-star"></i></div><div class="xsc-n">مهارج</div><div class="xsc-s">Maharidj</div></div>
+      <div class="xsc" onclick="openSP('sp-mokal')"><div class="xsc-ic"><i class="fas fa-scroll"></i></div><div class="xsc-n">موكال</div><div class="xsc-s">Mokal Xassida</div></div>
+      <div class="xsc" onclick="openSP('sp-kourel')"><div class="xsc-ic"><i class="fas fa-users"></i></div><div class="xsc-n">كوريل</div><div class="xsc-s">Kourel</div></div>
     </div>
   </div>
 
   <!-- ══ PAGE XAM-XAM ══ -->
   <div class="page" id="pg2">
-    <div class="xam-hero">
-      <div class="xam-hbg"></div><div class="xam-hov"></div>
-      <div class="xam-hc">
-        <div class="xam-hic"><i class="fas fa-star-and-crescent"></i></div>
-        <div>
-          <div class="xam-ht">خَمْ خَمْ</div>
-          <div class="xam-hs">Connaissance &amp; Sagesse Mouride</div>
+    <!-- Header sans la bannière "Connaissance et sagesse" -->
+    <div class="xam-head-new">
+      <div class="xam-hic"><i class="fas fa-star-and-crescent"></i></div>
+      <div class="xam-ht">خَمْ خَمْ</div>
+      <div class="xam-hs-new">Connaissance &amp; Sagesse Mouride</div>
+    </div>
+
+    <!-- 3 cards cliquables -->
+    <div class="xam-cards" id="xam-cards-list">
+      <div class="xam-card" onclick="showXamSection('maj')">
+        <div class="xam-card-inner">
+          <div class="xam-card-glow" style="background:radial-gradient(#3d8ef0,transparent);"></div>
+          <div class="xam-card-iw"><i class="fas fa-book-open"></i></div>
+          <div class="xam-card-txt">
+            <div class="xam-card-lbl">Majalis</div>
+            <div class="xam-card-sub">Livres de Serigne Touba<br>Enseignements & Écrits</div>
+          </div>
+          <div class="xam-card-arr"><i class="fas fa-chevron-right"></i></div>
+        </div>
+      </div>
+      <div class="xam-card" onclick="showXamSection('hist')">
+        <div class="xam-card-inner">
+          <div class="xam-card-glow" style="background:radial-gradient(#3d8ef0,transparent);"></div>
+          <div class="xam-card-iw"><i class="fas fa-landmark"></i></div>
+          <div class="xam-card-txt">
+            <div class="xam-card-lbl">Histoire</div>
+            <div class="xam-card-sub">Parcours de Serigne Touba<br>Khalifes & Grandes Figures</div>
+          </div>
+          <div class="xam-card-arr"><i class="fas fa-chevron-right"></i></div>
+        </div>
+      </div>
+      <div class="xam-card" onclick="showXamSection('wax')">
+        <div class="xam-card-inner">
+          <div class="xam-card-glow" style="background:radial-gradient(#3d8ef0,transparent);"></div>
+          <div class="xam-card-iw"><i class="fas fa-microphone-lines"></i></div>
+          <div class="xam-card-txt">
+            <div class="xam-card-lbl">Waxtan</div>
+            <div class="xam-card-sub">Conférences islamiques<br>Enseignements des Cheikhs</div>
+          </div>
+          <div class="xam-card-arr"><i class="fas fa-chevron-right"></i></div>
         </div>
       </div>
     </div>
-    <div class="xam-tabswrap">
-      <div class="xam-tabs">
-        <button class="xtab on" onclick="xtab('maj',this)"><i class="fas fa-book-open"></i><span>Majalis</span></button>
-        <button class="xtab" onclick="xtab('hist',this)"><i class="fas fa-landmark"></i><span>Histoire</span></button>
-        <button class="xtab" onclick="xtab('wax',this)"><i class="fas fa-microphone-lines"></i><span>Waxtan</span></button>
-      </div>
-    </div>
 
-    <!-- MAJALIS -->
-    <div class="xtc on" id="xc-maj">
+    <!-- SECTION MAJALIS (caché par défaut) -->
+    <div class="xam-section" id="xs-maj">
+      <button class="xam-back-btn" onclick="hideXamSection()"><i class="fas fa-arrow-left"></i> Retour</button>
       <div class="maj-intro"><i class="fas fa-book-quran"></i><span>Livres de Serigne Touba — Cheikh Ahmadou Bamba</span></div>
-      <div class="mbook sa" style="--d:0s"><div class="mbook-body"><div class="mbook-ar">تزوّد الشاكر</div><div class="mbook-fr">Tazawwudu Shikhar</div><div class="mbook-desc">Prière et gratitude envers Allah</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
-      <div class="mbook sa" style="--d:.07s"><div class="mbook-body"><div class="mbook-ar">نهج قضاء الحاجة</div><div class="mbook-fr">Nahju Kadaïl Hajah</div><div class="mbook-desc">Voie vers l'exaucement des vœux</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
-      <div class="mbook sa" style="--d:.14s"><div class="mbook-body"><div class="mbook-ar">الجوهر النفيس</div><div class="mbook-fr">Jawhar an-Nafis</div><div class="mbook-desc">La perle précieuse</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
-      <div class="mbook sa" style="--d:.21s"><div class="mbook-body"><div class="mbook-ar">مسالك الجنان</div><div class="mbook-fr">Massalik al-Jinan</div><div class="mbook-desc">Les voies du Paradis</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
-      <div class="mbook sa" style="--d:.28s"><div class="mbook-body"><div class="mbook-ar">منير الصدور</div><div class="mbook-fr">Munawirsudur</div><div class="mbook-desc">La lumière des cœurs</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
+      <div class="mbook"><div class="mbook-body"><div class="mbook-ar">تزوّد الشاكر</div><div class="mbook-fr">Tazawwudu Shikhar</div><div class="mbook-desc">Prière et gratitude envers Allah</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
+      <div class="mbook"><div class="mbook-body"><div class="mbook-ar">نهج قضاء الحاجة</div><div class="mbook-fr">Nahju Kadaïl Hajah</div><div class="mbook-desc">Voie vers l'exaucement des vœux</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
+      <div class="mbook"><div class="mbook-body"><div class="mbook-ar">الجوهر النفيس</div><div class="mbook-fr">Jawhar an-Nafis</div><div class="mbook-desc">La perle précieuse</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
+      <div class="mbook"><div class="mbook-body"><div class="mbook-ar">مسالك الجنان</div><div class="mbook-fr">Massalik al-Jinan</div><div class="mbook-desc">Les voies du Paradis</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
+      <div class="mbook"><div class="mbook-body"><div class="mbook-ar">منير الصدور</div><div class="mbook-fr">Munawirsudur</div><div class="mbook-desc">La lumière des cœurs</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
     </div>
 
-    <!-- HISTOIRE -->
-    <div class="xtc" id="xc-hist">
-      <div class="hhc sa" style="--d:0s" onclick="openSP('sp-stouba')">
+    <!-- SECTION HISTOIRE (caché par défaut) -->
+    <div class="xam-section" id="xs-hist">
+      <button class="xam-back-btn" onclick="hideXamSection()"><i class="fas fa-arrow-left"></i> Retour</button>
+      <div class="hhc" onclick="openSP('sp-stouba')">
         <div class="hhc-bg"></div><div class="hhc-ov"></div>
         <div class="hhc-body">
           <div class="hhc-ic"><i class="fas fa-mosque"></i></div>
@@ -689,34 +1123,35 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
           <i class="fas fa-chevron-right hhc-arr"></i>
         </div>
       </div>
-      <div class="sec-title sa" style="--d:.08s"><i class="fas fa-crown"></i> Ndiabootou S. Bi — Les Khalifes</div>
+      <div class="sec-title"><i class="fas fa-crown"></i> Ndiabootou S. Bi — Les Khalifes</div>
       <div class="k-scroll">
-        <div class="kchip sa" style="--d:.1s" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">👑</div><div class="kchip-n">س. محمد مصطفى</div><div class="kchip-s">1er Khalife</div></div>
-        <div class="kchip sa" style="--d:.14s" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">🌟</div><div class="kchip-n">س. فلّو</div><div class="kchip-s">2e Khalife</div></div>
-        <div class="kchip sa" style="--d:.18s" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">⭐</div><div class="kchip-n">س. ﭙارا</div><div class="kchip-s">3e Khalife</div></div>
-        <div class="kchip sa" style="--d:.22s" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">✨</div><div class="kchip-n">س. عبد الأحد</div><div class="kchip-s">4e Khalife</div></div>
-        <div class="kchip sa" style="--d:.26s" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">💫</div><div class="kchip-n">س. عبد القادر</div><div class="kchip-s">5e Khalife</div></div>
-        <div class="kchip sa" style="--d:.3s" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">🌙</div><div class="kchip-n">س. صالح</div><div class="kchip-s">6e Khalife</div></div>
+        <div class="kchip" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">👑</div><div class="kchip-n">س. محمد مصطفى</div><div class="kchip-s">1er Khalife</div></div>
+        <div class="kchip" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">🌟</div><div class="kchip-n">س. فلّو</div><div class="kchip-s">2e Khalife</div></div>
+        <div class="kchip" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">⭐</div><div class="kchip-n">س. ﭙارا</div><div class="kchip-s">3e Khalife</div></div>
+        <div class="kchip" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">✨</div><div class="kchip-n">س. عبد الأحد</div><div class="kchip-s">4e Khalife</div></div>
+        <div class="kchip" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">💫</div><div class="kchip-n">س. عبد القادر</div><div class="kchip-s">5e Khalife</div></div>
+        <div class="kchip" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">🌙</div><div class="kchip-n">س. صالح</div><div class="kchip-s">6e Khalife</div></div>
       </div>
-      <div class="sec-title sa" style="--d:.32s"><i class="fas fa-users"></i> Les Makk Gni</div>
-      <div class="makk-card sa" style="--d:.36s" onclick="openQuiz()">
+      <div class="sec-title"><i class="fas fa-users"></i> Les Makk Gni</div>
+      <div class="makk-card" onclick="openQuiz()">
         <div class="makk-ic"><i class="fas fa-star"></i></div>
         <div class="makk-b"><div class="makk-t">Grandes Figures Mourides</div><div class="makk-d">Personnalités qui ont façonné la Mouridiyya</div></div>
         <div class="makk-q"><i class="fas fa-question-circle"></i> Quiz</div>
       </div>
     </div>
 
-    <!-- WAXTAN -->
-    <div class="xtc" id="xc-wax">
-      <div class="wax-hdr sa" style="--d:0s">
+    <!-- SECTION WAXTAN (caché par défaut) -->
+    <div class="xam-section" id="xs-wax">
+      <button class="xam-back-btn" onclick="hideXamSection()"><i class="fas fa-arrow-left"></i> Retour</button>
+      <div class="wax-hdr">
         <div class="wax-hdr-ic"><i class="fas fa-podcast"></i></div>
         <div><div class="wax-hdr-t">Conférences Islamiques</div><div class="wax-hdr-s">Enseignements des Cheikhs Mourides</div></div>
       </div>
-      <div class="wax-card sa" style="--d:.06s"><div class="wax-num">01</div><div class="wax-av">🎙️</div><div class="wax-info"><div class="wax-name">سرين باس خالكوم</div><div class="wax-sub">S. Bass Xelcom</div><div class="wax-tags"><span>12 conf.</span><span>Fiqh</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
-      <div class="wax-card sa" style="--d:.12s"><div class="wax-num">02</div><div class="wax-av">📿</div><div class="wax-info"><div class="wax-name">سرين الحاج</div><div class="wax-sub">S. Aladji</div><div class="wax-tags"><span>8 conf.</span><span>Tasawwuf</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
-      <div class="wax-card sa" style="--d:.18s"><div class="wax-num">03</div><div class="wax-av">🌟</div><div class="wax-info"><div class="wax-name">سرين سام مباي</div><div class="wax-sub">S. Sam Mbaye</div><div class="wax-tags"><span>20 conf.</span><span>Sira</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
-      <div class="wax-card sa" style="--d:.24s"><div class="wax-num">04</div><div class="wax-av">✨</div><div class="wax-info"><div class="wax-name">سرين أحمدو مباكي</div><div class="wax-sub">S. Ahmadou Mbacké</div><div class="wax-tags"><span>15 conf.</span><span>Adab</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
-      <div class="wax-card sa" style="--d:.3s"><div class="wax-num">05</div><div class="wax-av">🌸</div><div class="wax-info"><div class="wax-name">سرين أفيا نياng</div><div class="wax-sub">S. Afia Niang</div><div class="wax-tags"><span>9 conf.</span><span>Tarbiya</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
+      <div class="wax-card"><div class="wax-num">01</div><div class="wax-av">🎙️</div><div class="wax-info"><div class="wax-name">سرين باس خالكوم</div><div class="wax-sub">S. Bass Xelcom</div><div class="wax-tags"><span>12 conf.</span><span>Fiqh</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
+      <div class="wax-card"><div class="wax-num">02</div><div class="wax-av">📿</div><div class="wax-info"><div class="wax-name">سرين الحاج</div><div class="wax-sub">S. Aladji</div><div class="wax-tags"><span>8 conf.</span><span>Tasawwuf</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
+      <div class="wax-card"><div class="wax-num">03</div><div class="wax-av">🌟</div><div class="wax-info"><div class="wax-name">سرين سام مباي</div><div class="wax-sub">S. Sam Mbaye</div><div class="wax-tags"><span>20 conf.</span><span>Sira</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
+      <div class="wax-card"><div class="wax-num">04</div><div class="wax-av">✨</div><div class="wax-info"><div class="wax-name">سرين أحمدو مباكي</div><div class="wax-sub">S. Ahmadou Mbacké</div><div class="wax-tags"><span>15 conf.</span><span>Adab</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
+      <div class="wax-card"><div class="wax-num">05</div><div class="wax-av">🌸</div><div class="wax-info"><div class="wax-name">سرين أفيا نياng</div><div class="wax-sub">S. Afia Niang</div><div class="wax-tags"><span>9 conf.</span><span>Tarbiya</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
     </div>
   </div>
 
@@ -732,17 +1167,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 <div class="sp" id="sp-coran">
   <div class="sp-head"><button class="sp-back" onclick="closeSP('sp-coran')"><i class="fas fa-arrow-left"></i> Retour</button><div class="sp-title">القرآن الكريم</div><div class="sp-sub">30 Juz — PDF téléchargeables</div></div>
   <div class="jgrid" id="juz-grid"></div>
-</div>
-
-<div class="sp" id="sp-xassida">
-  <div class="sp-head"><button class="sp-back" onclick="closeSP('sp-xassida')"><i class="fas fa-arrow-left"></i> Retour</button><div class="sp-title">الخصائد</div><div class="sp-sub">Collections de Cheikh Ahmadou Bamba</div></div>
-  <div class="xsc-grid">
-    <div class="xsc" onclick="openSP('sp-xpdf')"><div class="xsc-ic"><i class="fas fa-file-pdf"></i></div><div class="xsc-n">خصائد PDF</div><div class="xsc-s">Xassida PDF</div></div>
-    <div class="xsc" onclick="openSP('sp-rajass')"><div class="xsc-ic"><i class="fas fa-music"></i></div><div class="xsc-n">رجاس</div><div class="xsc-s">Rajass</div></div>
-    <div class="xsc" onclick="openSP('sp-maharidj')"><div class="xsc-ic"><i class="fas fa-star"></i></div><div class="xsc-n">مهارج</div><div class="xsc-s">Maharidj</div></div>
-    <div class="xsc" onclick="openSP('sp-mokal')"><div class="xsc-ic"><i class="fas fa-scroll"></i></div><div class="xsc-n">موكال</div><div class="xsc-s">Mokal Xassida</div></div>
-    <div class="xsc" onclick="openSP('sp-kourel')"><div class="xsc-ic"><i class="fas fa-users"></i></div><div class="xsc-n">كوريل</div><div class="xsc-s">Kourel</div></div>
-  </div>
 </div>
 
 <div class="sp" id="sp-xpdf">
@@ -836,12 +1260,9 @@ window.addEventListener('DOMContentLoaded',()=>{
     setTimeout(()=>document.getElementById('oc3').classList.add('on'),360);
     setTimeout(()=>document.getElementById('ob-btn').classList.add('on'),620);
   },500);
-  buildJuz(); buildXPDF(); buildSass();
-  // Set date
-  const d=new Date();
-  const days=['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'];
-  const months=['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];
-  document.getElementById('greg-date').textContent=days[d.getDay()]+' '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();
+  buildJuz(); buildXPDF(); buildSass(); buildCalendar();
+  updateClock();
+  setInterval(updateClock,1000);
   setTimeout(initSA,300);
 });
 
@@ -852,6 +1273,47 @@ function launch(){
   setTimeout(()=>{o.style.display='none';document.getElementById('app').style.display='block';setTimeout(initSA,200);},540);
 }
 
+// ── HORLOGE LIVE
+const prayers=[
+  {name:'Fadiar',h:5,m:54},
+  {name:'Tisbar',h:13,m:0},
+  {name:'Takussan',h:17,m:30},
+  {name:'Timiss',h:19,m:53},
+  {name:'Guéé',h:20,m:53}
+];
+function updateClock(){
+  const now=new Date();
+  const hh=now.getHours().toString().padStart(2,'0');
+  const mm=now.getMinutes().toString().padStart(2,'0');
+  document.getElementById('hero-time').textContent=hh+':'+mm;
+  // Find current/next prayer
+  const totalNow=now.getHours()*60+now.getMinutes();
+  let nextIdx=-1;
+  for(let i=0;i<prayers.length;i++){
+    const t=prayers[i].h*60+prayers[i].m;
+    if(totalNow<t){nextIdx=i;break;}
+  }
+  // Highlight current
+  document.querySelectorAll('.pcol').forEach((c,i)=>c.classList.remove('now'));
+  if(nextIdx>0){
+    document.getElementById('pc'+(nextIdx-1)).classList.add('now');
+  } else if(nextIdx===-1){
+    document.getElementById('pc4').classList.add('now');
+  }
+  // Countdown
+  if(nextIdx!==-1){
+    const p=prayers[nextIdx];
+    const target=new Date();target.setHours(p.h,p.m,0,0);
+    const diff=Math.max(0,target-now);
+    const dh=Math.floor(diff/3600000).toString().padStart(2,'0');
+    const dm=Math.floor((diff%3600000)/60000).toString().padStart(2,'0');
+    const ds=Math.floor((diff%60000)/1000).toString().padStart(2,'0');
+    document.getElementById('hero-next').innerHTML=p.name+' dans <span id="hero-countdown">'+dh+':'+dm+':'+ds+'</span>';
+  } else {
+    document.getElementById('hero-next').innerHTML='Fadiar demain';
+  }
+}
+
 // ── NAVIGATION
 function navTo(i){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
@@ -859,24 +1321,39 @@ function navTo(i){
   document.getElementById('pg'+i).classList.add('on');
   document.getElementById('n'+i).classList.add('on');
   window.scrollTo(0,0);
+  // Reset xam sections when nav to xam
+  if(i===2) hideXamSection();
   setTimeout(initSA,80);
 }
 function openSP(id){document.getElementById(id).classList.add('on');}
 function closeSP(id){document.getElementById(id).classList.remove('on');}
+
+// ── XAM-XAM sections
+function showXamSection(sec){
+  document.getElementById('xam-cards-list').style.display='none';
+  document.querySelectorAll('.xam-section').forEach(s=>s.classList.remove('on'));
+  document.getElementById('xs-'+sec).classList.add('on');
+  window.scrollTo(0,0);
+}
+function hideXamSection(){
+  document.querySelectorAll('.xam-section').forEach(s=>s.classList.remove('on'));
+  document.getElementById('xam-cards-list').style.display='flex';
+  document.getElementById('xam-cards-list').style.flexDirection='column';
+  window.scrollTo(0,0);
+}
 
 // ── MINI PLAYER
 let mpPlaying=false,mpProg=0,mpTimer=null;
 const MP_TOT=222;
 function mpToggle(){
   mpPlaying=!mpPlaying;
-  const btn=document.getElementById('mp-btn');
   const ico=document.getElementById('mp-icon');
   const disc=document.getElementById('mp-disc');
   if(mpPlaying){
-    ico.className='fas fa-pause';btn.classList.add('playing');disc.classList.add('spinning');
+    ico.className='fas fa-pause';disc.classList.add('spinning');
     mpTimer=setInterval(()=>{if(mpProg>=MP_TOT)mpProg=0;mpProg++;mpUI();},1000);
   } else {
-    ico.className='fas fa-play';btn.classList.remove('playing');disc.classList.remove('spinning');
+    ico.className='fas fa-play';disc.classList.remove('spinning');
     clearInterval(mpTimer);
   }
 }
@@ -889,7 +1366,7 @@ function mpUI(){
   document.getElementById('mp-cur').textContent=m+':'+s;
 }
 
-// ── TOGGLE PLAY (waxtan buttons)
+// ── PLAY TOGGLE
 function togglePlay(btn){
   const ip=btn.classList.contains('playing');
   document.querySelectorAll('.wq-play,.wax-play').forEach(b=>{b.classList.remove('playing');b.innerHTML='<i class="fas fa-play"></i>';});
@@ -914,11 +1391,10 @@ function buildJuz(){
 
 // ── XASSIDA PDF
 const xL=[{n:'مسالك الجنان',s:'Massalik al-Jinan'},{n:'الجوهر النفيس',s:'Jawhar an-Nafis'},{n:'تزوّد الشاكر',s:'Tazawwudu Shikhar'},{n:'نهج قضاء الحاجة',s:'Nahju Kadaïl Hajah'},{n:'منير الصدور',s:'Munawirsudur'},{n:'البردة الشريفة',s:'Burdah Charifa'}];
-const spines=['bs1','bs2','bs3','bs4','bs5','bs1'];
 function buildXPDF(){
   const l=document.getElementById('xpdf-list');l.innerHTML='';
   xL.forEach((x,i)=>{
-    l.innerHTML+=`<div class="mbook" style="--i:${i}"><div class="mbook-body"><div class="mbook-ar">${x.n}</div><div class="mbook-fr">${x.s}</div></div><button class="jdl" onclick="alert('PDF: ${x.s}')"><i class="fas fa-download"></i></button></div>`;
+    l.innerHTML+=`<div class="mbook"><div class="mbook-body"><div class="mbook-ar">${x.n}</div><div class="mbook-fr">${x.s}</div></div><button class="jdl" onclick="alert('PDF: ${x.s}')"><i class="fas fa-download"></i></button></div>`;
   });
 }
 
@@ -948,7 +1424,27 @@ function addTask(){
   document.getElementById('sm-n').value='';document.getElementById('sm-h').value='';
 }
 
-// ── REGIONS
+// ── CALENDRIER ISLAMIQUE
+function buildCalendar(){
+  const g=document.getElementById('ical-grid');
+  if(!g)return;
+  // Dhū al-Hijjah 1447 — commence un mardi (décalage 2)
+  const offset=2; // 0=dim,1=lun,2=mar...
+  const total=30;
+  const today=22; // jour actuel
+  const events=[1,9,10,27]; // événements (Wuquf Arafat=9, Aïd=10, etc.)
+  let html='';
+  for(let i=0;i<offset;i++) html+=`<div class="ical-day empty"></div>`;
+  for(let d=1;d<=total;d++){
+    let cls='ical-day';
+    if(d===today) cls+=' today';
+    else if(events.includes(d)) cls+=' event';
+    html+=`<div class="${cls}">${d}</div>`;
+  }
+  g.innerHTML=html;
+}
+
+
 const rD={
   dakar:{t:'🏙️ Dakar',p:"Cheikh Ahmadou Bamba débarqua à Dakar en 1907 lors de son retour d'exil. Son rayonnement spirituel y attira des milliers de disciples."},
   diourbel:{t:'⭐ Diourbel — Touba',p:"Diourbel abrite Touba, ville sainte fondée en 1887. La Grande Mosquée accueille des millions de pèlerins lors du Grand Magal."},
@@ -982,15 +1478,6 @@ function openQuiz(){
   document.getElementById('qmodal').classList.add('on');
 }
 function closeQuiz(){document.getElementById('qmodal').classList.remove('on');}
-
-// ── TABS
-function xtab(id,btn){
-  document.querySelectorAll('.xtab').forEach(t=>t.classList.remove('on'));
-  document.querySelectorAll('.xtc').forEach(c=>c.classList.remove('on'));
-  btn.classList.add('on');
-  document.getElementById('xc-'+id).classList.add('on');
-  setTimeout(initSA,60);
-}
 
 // ── SCROLL ANIMATIONS
 function initSA(){
