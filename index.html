@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<title>النور المريدي</title>
+<title>&#1575;&#1604;&#1606;&#1608;&#1585; &#1575;&#1604;&#1605;&#1585;&#1610;&#1583;&#1610;</title>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
+
 :root{
   --b1:#04101e;--b2:#071828;--b3:#0d2640;--b4:#153a5e;--b5:#1c5080;--b6:#2368a8;--b7:#3d8ef0;
   --gold:#c8a84b;--gold2:#e4c76b;--gold3:#f5e0a0;
@@ -65,173 +66,90 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 @keyframes fadeup{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
 
 /* ═══════════════════════════════════════
-   PAGE 1 ACCUEIL — HERO PRIÈRES
+   PAGE 0 ACCUEIL — 4 GRANDES CARDS + SECTIONS
 ═══════════════════════════════════════ */
-.hero{
-  position:relative;
-  height:390px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-}
-.hero-bg{
-  position:absolute;
-  inset:0;
-  background-image:url("diouma.jpg");
-  background-size:cover;
-  background-position: center 80%;
-  background-repeat:no-repeat;
-}
-.hero-ov{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(4,16,30,.55) 0%,
-    rgba(4,16,30,.35) 30%,
-    rgba(4,16,30,.75) 65%,
-    rgba(4,16,30,.98) 88%,
-    rgba(4,16,30,1)   100%
-  );
-}
-.hero-inner{
-  position:relative;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  height:100%;
-  padding:14px 20px 0;
-}
+#pg0{background:var(--milk);}
 
-/* ── Ligne haut : heure + date/loc ── */
-.hero-clock-row{
+/* En-tête accueil — heure et date uniquement */
+.ac-hero-header{
+  padding:28px 20px 20px;
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
-  margin-bottom:0;
 }
-.hero-time-big{
+.ac-time-big{
   font-family:'Cinzel',serif;
   font-size:3.2rem;
   font-weight:700;
-  color:var(--gold2);
+  color:var(--b1);
   line-height:1;
-  text-shadow:0 2px 16px rgba(200,168,75,.3);
   letter-spacing:-.02em;
 }
-.hero-date-block{
-  text-align:right;
-  padding-top:4px;
-}
-.hero-hijri{
-  font-family:'Nunito',sans-serif;
-  font-size:.72rem;
-  font-weight:700;
-  color:#fff;
-  margin-bottom:6px;
-}
-.hero-location-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-  background:rgba(20,40,70,.55);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:20px;
-  padding:5px 11px;
-  font-size:.65rem;
-  color:rgba(255,255,255,.8);
-  font-weight:700;
-  backdrop-filter:blur(10px);
-}
-.hero-location-pill i{font-size:.7rem;color:rgba(255,255,255,.65);}
+.ac-date-block{text-align:right;padding-top:4px;}
+.ac-hijri{font-size:.72rem;font-weight:700;color:var(--t2);margin-bottom:6px;}
+.ac-loc-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(4,16,30,.06);border:1px solid rgba(4,16,30,.1);border-radius:20px;padding:5px 11px;font-size:.65rem;color:var(--t2);font-weight:700;}
+.ac-loc-pill i{font-size:.7rem;color:var(--b5);}
 
-/* Compte à rebours */
-.hero-next-prayer{
-  font-family:'Nunito',sans-serif;
-  font-size:.78rem;
-  font-weight:700;
-  color:rgba(255,255,255,.65);
-  margin-top:4px;
+/* Grille 4 cards accueil */
+.ac-grid-4{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  padding:4px 16px 20px;
 }
-.hero-next-prayer span{color:var(--gold2);}
-
-/* ── Spacer minimal — juste assez pour voir la mosquée ── */
-.hero-spacer{flex:1;}
-
-/* ── 5 colonnes prières ── */
-.prayer-cols{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 10px 20px;
-  gap:0;
+.ac4{
+  border-radius:22px;
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:0 14px 40px rgba(4,16,30,.42);
+  transition:transform .25s,box-shadow .25s;
+  position:relative;
 }
-.pcol{
+.ac4:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(4,16,30,.55);}
+.ac4-inner{
+  height:160px;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:5px;
-  flex:1;
-  padding:10px 2px 12px;
-  border-radius:18px;
-  cursor:pointer;
-  transition:all .22s;
-  border:1.5px solid transparent;
+  justify-content:center;
+  padding:18px 12px;
+  position:relative;
+  overflow:hidden;
 }
-.pcol.now{
-  background:rgba(20,45,90,.52);
-  border-color:rgba(100,160,255,.28);
-  box-shadow:0 4px 22px rgba(20,60,140,.5);
-  backdrop-filter:blur(10px);
-}
-.pcol-name{
-  font-family:'Nunito',sans-serif;
-  font-size:.62rem;
-  font-weight:800;
-  color:rgba(255,255,255,.65);
-  letter-spacing:.01em;
-}
-.pcol.now .pcol-name{color:#fff;}
-.pcol-icon{
-  width:36px;height:36px;
-  display:flex;align-items:center;justify-content:center;
-}
-.pcol-icon svg{width:36px;height:36px;}
-.pcol-time{
-  font-family:'Cinzel',serif;
-  font-size:.68rem;
-  font-weight:700;
-  color:rgba(255,255,255,.65);
-}
-.pcol.now .pcol-time{color:#fff;font-size:.7rem;}
+/* Card 1 Coran : bleu profond (même dégradé que b1→b4) */
+.ac4-coran .ac4-inner{background:linear-gradient(135deg,#04101e,#153a5e);}
+/* Card 2 Xassida : légèrement violet foncé (complément du bleu Coran) */
+.ac4-xassida .ac4-inner{background:linear-gradient(135deg,#0e1630,#2d1f5e);}
+/* Card 3 Majalis : même dégradé que Coran */
+.ac4-majalis .ac4-inner{background:linear-gradient(135deg,#04101e,#153a5e);}
+/* Card 4 Culture : même dégradé que Xassida */
+.ac4-culture .ac4-inner{background:linear-gradient(135deg,#0e1630,#2d1f5e);}
 
-/* ═══ ACCUEIL MODERNE ═══ */
-#pg0{background:#0a1628;}
+.ac4-glow{position:absolute;top:-20px;right:-20px;width:130px;height:130px;border-radius:50%;opacity:.25;pointer-events:none;}
+.ac4-coran .ac4-glow{background:radial-gradient(#3d8ef0,transparent);}
+.ac4-xassida .ac4-glow{background:radial-gradient(#c8a84b,transparent);}
+.ac4-majalis .ac4-glow{background:radial-gradient(#3d8ef0,transparent);}
+.ac4-culture .ac4-glow{background:radial-gradient(#c8a84b,transparent);}
+
+.ac4-pat{position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 2L58 30L30 58L2 30Z' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23c8a84b' stroke-width='.6'/%3E%3Ccircle cx='30' cy='30' r='8' fill='none' stroke='%23c8a84b' stroke-width='.6'/%3E%3C/svg%3E");background-size:60px 60px;}
+.ac4-badge{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:.5rem;font-weight:900;padding:2px 8px;border-radius:20px;letter-spacing:.06em;}
+.ac4-iw{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;margin-bottom:11px;box-shadow:0 4px 16px rgba(0,0,0,.3);}
+.ac4-coran .ac4-iw, .ac4-majalis .ac4-iw{background:rgba(61,142,240,.18);border:1.5px solid rgba(61,142,240,.28);}
+.ac4-xassida .ac4-iw, .ac4-culture .ac4-iw{background:rgba(200,168,75,.18);border:1.5px solid rgba(200,168,75,.3);}
+.ac4-iw i{font-size:1.5rem;}
+.ac4-coran .ac4-iw i, .ac4-majalis .ac4-iw i{color:#7ab8ff;}
+.ac4-xassida .ac4-iw i, .ac4-culture .ac4-iw i{color:var(--gold2);}
+.ac4-lbl{font-size:.9rem;font-weight:900;color:#fff;margin-bottom:3px;text-align:center;}
+.ac4-sub{font-size:.58rem;color:rgba(255,255,255,.42);text-align:center;line-height:1.4;}
+
+/* Section labels */
 .ac-section{padding:0 16px;margin-bottom:22px;}
-.ac-label{font-family:'Nunito',sans-serif;font-size:.65rem;font-weight:900;color:rgba(255,255,255,.35);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-bottom:10px;}
-.ac-label i{color:rgba(200,168,75,.5);font-size:.7rem;}
+.ac-label{font-family:'Nunito',sans-serif;font-size:.65rem;font-weight:900;color:var(--t3);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-bottom:10px;}
+.ac-label i{color:var(--b6);font-size:.7rem;}
 .ac-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
-.ac-label-more{font-size:.62rem;color:rgba(200,168,75,.7);font-weight:800;cursor:pointer;display:flex;align-items:center;gap:3px;}
-/* Actualité */
-.ac-card{border-radius:18px;overflow:hidden;height:180px;position:relative;cursor:pointer;box-shadow:0 16px 40px rgba(4,16,30,.5);transition:transform .25s;}
-.ac-card:hover{transform:translateY(-3px);}
-.ac-card-bg{position:absolute;inset:0;background-image:url("scheikh.jpg");background-size:cover;background-position:center top;}
-.ac-card-ov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(4,16,30,.08) 0%,rgba(4,16,30,.92) 100%);}
-.ac-card-body{position:absolute;bottom:0;left:0;right:0;padding:16px 18px;z-index:2;}
-.ac-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(220,50,50,.85);color:#fff;font-size:.56rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:8px;}
-.ac-title{font-family:'Amiri',serif;font-size:1rem;color:#fff;direction:rtl;line-height:1.45;margin-bottom:6px;}
-.ac-meta{font-size:.58rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:4px;}
-/* Grille 2x2 */
-.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.qg-card{background:linear-gradient(135deg,rgba(21,58,94,.55),rgba(4,16,30,.8));border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px;display:flex;align-items:center;gap:12px;cursor:pointer;box-shadow:0 6px 20px rgba(4,16,30,.35);transition:all .22s;backdrop-filter:blur(6px);}
-.qg-card:hover{background:linear-gradient(135deg,rgba(35,104,168,.35),rgba(21,58,94,.7));transform:translateY(-2px);}
-.qg-icon{width:36px;height:36px;border-radius:11px;background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.qg-icon i{font-size:.9rem;color:var(--gold2);}
-.qg-txt{flex:1;}
-.qg-name{font-size:.76rem;font-weight:900;color:#fff;margin-bottom:1px;}
-.qg-sub{font-size:.56rem;color:rgba(255,255,255,.35);}
-.qg-arr{font-size:.62rem;color:rgba(255,255,255,.2);}
-/* Xassida dark card */
+.ac-label-more{font-size:.62rem;color:var(--b6);font-weight:800;cursor:pointer;display:flex;align-items:center;gap:3px;}
+
+/* Xassida du Jour card */
 .xj-dark-card{border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(145deg,var(--b1),var(--b3));box-shadow:0 16px 44px rgba(4,16,30,.45);border:1px solid rgba(200,168,75,.08);}
 .xj-dark-pat{position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 2L58 30L30 58L2 30Z' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23c8a84b' stroke-width='.6'/%3E%3C/svg%3E");background-size:60px 60px;}
 .xj-dark-glow{position:absolute;top:-30px;right:-30px;width:160px;height:160px;border-radius:50%;background:radial-gradient(rgba(200,168,75,.18),transparent);pointer-events:none;}
@@ -245,48 +163,22 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .xjd-author{font-size:.56rem;color:rgba(255,255,255,.35);margin-bottom:6px;}
 .xjd-ctrls{display:flex;align-items:center;gap:6px;flex-shrink:0;}
 .xjd-sep{height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.15),transparent);margin:14px 0;}
-/* daily-wrap sombre pour accueil */
-#pg0 .daily-wrap{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);}
-#pg0 .daily-tab{color:rgba(255,255,255,.35);}
-#pg0 .daily-tab.on{color:var(--gold2);border-bottom-color:var(--gold2);}
-#pg0 .daily-tabs{border-bottom-color:rgba(255,255,255,.07);}
-#pg0 .di-name{color:#fff;}
-#pg0 .di-sub{color:rgba(255,255,255,.35);}
-#pg0 .daily-item{border-bottom-color:rgba(255,255,255,.05);}
-#pg0 .di-chk{border-color:rgba(200,168,75,.4);}
-#pg0 .daily-item.done .di-chk{background:rgba(200,168,75,.6);}
-#pg0 .di-time{background:rgba(200,168,75,.1);color:var(--gold2);}
-/* Section header (autres pages) */
-.sh{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 10px;}
-.sh-title{font-size:.92rem;font-weight:800;color:var(--t1);display:flex;align-items:center;gap:6px;}
-.sh-title i{color:var(--b6);}
-.sh-more{font-size:.68rem;color:var(--b6);font-weight:800;cursor:pointer;display:flex;align-items:center;gap:3px;}
+.xj-list{display:flex;flex-direction:column;gap:8px;}
+.xj-item{background:rgba(255,255,255,.05);border:1px solid rgba(200,168,75,.12);border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .22s;}
+.xj-item:hover{background:rgba(255,255,255,.09);transform:translateX(3px);}
+.xj-num{width:28px;height:28px;border-radius:50%;background:rgba(200,168,75,.12);border:1.5px solid rgba(200,168,75,.22);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.6rem;font-weight:700;color:var(--gold2);flex-shrink:0;}
+.xj-info{flex:1;}
+.xj-name-ar{font-family:'Amiri',serif;font-size:.95rem;color:#fff;direction:rtl;margin-bottom:1px;}
+.xj-name-fr{font-size:.58rem;color:rgba(255,255,255,.4);}
+.xj-play{width:34px;height:34px;border-radius:50%;background:rgba(200,168,75,.15);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all .2s;}
+.xj-play:hover{background:rgba(200,168,75,.28);transform:scale(1.08);}
+.xj-play i{font-size:.72rem;color:var(--gold2);margin-left:2px;}
 
-/* ═══ CALENDRIER ISLAMIQUE (accueil) ═══ */
-.islamic-cal{
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 14px 40px rgba(4,16,30,.32);
-  position:relative;
-  background:linear-gradient(135deg,var(--b1) 0%,var(--b3) 50%,var(--b4) 100%);
-}
-/* Motif géométrique arabe en SVG background */
-.islamic-cal-pat{
-  position:absolute;inset:0;
-  opacity:.07;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3Cpath d='M40 10L70 40L40 70L10 40Z' fill='none' stroke='%23c8a84b' stroke-width='.7'/%3E%3Ccircle cx='40' cy='40' r='12' fill='none' stroke='%23c8a84b' stroke-width='.7'/%3E%3Cpath d='M40 0L40 10M80 40L70 40M40 80L40 70M0 40L10 40' stroke='%23c8a84b' stroke-width='.7'/%3E%3C/svg%3E");
-  background-size:80px 80px;
-}
-/* Lueur dorée en haut à droite */
-.islamic-cal-glow{
-  position:absolute;top:-20px;right:-20px;
-  width:140px;height:140px;
-  border-radius:50%;
-  background:radial-gradient(rgba(200,168,75,.28),transparent);
-  pointer-events:none;
-}
+/* Calendrier islamique */
+.islamic-cal{border-radius:22px;overflow:hidden;box-shadow:0 14px 40px rgba(4,16,30,.32);position:relative;background:linear-gradient(135deg,var(--b1) 0%,var(--b3) 50%,var(--b4) 100%);}
+.islamic-cal-pat{position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3Cpath d='M40 10L70 40L40 70L10 40Z' fill='none' stroke='%23c8a84b' stroke-width='.7'/%3E%3Ccircle cx='40' cy='40' r='12' fill='none' stroke='%23c8a84b' stroke-width='.7'/%3E%3C/svg%3E");background-size:80px 80px;}
+.islamic-cal-glow{position:absolute;top:-20px;right:-20px;width:140px;height:140px;border-radius:50%;background:radial-gradient(rgba(200,168,75,.28),transparent);pointer-events:none;}
 .islamic-cal-inner{position:relative;z-index:2;padding:18px 20px 16px;}
-/* En-tête calendrier */
 .ical-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
 .ical-title-block{display:flex;align-items:center;gap:10px;}
 .ical-icon{width:38px;height:38px;border-radius:11px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;}
@@ -294,147 +186,42 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .ical-month-ar{font-family:'Amiri',serif;font-size:1.1rem;color:#fff;direction:rtl;line-height:1;}
 .ical-month-fr{font-size:.6rem;color:rgba(255,255,255,.45);margin-top:1px;}
 .ical-year-pill{background:rgba(200,168,75,.12);border:1px solid rgba(200,168,75,.25);border-radius:20px;padding:4px 12px;font-size:.65rem;color:var(--gold2);font-weight:800;}
-/* Jours de semaine */
 .ical-days-head{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:6px;}
 .ical-dh{font-size:.52rem;font-weight:900;color:rgba(255,255,255,.35);text-align:center;letter-spacing:.04em;}
-/* Grille jours */
 .ical-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
-.ical-day{
-  aspect-ratio:1;
-  border-radius:8px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:'Cinzel',serif;
-  font-size:.62rem;
-  font-weight:700;
-  color:rgba(255,255,255,.55);
-  cursor:pointer;
-  transition:all .18s;
-}
+.ical-day{aspect-ratio:1;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.62rem;font-weight:700;color:rgba(255,255,255,.55);cursor:pointer;transition:all .18s;}
 .ical-day:hover{background:rgba(255,255,255,.08);}
 .ical-day.empty{pointer-events:none;}
-.ical-day.today{
-  background:linear-gradient(135deg,var(--b5),var(--b7));
-  color:#fff;
-  box-shadow:0 4px 12px rgba(35,104,168,.45);
-}
-.ical-day.event{color:var(--gold2);}
-.ical-day.event::after{
-  content:'';
-  position:absolute;
-  bottom:3px;left:50%;
-  transform:translateX(-50%);
-  width:4px;height:4px;
-  border-radius:50%;
-  background:var(--gold2);
-}
-.ical-day.event{position:relative;}
-/* Séparateur doré */
+.ical-day.today{background:linear-gradient(135deg,var(--b5),var(--b7));color:#fff;box-shadow:0 4px 12px rgba(35,104,168,.45);}
+.ical-day.event{color:var(--gold2);position:relative;}
+.ical-day.event::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--gold2);}
 .ical-sep{height:1px;background:linear-gradient(90deg,transparent,rgba(200,168,75,.2),transparent);margin:12px 0;}
-/* Prochain événement */
 .ical-next{display:flex;align-items:center;gap:10px;}
 .ical-next-dot{width:8px;height:8px;border-radius:50%;background:var(--gold2);flex-shrink:0;box-shadow:0 0 6px rgba(200,168,75,.5);}
 .ical-next-txt{font-size:.62rem;color:rgba(255,255,255,.55);}
 .ical-next-txt strong{color:var(--gold2);display:block;font-size:.68rem;margin-bottom:1px;}
 
-/* ═══ XASSIDA DU JOUR (nouveau bloc accueil) ═══ */
-.xassida-jour{
-  margin:18px 18px 0;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 14px 40px rgba(4,16,30,.32);
-  position:relative;
-  background:linear-gradient(135deg,var(--b1) 0%,var(--b3) 50%,var(--b4) 100%);
-}
-.xassida-jour-pat{
-  position:absolute;inset:0;
-  opacity:.07;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 2L58 30L30 58L2 30Z' fill='none' stroke='%23c8a84b' stroke-width='1'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%23c8a84b' stroke-width='.6'/%3E%3Ccircle cx='30' cy='30' r='8' fill='none' stroke='%23c8a84b' stroke-width='.6'/%3E%3C/svg%3E");
-  background-size:60px 60px;
-}
-.xassida-jour-glow{
-  position:absolute;bottom:-20px;left:-20px;
-  width:160px;height:160px;
-  border-radius:50%;
-  background:radial-gradient(rgba(61,142,240,.22),transparent);
-  pointer-events:none;
-}
-.xassida-jour-inner{position:relative;z-index:2;padding:18px 20px;}
-/* Titre section */
-.xj-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
-.xj-title-block{display:flex;align-items:center;gap:10px;}
-.xj-icon{width:38px;height:38px;border-radius:11px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;}
-.xj-icon i{font-size:.95rem;color:var(--gold2);}
-.xj-title{font-size:.9rem;font-weight:900;color:#fff;}
-.xj-sub{font-size:.58rem;color:rgba(255,255,255,.4);margin-top:1px;}
-.xj-see-all{font-size:.62rem;color:var(--gold2);font-weight:800;cursor:pointer;display:flex;align-items:center;gap:3px;opacity:.8;}
-/* Cards Xassida */
-.xj-list{display:flex;flex-direction:column;gap:8px;}
-.xj-item{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(200,168,75,.12);
-  border-radius:14px;
-  padding:12px 14px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  cursor:pointer;
-  transition:all .22s;
-}
-.xj-item:hover{background:rgba(255,255,255,.09);transform:translateX(3px);}
-.xj-num{
-  width:28px;height:28px;
-  border-radius:50%;
-  background:rgba(200,168,75,.12);
-  border:1.5px solid rgba(200,168,75,.22);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Cinzel',serif;
-  font-size:.6rem;
-  font-weight:700;
-  color:var(--gold2);
-  flex-shrink:0;
-}
-.xj-info{flex:1;}
-.xj-name-ar{font-family:'Amiri',serif;font-size:.95rem;color:#fff;direction:rtl;margin-bottom:1px;}
-.xj-name-fr{font-size:.58rem;color:rgba(255,255,255,.4);}
-.xj-play{
-  width:34px;height:34px;
-  border-radius:50%;
-  background:rgba(200,168,75,.15);
-  border:1.5px solid rgba(200,168,75,.28);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-  cursor:pointer;
-  transition:all .2s;
-}
-.xj-play:hover{background:rgba(200,168,75,.28);transform:scale(1.08);}
-.xj-play i{font-size:.72rem;color:var(--gold2);margin-left:2px;}
-.sh-title{font-size:.92rem;font-weight:800;color:var(--t1);display:flex;align-items:center;gap:6px;}
-.sh-title i{color:var(--b6);}
-.sh-more{font-size:.68rem;color:var(--b6);font-weight:800;cursor:pointer;display:flex;align-items:center;gap:3px;}
+/* Lecture du jour */
+.daily-wrap{background:var(--milk);border:1px solid rgba(35,104,168,.07);border-radius:20px;overflow:hidden;box-shadow:var(--sh1);}
+.daily-tabs{display:flex;border-bottom:1px solid rgba(35,104,168,.08);}
+.daily-tab{flex:1;padding:10px 8px;border:none;background:transparent;font-family:'Nunito',sans-serif;font-size:.7rem;font-weight:800;color:var(--t3);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all .22s;border-bottom:2.5px solid transparent;margin-bottom:-1px;}
+.daily-tab i{font-size:.8rem;}
+.daily-tab.on{color:var(--b6);border-bottom-color:var(--b6);}
+.daily-list{display:none;padding:8px 14px 12px;}
+.daily-list.on{display:block;}
+.daily-item{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(35,104,168,.06);}
+.daily-item:last-child{border-bottom:none;}
+.di-chk{width:24px;height:24px;border-radius:50%;border:2px solid rgba(35,104,168,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all .22s;}
+.di-chk i{color:#fff;font-size:9px;display:none;}
+.daily-item.done .di-chk{background:var(--b6);}
+.daily-item.done .di-chk i{display:block;}
+.di-body{flex:1;}
+.di-name{font-family:'Amiri',serif;font-size:.88rem;color:var(--t1);direction:rtl;}
+.daily-item.done .di-name{text-decoration:line-through;color:var(--t3);}
+.di-sub{font-size:.6rem;color:var(--t3);}
+.di-time{font-size:.58rem;color:var(--b6);font-weight:800;display:flex;align-items:center;gap:3px;background:rgba(35,104,168,.07);padding:3px 7px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
 
-/* Section header */
-.sh{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 10px;}
-.big-news{margin:0 18px;border-radius:var(--rl);overflow:hidden;height:210px;position:relative;cursor:pointer;box-shadow:var(--sh3);transition:transform .25s;}
-.big-news:hover{transform:translateY(-3px);}
-.bn-img{position:absolute;inset:0;background-image:url("scheikh.jpg");background-size:cover;background-position:center top;}
-.bn-grad{position:absolute;inset:0;background:linear-gradient(160deg,rgba(4,16,30,.1) 0%,rgba(4,16,30,.88) 100%);}
-.bn-body{position:absolute;bottom:0;left:0;right:0;padding:16px;z-index:2;}
-.bn-tag{display:inline-flex;align-items:center;gap:4px;background:var(--b6);color:#fff;font-size:.58rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-bottom:7px;}
-.bn-title{font-family:'Amiri',serif;font-size:1.1rem;color:#fff;direction:rtl;line-height:1.4;margin-bottom:5px;}
-.bn-meta{font-size:.6rem;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:5px;}
-
-/* Mini Player */
-.mini-player{margin:0 18px;background:linear-gradient(145deg,var(--b1),var(--b3));border-radius:22px;padding:15px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 36px rgba(4,16,30,.28);position:relative;overflow:hidden;}
-.mini-player::before{content:'';position:absolute;right:-16px;top:-16px;width:100px;height:100px;background:radial-gradient(circle,rgba(46,128,208,.2) 0%,transparent 70%);border-radius:50%;}
-.mp-disc{width:52px;height:52px;border-radius:50%;background:conic-gradient(from 0deg,#1a3a5c,#0d2640,#1e5080,#0a1e35,#2368a8,#0a1e35);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px rgba(200,168,75,.15);flex-shrink:0;}
-.mp-disc.spinning{animation:spin 4s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg);}}
-.mp-disc i{font-size:.95rem;color:var(--gold2);}
-.mp-info{flex:1;min-width:0;}
-.mp-title{font-family:'Amiri',serif;font-size:1rem;color:#fff;direction:rtl;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.mp-author{font-size:.58rem;color:rgba(255,255,255,.38);margin-bottom:7px;}
+/* Mini player controls */
 .mp-bar{height:3px;background:rgba(255,255,255,.12);border-radius:3px;position:relative;cursor:pointer;margin-bottom:4px;}
 .mp-fill{height:100%;background:linear-gradient(90deg,var(--b6),var(--b7));border-radius:3px;width:0%;transition:width .8s linear;}
 .mp-dot{width:9px;height:9px;border-radius:50%;background:#fff;position:absolute;top:50%;transform:translateY(-50%);left:0%;margin-left:-4px;transition:left .8s linear;box-shadow:0 0 4px rgba(255,255,255,.5);}
@@ -446,70 +233,37 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .mp-main{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--b5),var(--b7));box-shadow:0 4px 16px rgba(35,104,168,.5),0 0 0 4px rgba(35,104,168,.12);}
 .mp-main i{font-size:1rem;color:#fff;margin-left:2px;}
 
-/* Daily reading */
-.daily-wrap{margin:14px 18px 0;background:var(--milk);border-radius:20px;overflow:hidden;box-shadow:0 6px 22px rgba(4,16,30,.1);border:1px solid rgba(35,104,168,.06);}
-.daily-tabs{display:flex;border-bottom:1px solid rgba(35,104,168,.07);}
-.daily-tab{flex:1;padding:10px 8px;border:none;background:transparent;font-family:'Nunito',sans-serif;font-size:.7rem;font-weight:800;color:var(--t3);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all .22s;border-bottom:2.5px solid transparent;margin-bottom:-1px;}
-.daily-tab i{font-size:.8rem;}
-.daily-tab.on{color:var(--b6);border-bottom-color:var(--b6);}
-.daily-list{display:none;padding:8px 14px 12px;}
-.daily-list.on{display:block;}
-.daily-item{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(35,104,168,.05);}
-.daily-item:last-child{border-bottom:none;}
-.di-chk{width:24px;height:24px;border-radius:50%;border:2px solid var(--b6);display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;transition:all .22s;}
-.di-chk i{color:#fff;font-size:9px;display:none;}
-.daily-item.done .di-chk{background:var(--b6);}
-.daily-item.done .di-chk i{display:block;}
-.di-body{flex:1;}
-.di-name{font-family:'Amiri',serif;font-size:.88rem;color:var(--t1);direction:rtl;}
-.daily-item.done .di-name{text-decoration:line-through;color:var(--t3);}
-.di-sub{font-size:.6rem;color:var(--t3);}
-.di-time{font-size:.58rem;color:var(--b6);font-weight:800;display:flex;align-items:center;gap:3px;background:rgba(35,104,168,.07);padding:3px 7px;border-radius:20px;white-space:nowrap;flex-shrink:0;}
-
-/* Waxtan quick */
-.wax-quick{margin:14px 18px 0;display:flex;flex-direction:column;gap:8px;}
-.wq-card{background:var(--milk);border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:11px;box-shadow:0 4px 16px rgba(4,16,30,.09);border:1px solid rgba(35,104,168,.06);transition:all .22s;}
-.wq-card:hover{transform:translateX(3px);box-shadow:0 6px 22px rgba(35,104,168,.14);}
-.wq-av{font-size:1.3rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--b3),var(--b5));border-radius:12px;flex-shrink:0;box-shadow:0 4px 12px rgba(35,104,168,.24);}
-.wq-info{flex:1;}
-.wq-name{font-family:'Amiri',serif;font-size:.9rem;color:var(--t1);direction:rtl;margin-bottom:1px;}
-.wq-sub{font-size:.6rem;color:var(--t3);}
-.wq-play{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--b5),var(--b7));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--shb);flex-shrink:0;transition:transform .2s;}
-.wq-play:hover{transform:scale(1.1);}
-.wq-play.playing{background:linear-gradient(135deg,#b00020,#e0002a);}
-.wq-play i{color:#fff;font-size:.82rem;margin-left:2px;}
-.wq-play.playing i{margin-left:0;}
-
-/* ═══════════════════════════════════════
-   PAGE 2 CORAN & XASSIDA — 2 cards seulement
-═══════════════════════════════════════ */
+/* ═══ PAGE CORAN & XASSIDA ═══ */
 .p2-head{background:linear-gradient(155deg,var(--b1),var(--b3));padding:26px 18px 22px;}
 .p2-ht{font-family:'Amiri',serif;font-size:1.8rem;color:#fff;direction:rtl;margin-bottom:2px;}
 .p2-hs{font-size:.7rem;color:rgba(255,255,255,.4);}
-
-/* 2 cards en grille */
 .main-cards-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:18px;}
-
 .mc2{border-radius:var(--rl);overflow:hidden;cursor:pointer;box-shadow:0 12px 36px rgba(4,16,30,.28);transition:transform .25s;}
 .mc2:hover{transform:translateY(-5px);}
 .mc2-inner{height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px 12px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--b1),var(--b4));}
 .mc2-glow{position:absolute;top:-20px;right:-20px;width:140px;height:140px;border-radius:50%;background:radial-gradient(#3d8ef0,transparent);opacity:.2;}
 .mc2-iw{width:56px;height:56px;border-radius:16px;background:rgba(61,142,240,.15);border:1.5px solid rgba(61,142,240,.25);display:flex;align-items:center;justify-content:center;margin-bottom:12px;box-shadow:0 4px 16px rgba(35,104,168,.3);}
-.mc2-iw i{font-size:1.6rem;color:#7ab8ff;}
 .mc2-lbl{font-size:.96rem;font-weight:900;color:#fff;margin-bottom:3px;text-align:center;}
 .mc2-sub{font-size:.6rem;color:rgba(255,255,255,.38);text-align:center;line-height:1.4;}
 .mc2-badge{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.6);font-size:.5rem;font-weight:900;padding:2px 8px;border-radius:20px;}
+.sh{display:flex;align-items:center;justify-content:space-between;padding:18px 18px 10px;}
+.sh-title{font-size:.92rem;font-weight:800;color:var(--t1);display:flex;align-items:center;gap:6px;}
+.sh-title i{color:var(--b6);}
+.xsc-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:18px;}
+.xsc{background:linear-gradient(135deg,var(--b1),var(--b4));border-radius:var(--r);padding:20px 12px;cursor:pointer;box-shadow:0 10px 28px rgba(4,16,30,.32);border:1.5px solid rgba(61,142,240,.12);transition:all .22s;text-align:center;position:relative;overflow:hidden;}
+.xsc::before{content:'';position:absolute;top:-18px;right:-18px;width:80px;height:80px;border-radius:50%;background:radial-gradient(#3d8ef0,transparent);opacity:.18;}
+.xsc:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(4,16,30,.4);border-color:rgba(61,142,240,.28);}
+.xsc-ic{width:50px;height:50px;border-radius:14px;background:rgba(61,142,240,.15);border:1.5px solid rgba(61,142,240,.22);display:flex;align-items:center;justify-content:center;margin:0 auto 9px;box-shadow:0 4px 12px rgba(35,104,168,.26);}
+.xsc-ic i{color:#7ab8ff;font-size:1.25rem;}
+.xsc-n{font-family:'Amiri',serif;font-size:.96rem;color:#fff;direction:rtl;margin-bottom:2px;}
+.xsc-s{font-size:.6rem;color:rgba(255,255,255,.4);}
 
-/* ═══════════════════════════════════════
-   PAGE 3 XAM-XAM — 3 cards cliquables remplaçant tabs
-═══════════════════════════════════════ */
+/* ═══ PAGE XAM-XAM ═══ */
 .xam-head-new{background:linear-gradient(135deg,var(--b1),var(--b4));padding:28px 18px 22px;}
 .xam-head-new .xam-hic{width:48px;height:48px;border-radius:14px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;margin-bottom:10px;}
 .xam-head-new .xam-hic i{font-size:1.4rem;color:var(--gold2);}
 .xam-ht{font-family:'Amiri',serif;font-size:1.8rem;color:#fff;direction:rtl;line-height:1;}
 .xam-hs-new{font-size:.65rem;color:rgba(255,255,255,.42);margin-top:4px;}
-
-/* 3 cards Xam-Xam */
 .xam-cards{display:flex;flex-direction:column;gap:14px;padding:18px;}
 .xam-card{border-radius:var(--rl);overflow:hidden;cursor:pointer;box-shadow:0 10px 32px rgba(4,16,30,.24);transition:transform .25s,box-shadow .25s;}
 .xam-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(4,16,30,.36);}
@@ -521,28 +275,37 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .xam-card-lbl{font-size:1rem;font-weight:900;color:#fff;margin-bottom:3px;}
 .xam-card-sub{font-size:.62rem;color:rgba(255,255,255,.4);line-height:1.4;}
 .xam-card-arr{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-size:.82rem;flex-shrink:0;}
-
-/* Sections Xam-Xam (maintenant affichées directement dans la page) */
 .xam-section{display:none;padding:0 18px 18px;}
 .xam-section.on{display:block;animation:fadeup .3s ease;}
+.xam-back-btn{display:flex;align-items:center;gap:6px;background:rgba(35,104,168,.1);border:1px solid rgba(35,104,168,.2);border-radius:10px;padding:7px 12px;font-size:.72rem;font-weight:800;color:var(--b5);cursor:pointer;margin-bottom:14px;width:fit-content;font-family:'Nunito',sans-serif;}
+.xam-back-btn i{font-size:.8rem;}
 
-/* MAJALIS */
+/* ═══ MAJALIS — grille 11 livres dégradé Sass Wi ═══ */
 .maj-intro{display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--b1),var(--b3));border-radius:12px;padding:11px 14px;margin-bottom:14px;color:rgba(255,255,255,.65);font-size:.7rem;font-weight:700;}
 .maj-intro i{color:var(--gold2);font-size:.95rem;}
-.mbook{background:var(--milk);border-radius:16px;display:flex;align-items:center;overflow:hidden;cursor:pointer;box-shadow:0 4px 18px rgba(4,16,30,.08);margin-bottom:9px;transition:all .22s;border-left:5px solid #ccc;}
-.mbook:hover{transform:translateX(3px);box-shadow:0 6px 22px rgba(35,104,168,.14);}
-.mbook:nth-child(1){background:#f0fff8;border-left-color:#0a7040;}
-.mbook:nth-child(2){background:#f0f5ff;border-left-color:var(--b5);}
-.mbook:nth-child(3){background:#fff0f5;border-left-color:#881a40;}
-.mbook:nth-child(4){background:#f5f0ff;border-left-color:#451a98;}
-.mbook:nth-child(5){background:#f0f8ff;border-left-color:#1a6090;}
-.mbook-body{flex:1;padding:13px 13px;}
-.mbook-ar{font-family:'Amiri',serif;font-size:.98rem;color:var(--t1);direction:rtl;margin-bottom:1px;}
-.mbook-fr{font-size:.67rem;font-weight:800;color:var(--b5);margin-bottom:2px;}
-.mbook-desc{font-size:.6rem;color:var(--t3);}
-.mbook-arrow{width:38px;display:flex;align-items:center;justify-content:center;color:var(--t3);font-size:.78rem;}
+.maj-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.mbook-card{
+  background:linear-gradient(135deg,var(--b1),var(--b4));
+  border:1.5px solid rgba(61,142,240,.12);
+  border-radius:var(--rl);
+  padding:20px 12px;
+  cursor:pointer;
+  transition:all .22s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 10px 28px rgba(4,16,30,.32);
+}
+.mbook-card::before{content:'';position:absolute;top:-18px;right:-18px;width:80px;height:80px;border-radius:50%;background:radial-gradient(#3d8ef0,transparent);opacity:.18;pointer-events:none;}
+.mbook-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(4,16,30,.4);border-color:rgba(61,142,240,.28);}
+.mbook-num{width:28px;height:28px;border-radius:50%;background:rgba(61,142,240,.15);border:1.5px solid rgba(61,142,240,.28);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.6rem;font-weight:700;color:#7ab8ff;margin-bottom:10px;}
+.mbook-ar{font-family:'Amiri',serif;font-size:.96rem;color:#fff;direction:rtl;margin-bottom:3px;line-height:1.35;}
+.mbook-fr{font-size:.56rem;color:rgba(255,255,255,.38);line-height:1.3;}
 
-/* HISTOIRE */
+/* ═══ HISTOIRE ═══ */
 .hhc{border-radius:18px;overflow:hidden;margin-bottom:14px;height:112px;position:relative;cursor:pointer;box-shadow:0 8px 26px rgba(4,16,30,.16);transition:transform .22s;}
 .hhc:hover{transform:translateY(-3px);}
 .hhc-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--b2),var(--b4));}
@@ -555,15 +318,11 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .hhc-tit{font-size:.88rem;font-weight:900;color:#fff;margin-bottom:1px;}
 .hhc-sub{font-size:.6rem;color:rgba(255,255,255,.45);}
 .hhc-arr{color:rgba(255,255,255,.35);font-size:.85rem;flex-shrink:0;}
-
 .sec-title{font-size:.8rem;font-weight:900;color:var(--t1);margin-bottom:11px;display:flex;align-items:center;gap:7px;}
 .sec-title i{color:var(--b6);}
-
-/* Khalife scroll */
 .k-scroll{display:flex;gap:9px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;margin-bottom:16px;}
 .k-scroll::-webkit-scrollbar{display:none;}
 .kchip{flex-shrink:0;border-radius:14px;padding:12px 10px;text-align:center;width:90px;cursor:pointer;box-shadow:0 4px 14px rgba(4,16,30,.09);border:1.5px solid transparent;transition:all .22s;}
-.kchip:hover{transform:translateY(-2px);}
 .kchip:nth-child(1){background:#fff8e0;border-color:#e0c060;}
 .kchip:nth-child(2){background:#f0f5ff;border-color:#a0b8e8;}
 .kchip:nth-child(3){background:#f0fff5;border-color:#80d8a8;}
@@ -573,7 +332,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .kchip-av{font-size:1.5rem;margin-bottom:5px;}
 .kchip-n{font-family:'Amiri',serif;font-size:.68rem;color:var(--t1);direction:rtl;line-height:1.3;margin-bottom:2px;}
 .kchip-s{font-size:.55rem;color:var(--t3);}
-
 .makk-card{background:linear-gradient(135deg,var(--b2),var(--b4));border-radius:16px;padding:15px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;box-shadow:0 6px 20px rgba(4,16,30,.18);transition:transform .22s;}
 .makk-card:hover{transform:translateY(-2px);}
 .makk-ic{width:44px;height:44px;border-radius:12px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -583,43 +341,20 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .makk-d{font-size:.62rem;color:rgba(255,255,255,.45);}
 .makk-q{background:var(--b6);color:#fff;font-size:.6rem;font-weight:900;padding:5px 11px;border-radius:20px;white-space:nowrap;box-shadow:0 4px 12px rgba(35,104,168,.38);}
 
-/* WAXTAN section */
-.wax-hdr{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--b1),var(--b3));border-radius:16px;padding:14px 16px;margin-bottom:14px;box-shadow:0 6px 20px rgba(4,16,30,.18);}
-.wax-hdr-ic{width:44px;height:44px;border-radius:12px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.wax-hdr-ic i{font-size:1.2rem;color:var(--gold2);}
-.wax-hdr-t{font-size:.88rem;font-weight:900;color:#fff;margin-bottom:1px;}
-.wax-hdr-s{font-size:.62rem;color:rgba(255,255,255,.42);}
-.wax-card{border-radius:16px;padding:13px 14px;margin-bottom:9px;display:flex;align-items:center;gap:11px;box-shadow:0 4px 16px rgba(4,16,30,.08);cursor:pointer;transition:all .22s;}
-.wax-card:hover{transform:translateX(4px);}
-.wax-card:nth-child(1){background:#f0f5ff;}
-.wax-card:nth-child(2){background:#f0fff8;}
-.wax-card:nth-child(3){background:#fff8f0;}
-.wax-card:nth-child(4){background:#f5f0ff;}
-.wax-card:nth-child(5){background:#fff0f5;}
-.wax-num{font-size:.62rem;font-weight:900;color:var(--t3);min-width:18px;}
-.wax-av{font-size:1.3rem;width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 10px rgba(4,16,30,.1);}
-.wax-card:nth-child(1) .wax-av{background:rgba(35,104,168,.12);}
-.wax-card:nth-child(2) .wax-av{background:rgba(10,100,60,.1);}
-.wax-card:nth-child(3) .wax-av{background:rgba(180,80,20,.1);}
-.wax-card:nth-child(4) .wax-av{background:rgba(100,40,180,.1);}
-.wax-card:nth-child(5) .wax-av{background:rgba(180,20,60,.1);}
-.wax-info{flex:1;}
-.wax-name{font-family:'Amiri',serif;font-size:.92rem;color:var(--t1);direction:rtl;margin-bottom:1px;}
-.wax-sub{font-size:.6rem;color:var(--t3);margin-bottom:3px;}
-.wax-tags{display:flex;gap:4px;}
-.wax-tags span{background:rgba(35,104,168,.08);color:var(--b5);font-size:.55rem;font-weight:800;padding:2px 6px;border-radius:20px;}
-.wax-play{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--b5),var(--b7));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:var(--shb);flex-shrink:0;transition:all .2s;}
-.wax-play:hover{transform:scale(1.1);}
-.wax-play.playing{background:linear-gradient(135deg,#b00020,#e00030);}
-.wax-play i{color:#fff;font-size:.85rem;margin-left:2px;}
-.wax-play.playing i{margin-left:0;}
+/* ═══ CULTURE MOURIDE ═══ */
+.culture-section{padding:0 18px 18px;}
+.culture-card{background:linear-gradient(145deg,#04101e,#153a5e);border:1px solid rgba(200,168,75,.15);border-radius:16px;padding:16px;margin-bottom:10px;cursor:pointer;display:flex;align-items:center;gap:12px;box-shadow:0 6px 20px rgba(4,16,30,.28);transition:all .22s;}
+.culture-card:hover{transform:translateX(4px);border-color:rgba(200,168,75,.3);}
+.culture-ic{width:44px;height:44px;border-radius:12px;background:rgba(200,168,75,.14);border:1.5px solid rgba(200,168,75,.28);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.culture-ic i{font-size:1.2rem;color:var(--gold2);}
+.culture-b{flex:1;}
+.culture-t{font-size:.86rem;font-weight:900;color:#fff;margin-bottom:2px;}
+.culture-d{font-size:.6rem;color:rgba(255,255,255,.4);}
+.culture-arr{color:rgba(255,255,255,.3);font-size:.8rem;}
 
-/* Back button in xam section */
-.xam-back-btn{display:flex;align-items:center;gap:6px;background:rgba(35,104,168,.1);border:1px solid rgba(35,104,168,.2);border-radius:10px;padding:7px 12px;font-size:.72rem;font-weight:800;color:var(--b5);cursor:pointer;margin-bottom:14px;width:fit-content;font-family:'Nunito',sans-serif;}
-.xam-back-btn i{font-size:.8rem;}
-
-/* SUB-PANELS */
+/* ═══ SUB-PANELS ═══ */
 .sp{position:fixed;inset:0;z-index:200;background:var(--bg);transform:translateX(100%);transition:transform .38s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding-bottom:40px;max-width:430px;margin:0 auto;left:0;right:0;}
+#sp-livre{background:transparent !important;}
 .sp.on{transform:translateX(0);}
 .sp-head{background:linear-gradient(155deg,var(--b1),var(--b3));padding:50px 18px 22px;position:sticky;top:0;z-index:10;}
 .sp-back{display:flex;align-items:center;gap:6px;color:rgba(255,255,255,.55);font-size:.78rem;cursor:pointer;background:none;border:none;margin-bottom:12px;font-family:'Nunito',sans-serif;font-weight:800;}
@@ -637,35 +372,14 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .jdl:hover{background:var(--b6);color:#fff;}
 
 /* XASSIDA sub */
-.xsc-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;padding:18px;}
-.xsc{
-  background:linear-gradient(135deg,var(--b1),var(--b4));
-  border-radius:var(--r);
-  padding:20px 12px;
-  cursor:pointer;
-  box-shadow:0 10px 28px rgba(4,16,30,.32);
-  border:1.5px solid rgba(61,142,240,.12);
-  transition:all .22s;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-.xsc::before{
-  content:'';
-  position:absolute;
-  top:-18px;right:-18px;
-  width:80px;height:80px;
-  border-radius:50%;
-  background:radial-gradient(#3d8ef0,transparent);
-  opacity:.18;
-}
-.xsc:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(4,16,30,.4);border-color:rgba(61,142,240,.28);}
-.xsc-ic{width:50px;height:50px;border-radius:14px;background:rgba(61,142,240,.15);border:1.5px solid rgba(61,142,240,.22);display:flex;align-items:center;justify-content:center;margin:0 auto 9px;box-shadow:0 4px 12px rgba(35,104,168,.26);}
-.xsc-ic i{color:#7ab8ff;font-size:1.25rem;}
-.xsc-n{font-family:'Amiri',serif;font-size:.96rem;color:#fff;direction:rtl;margin-bottom:2px;}
-.xsc-s{font-size:.6rem;color:rgba(255,255,255,.4);}
+.xpdf-list-item{background:var(--milk);border-radius:16px;display:flex;align-items:center;overflow:hidden;cursor:pointer;box-shadow:0 4px 18px rgba(4,16,30,.08);margin-bottom:9px;transition:all .22s;border-left:5px solid var(--b5);}
+.xpdf-list-item:hover{transform:translateX(3px);}
+.xpdf-body{flex:1;padding:13px 13px;}
+.xpdf-ar{font-family:'Amiri',serif;font-size:.98rem;color:var(--t1);direction:rtl;margin-bottom:1px;}
+.xpdf-fr{font-size:.67rem;font-weight:800;color:var(--b5);}
+.xpdf-arrow{width:38px;display:flex;align-items:center;justify-content:center;color:var(--t3);font-size:.78rem;}
 
-/* SASS */
+/* SASS WI */
 .sass-w{padding:18px;}
 .sass-h{font-size:.96rem;font-weight:900;color:var(--t1);margin-bottom:2px;}
 .sass-s{font-size:.68rem;color:var(--t3);margin-bottom:16px;}
@@ -697,7 +411,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .rsp{font-size:.72rem;color:var(--t2);line-height:1.65;}
 .qbtn{background:linear-gradient(135deg,var(--b5),var(--b7));color:#fff;border:none;cursor:pointer;padding:7px 13px;border-radius:18px;font-weight:900;font-size:.66rem;display:flex;align-items:center;gap:4px;box-shadow:var(--shb);font-family:'Nunito',sans-serif;}
 
-/* KHALIFES full panel */
+/* KHALIFES PANEL */
 .kgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;}
 .kcard{background:var(--milk);border-radius:var(--r);padding:16px 10px;text-align:center;cursor:pointer;box-shadow:var(--sh2);border:1.5px solid transparent;transition:all .22s;}
 .kcard:hover{border-color:var(--b6);box-shadow:var(--shb);transform:translateY(-2px);}
@@ -705,7 +419,100 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .kn{font-family:'Amiri',serif;font-size:.88rem;color:var(--t1);direction:rtl;margin-bottom:2px;}
 .ks{font-size:.6rem;color:var(--t3);line-height:1.4;}
 
-/* MODALS */
+/* ═══ PANNEAU LIVRE ARABE ═══ */
+#sp-livre{background:#fff;}
+.livre-head{
+  position:sticky;top:0;z-index:10;
+  background:rgba(255,255,255,0.75);
+  backdrop-filter:blur(12px);
+  padding:14px 18px 10px;
+  border-bottom:1px solid rgba(4,16,30,.08);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.livre-back{display:flex;align-items:center;gap:6px;color:var(--b5);font-size:.78rem;cursor:pointer;background:none;border:none;font-family:'Nunito',sans-serif;font-weight:800;}
+.livre-back i{font-size:.95rem;}
+.livre-titre-ar{font-family:'Amiri',serif;font-size:1rem;color:var(--b1);direction:rtl;}
+
+/* Fond blanc avec motif calligraphique subtil */
+.livre-body{
+  min-height:100vh;
+  padding:20px 18px 180px;
+  position:relative;
+  background:#fff;
+}
+.livre-watermark{
+  position:fixed;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-family:'Amiri',serif;
+  font-size:22vw;
+  color:rgba(4,16,30,.025);
+  direction:rtl;
+  pointer-events:none;
+  white-space:nowrap;
+  z-index:0;
+  user-select:none;
+  line-height:1;
+}
+.livre-content{
+  position:relative;z-index:1;
+  font-family:'Amiri',serif;
+  font-size:1.35rem;
+  color:#1a1a2e;
+  direction:rtl;
+  line-height:2.2;
+  text-align:justify;
+  cursor:pointer;
+  user-select:none;
+  -webkit-user-select:none;
+}
+.livre-content:hover{color:#0a1628;}
+
+/* Lecteur audio flottant en bas */
+.livre-player{
+  position:fixed;
+  bottom:0;left:50%;
+  transform:translateX(-50%);
+  width:100%;max-width:430px;
+  background:linear-gradient(135deg,var(--b1),var(--b3));
+  border-top:1px solid rgba(200,168,75,.15);
+  padding:14px 18px 28px;
+  z-index:20;
+  box-shadow:0 -8px 32px rgba(4,16,30,.28);
+}
+/* Spectre animé */
+.spectre{
+  display:flex;
+  align-items:flex-end;
+  gap:3px;
+  height:36px;
+  margin-bottom:10px;
+  justify-content:center;
+}
+.spectre-bar{
+  width:4px;
+  border-radius:2px;
+  background:linear-gradient(to top,var(--b7),var(--gold2));
+  transition:height .12s ease;
+  opacity:.7;
+}
+.spectre-bar.playing{animation:none;}
+
+.livre-player-info{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.lp-titre{font-family:'Amiri',serif;font-size:.92rem;color:#fff;direction:rtl;}
+.lp-vitesse{font-size:.6rem;color:rgba(255,255,255,.4);font-weight:700;cursor:pointer;background:rgba(255,255,255,.08);padding:3px 8px;border-radius:12px;border:none;font-family:'Nunito',sans-serif;color:rgba(255,255,255,.6);}
+.livre-pbar{height:4px;background:rgba(255,255,255,.12);border-radius:4px;position:relative;cursor:pointer;margin-bottom:6px;}
+.livre-pfill{height:100%;background:linear-gradient(90deg,var(--b6),var(--gold2));border-radius:4px;width:0%;transition:width .4s linear;}
+.livre-pdot{width:12px;height:12px;border-radius:50%;background:#fff;position:absolute;top:50%;transform:translateY(-50%);left:0%;margin-left:-6px;transition:left .4s linear;box-shadow:0 0 6px rgba(255,255,255,.6);}
+.livre-ptimes{display:flex;justify-content:space-between;font-size:.56rem;color:rgba(255,255,255,.3);margin-bottom:8px;}
+.livre-ctrls{display:flex;align-items:center;justify-content:center;gap:16px;}
+.lc{background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.lc i{color:rgba(255,255,255,.5);font-size:1rem;}
+.lc:hover i{color:#fff;}
+.lc-main{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--b5),var(--b7));box-shadow:0 4px 18px rgba(35,104,168,.5),0 0 0 4px rgba(35,104,168,.12);}
+.lc-main i{color:#fff;font-size:1.1rem;margin-left:2px;}
+
+/* QUIZ MODAL */
 .moverlay{position:fixed;inset:0;z-index:300;background:rgba(4,16,30,.82);backdrop-filter:blur(12px);display:none;align-items:center;justify-content:center;padding:20px;}
 .moverlay.on{display:flex;}
 .qbox{background:var(--milk);border-radius:28px;padding:26px 20px;max-width:370px;width:100%;box-shadow:var(--sh3);animation:fadeup .3s ease;}
@@ -718,6 +525,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .qopt.ok{border-color:#00c896;background:#d0f7ee;color:#065f46;}
 .qopt.no{border-color:#ef4444;background:#fef2f2;color:#991b1b;}
 .qclose{width:100%;background:linear-gradient(135deg,var(--b5),var(--b7));color:#fff;border:none;cursor:pointer;padding:12px;border-radius:13px;font-weight:900;font-size:.82rem;font-family:'Nunito',sans-serif;box-shadow:var(--shb);}
+/* SASS MODAL */
 .smoverlay{position:fixed;inset:0;z-index:300;background:rgba(4,16,30,.78);backdrop-filter:blur(12px);display:none;align-items:flex-end;justify-content:center;}
 .smoverlay.on{display:flex;}
 .smbox{background:var(--milk);border-radius:26px 26px 0 0;padding:26px 18px 42px;width:100%;max-width:430px;animation:slideup .35s cubic-bezier(.4,0,.2,1);box-shadow:0 -8px 40px rgba(4,16,30,.2);}
@@ -731,15 +539,108 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 .smconf{background:linear-gradient(135deg,var(--b5),var(--b7));color:#fff;box-shadow:var(--shb);}
 .smcanc{background:var(--bg);color:var(--t2);}
 
-.sa{opacity:0;transform:translateY(22px);transition:opacity .5s ease var(--d,0s),transform .5s ease var(--d,0s);}
-.sa.vis{opacity:1;transform:translateY(0);}
-
+@keyframes spin{to{transform:rotate(360deg);}}
+.spinning{animation:spin 4s linear infinite;}
 ::-webkit-scrollbar{width:3px;}
 ::-webkit-scrollbar-thumb{background:rgba(35,104,168,.18);border-radius:2px;}
+
+/* ═══ BAYTS — Distiques Coran-style ═══ */
+.bayt-row{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  padding:14px 12px;
+  border-radius:14px;
+  margin-bottom:8px;
+  background:rgba(255,255,255,.6);
+  border:1.5px solid rgba(4,16,30,.05);
+  cursor:pointer;
+  transition:all .22s;
+  backdrop-filter:blur(4px);
+}
+.bayt-row:hover{
+  background:rgba(255,255,255,.85);
+  border-color:rgba(35,104,168,.18);
+  transform:translateX(-3px);
+  box-shadow:0 4px 16px rgba(4,16,30,.1);
+}
+.bayt-row.bayt-active{
+  background:rgba(35,104,168,.12);
+  border-color:rgba(35,104,168,.4);
+  box-shadow:0 4px 20px rgba(35,104,168,.2);
+  transform:none;
+}
+.bayt-row.bayt-done{
+  opacity:.5;
+}
+.bayt-num{
+  flex-shrink:0;
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--b5),var(--b7));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Cinzel',serif;
+  font-size:.58rem;
+  font-weight:700;
+  color:#fff;
+  margin-top:2px;
+  box-shadow:0 2px 8px rgba(35,104,168,.3);
+}
+.bayt-row.bayt-active .bayt-num{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  box-shadow:0 2px 8px rgba(200,168,75,.4);
+}
+.bayt-text{
+  flex:1;
+  font-family:'Amiri',serif;
+  font-size:1.25rem;
+  color:var(--b1);
+  line-height:1.9;
+  text-align:right;
+  direction:rtl;
+}
+.bayt-row.bayt-active .bayt-text{
+  color:var(--b1);
+  font-size:1.3rem;
+}
+.hemistich{
+  display:inline;
+}
+.bayt-sep{
+  color:var(--t3);
+  font-size:.9rem;
+  font-family:'Nunito',sans-serif;
+  padding:0 4px;
+}
+.bayt-row.bayt-active .bayt-sep{
+  color:var(--gold);
+}
+
+/* Disc spinning */
+#lp-disc.spinning{animation:spin 4s linear infinite;}
+#sp-livre{background:transparent !important;}
+#sp-livre .livre-head{background:rgba(255,255,255,0.85);}
+#livre-scroll{background:transparent !important;}
+
+
+
+.bayt-row{display:flex;align-items:flex-start;gap:8px;padding:10px 0;margin-bottom:2px;cursor:pointer;}
+.bayt-row.bayt-done{opacity:.28;}
+.bayt-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:rgba(35,104,168,.65);display:flex;align-items:center;justify-content:center;font-size:.52rem;font-weight:700;color:#fff;margin-top:7px;}
+.bayt-row.bayt-active .bayt-num{background:linear-gradient(135deg,var(--gold),var(--gold2));}
+.bayt-text{flex:1;font-family:'Amiri',serif;font-size:1.2rem;color:var(--b1);line-height:2.1;text-align:right;direction:rtl;text-shadow:0 0 6px rgba(255,255,255,.7);}
+.bayt-row.bayt-active .bayt-text{font-size:1.26rem;color:var(--b1);text-shadow:0 0 10px rgba(255,255,255,.9);}
+.bayt-sep{color:rgba(80,50,10,.45);font-size:.8rem;padding:0 4px;}
+.bayt-row.bayt-active .bayt-sep{color:var(--gold);}
+#lp-disc.spinning{animation:spin 4s linear infinite;}
+
+
 </style>
 </head>
 <body>
-
 <!-- ONBOARDING -->
 <div id="ob">
   <div class="ob-bg"></div><div class="ob-pat"></div>
@@ -748,9 +649,9 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
     <div class="ob-ar">النور المريدي</div>
     <div class="ob-sub">Application Mouride</div>
     <div class="ob-cards">
-      <div class="ob-card" id="oc1"><i class="fas fa-clock"></i><span>Prières & Actualités</span></div>
-      <div class="ob-card" id="oc2"><i class="fas fa-book-open"></i><span>Coran & Xassida</span></div>
-      <div class="ob-card" id="oc3"><i class="fas fa-star-and-crescent"></i><span>Xam-Xam</span></div>
+      <div class="ob-card" id="oc1"><i class="fas fa-quran"></i><span>Coran & Xassida</span></div>
+      <div class="ob-card" id="oc2"><i class="fas fa-book-open"></i><span>Majalis & Savoir</span></div>
+      <div class="ob-card" id="oc3"><i class="fas fa-star-and-crescent"></i><span>Culture Mouride</span></div>
     </div>
     <button class="ob-btn" id="ob-btn" onclick="launch()"><i class="fas fa-play" style="margin-right:6px"></i>Bismillah — بسم الله</button>
   </div>
@@ -771,194 +672,68 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 
   <!-- ══ PAGE ACCUEIL ══ -->
   <div class="page on" id="pg0">
-    <!-- HERO PRIÈRES — style image référence -->
-    <div class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-ov"></div>
-      <div class="hero-inner">
 
-        <!-- Haut : heure + date/localisation -->
-        <div class="hero-clock-row">
-          <div>
-            <div class="hero-time-big" id="hero-time">19:53</div>
-            <div class="hero-next-prayer" id="hero-next">Timiss dans <span id="hero-countdown">00:33:24</span></div>
-          </div>
-          <div class="hero-date-block">
-            <div class="hero-hijri" id="hero-hijri">Dhū al-Hijjah 22, 1447 AH</div>
-            <div class="hero-location-pill"><i class="fas fa-map-location-dot"></i> Dakar, Sénégal</div>
-          </div>
-        </div>
-
-        <!-- Espace central : l'image de la mosquée est visible ici -->
-        <div class="hero-spacer"></div>
-
-        <!-- Bas : 5 prières -->
-        <div class="prayer-cols">
-
-          <!-- Fadiar : soleil levant + vagues -->
-          <div class="pcol" id="pc0">
-            <div class="pcol-name">Fadiar</div>
-            <div class="pcol-icon">
-              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- soleil -->
-                <circle cx="22" cy="18" r="7" fill="#f5a623" opacity=".95"/>
-                <!-- rayons -->
-                <line x1="22" y1="4" x2="22" y2="8" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="22" y1="28" x2="22" y2="30" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="8" y1="18" x2="12" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="32" y1="18" x2="36" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="11.5" y1="7.5" x2="14.3" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="29.7" y1="25.7" x2="32.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="32.5" y1="7.5" x2="29.7" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="14.3" y1="25.7" x2="11.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <!-- vagues -->
-                <path d="M6 34 Q10 31 14 34 Q18 37 22 34 Q26 31 30 34 Q34 37 38 34" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-                <path d="M6 39 Q10 36 14 39 Q18 42 22 39 Q26 36 30 39 Q34 42 38 39" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/>
-              </svg>
-            </div>
-            <div class="pcol-time">05:54</div>
-          </div>
-
-          <!-- Tisbar : soleil + vagues -->
-          <div class="pcol" id="pc1">
-            <div class="pcol-name">Tisbar</div>
-            <div class="pcol-icon">
-              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="22" cy="18" r="7" fill="#f5a623" opacity=".95"/>
-                <line x1="22" y1="4" x2="22" y2="8" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="22" y1="28" x2="22" y2="30" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="8" y1="18" x2="12" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="32" y1="18" x2="36" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="11.5" y1="7.5" x2="14.3" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="29.7" y1="25.7" x2="32.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="32.5" y1="7.5" x2="29.7" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="14.3" y1="25.7" x2="11.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M6 34 Q10 31 14 34 Q18 37 22 34 Q26 31 30 34 Q34 37 38 34" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-                <path d="M6 39 Q10 36 14 39 Q18 42 22 39 Q26 36 30 39 Q34 42 38 39" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/>
-              </svg>
-            </div>
-            <div class="pcol-time">13:00</div>
-          </div>
-
-          <!-- Takussan : nuage + soleil partiel + vagues -->
-          <div class="pcol" id="pc2">
-            <div class="pcol-name">Takussan</div>
-            <div class="pcol-icon">
-              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- soleil derrière -->
-                <circle cx="15" cy="16" r="6" fill="#f5a623" opacity=".8"/>
-                <line x1="15" y1="4" x2="15" y2="7" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/>
-                <line x1="4" y1="16" x2="7" y2="16" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/>
-                <line x1="7.5" y1="8.5" x2="9.6" y2="10.6" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/>
-                <line x1="22.5" y1="8.5" x2="20.4" y2="10.6" stroke="#f5a623" stroke-width="2" stroke-linecap="round"/>
-                <!-- nuage -->
-                <path d="M13 28 Q13 22 20 22 Q22 18 27 20 Q33 20 33 26 Q36 26 36 30 Q36 33 32 33 L14 33 Q10 33 10 29 Q10 26 13 26 Z" fill="white" opacity=".88"/>
-                <!-- vagues -->
-                <path d="M6 37 Q10 34 14 37 Q18 40 22 37 Q26 34 30 37 Q34 40 38 37" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-                <path d="M6 42 Q10 39 14 42 Q18 45 22 42 Q26 39 30 42 Q34 45 38 42" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".5"/>
-              </svg>
-            </div>
-            <div class="pcol-time">17:30</div>
-          </div>
-
-          <!-- Timiss : soleil levant + vagues (actif) -->
-          <div class="pcol now" id="pc3">
-            <div class="pcol-name">Timiss</div>
-            <div class="pcol-icon">
-              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="22" cy="18" r="7" fill="#f5a623" opacity=".95"/>
-                <line x1="22" y1="4" x2="22" y2="8" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="22" y1="28" x2="22" y2="30" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="8" y1="18" x2="12" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="32" y1="18" x2="36" y2="18" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="11.5" y1="7.5" x2="14.3" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="29.7" y1="25.7" x2="32.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="32.5" y1="7.5" x2="29.7" y2="10.3" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <line x1="14.3" y1="25.7" x2="11.5" y2="28.5" stroke="#f5a623" stroke-width="2.2" stroke-linecap="round"/>
-                <path d="M6 34 Q10 31 14 34 Q18 37 22 34 Q26 31 30 34 Q34 37 38 34" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-                <path d="M6 39 Q10 36 14 39 Q18 42 22 39 Q26 36 30 39 Q34 42 38 39" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/>
-              </svg>
-            </div>
-            <div class="pcol-time">19:53</div>
-          </div>
-
-          <!-- Guéé : lune + étoile + vagues -->
-          <div class="pcol" id="pc4">
-            <div class="pcol-name">Guéé</div>
-            <div class="pcol-icon">
-              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- lune -->
-                <path d="M26 8 A12 12 0 1 0 26 32 A8 8 0 1 1 26 8 Z" fill="#f5c842" opacity=".92"/>
-                <!-- étoile -->
-                <path d="M33 10 L34.2 13.5 L38 13.5 L35 15.8 L36.2 19.3 L33 17 L29.8 19.3 L31 15.8 L28 13.5 L31.8 13.5 Z" fill="#f5c842" opacity=".85"/>
-                <!-- vagues -->
-                <path d="M6 34 Q10 31 14 34 Q18 37 22 34 Q26 31 30 34 Q34 37 38 34" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-                <path d="M6 39 Q10 36 14 39 Q18 42 22 39 Q26 36 30 39 Q34 42 38 39" stroke="#7ecfff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".55"/>
-              </svg>
-            </div>
-            <div class="pcol-time">20:53</div>
-          </div>
-
-        </div>
-
+    <!-- En-tête heure + date -->
+    <div class="ac-hero-header">
+      <div>
+        <div class="ac-time-big" id="hero-time">05:34</div>
+        <div style="font-size:.7rem;color:var(--t2);font-weight:700;margin-top:2px;" id="hero-next-small"></div>
+      </div>
+      <div class="ac-date-block">
+        <div class="ac-hijri">Dhū al-Hijjah 22, 1447 AH</div>
+        <div class="ac-loc-pill"><i class="fas fa-map-location-dot"></i> Dakar, Sénégal</div>
       </div>
     </div>
 
-
-    <!-- ── ACTUALITÉS ── -->
-    <div class="ac-section">
-      <div class="ac-label"><i class="fas fa-rss"></i> À la Une</div>
-      <div class="ac-card">
-        <div class="ac-card-bg"></div>
-        <div class="ac-card-ov"></div>
-        <div class="ac-card-body">
-          <span class="ac-tag"><i class="fas fa-circle" style="font-size:.4rem"></i> En direct</span>
-          <div class="ac-title">خطاب خليفة العام للمريدين في ذكرى المولد النبوي الشريف</div>
-          <div class="ac-meta"><i class="fas fa-map-marker-alt"></i> Touba &nbsp;·&nbsp; Il y a 2h</div>
+    <!-- 4 GRANDES CARDS -->
+    <div class="ac-grid-4">
+      <!-- Card 1 : Coran (haut gauche) — bleu profond -->
+      <div class="ac4 ac4-coran" onclick="openSP('sp-coran')">
+        <div class="ac4-inner">
+          <div class="ac4-glow"></div>
+          <div class="ac4-pat"></div>
+          <div class="ac4-badge">30 JUZ</div>
+          <div class="ac4-iw"><i class="fas fa-quran"></i></div>
+          <div class="ac4-lbl">Coran</div>
+          <div class="ac4-sub">30 Juz PDF</div>
+        </div>
+      </div>
+      <!-- Card 2 : Xassida (haut droite) — violet foncé -->
+      <div class="ac4 ac4-xassida" onclick="openSP('sp-xpdf')">
+        <div class="ac4-inner">
+          <div class="ac4-glow"></div>
+          <div class="ac4-pat"></div>
+          <div class="ac4-badge">AUDIO</div>
+          <div class="ac4-iw"><i class="fas fa-scroll"></i></div>
+          <div class="ac4-lbl">Xassida</div>
+          <div class="ac4-sub">Khassaïd PDF</div>
+        </div>
+      </div>
+      <!-- Card 3 : Majalis (bas gauche) — même bleu que Coran -->
+      <div class="ac4 ac4-majalis" onclick="navTo(2);showXamSection('maj')">
+        <div class="ac4-inner">
+          <div class="ac4-glow"></div>
+          <div class="ac4-pat"></div>
+          <div class="ac4-badge">11 LIVRES</div>
+          <div class="ac4-iw"><i class="fas fa-book-open"></i></div>
+          <div class="ac4-lbl">Majalis</div>
+          <div class="ac4-sub">Écrits de S.T.</div>
+        </div>
+      </div>
+      <!-- Card 4 : Culture (bas droite) — même violet que Xassida -->
+      <div class="ac4 ac4-culture" onclick="navTo(2);showXamSection('culture')">
+        <div class="ac4-inner">
+          <div class="ac4-glow"></div>
+          <div class="ac4-pat"></div>
+          <div class="ac4-badge">MOURIDE</div>
+          <div class="ac4-iw"><i class="fas fa-star-and-crescent"></i></div>
+          <div class="ac4-lbl">Culture</div>
+          <div class="ac4-sub">Mouridiyya</div>
         </div>
       </div>
     </div>
 
-    <!-- ── GRILLE 2 ACTIONS RAPIDES ── -->
-    <div class="ac-section">
-      <div class="ac-label"><i class="fas fa-bolt"></i> Accès Rapide</div>
-      <div class="quick-grid">
-        <div class="qg-card" onclick="openSP('sp-coran')">
-          <div class="qg-icon"><i class="fas fa-quran"></i></div>
-          <div class="qg-txt">
-            <div class="qg-name">Coran</div>
-            <div class="qg-sub">30 Juz PDF</div>
-          </div>
-          <i class="fas fa-chevron-right qg-arr"></i>
-        </div>
-        <div class="qg-card" onclick="openSP('sp-sass')">
-          <div class="qg-icon"><i class="fas fa-calendar-check"></i></div>
-          <div class="qg-txt">
-            <div class="qg-name">Sass Wi</div>
-            <div class="qg-sub">Programme</div>
-          </div>
-          <i class="fas fa-chevron-right qg-arr"></i>
-        </div>
-        <div class="qg-card" onclick="navTo(2)">
-          <div class="qg-icon"><i class="fas fa-book-open"></i></div>
-          <div class="qg-txt">
-            <div class="qg-name">Majalis</div>
-            <div class="qg-sub">Écrits</div>
-          </div>
-          <i class="fas fa-chevron-right qg-arr"></i>
-        </div>
-        <div class="qg-card" onclick="navTo(2)">
-          <div class="qg-icon"><i class="fas fa-microphone-lines"></i></div>
-          <div class="qg-txt">
-            <div class="qg-name">Waxtan</div>
-            <div class="qg-sub">Conférences</div>
-          </div>
-          <i class="fas fa-chevron-right qg-arr"></i>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── XASSIDA DU JOUR ── -->
+    <!-- Xassida du Jour -->
     <div class="ac-section">
       <div class="ac-label-row">
         <div class="ac-label"><i class="fas fa-scroll"></i> Xassida du Jour</div>
@@ -968,7 +743,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
         <div class="xj-dark-pat"></div>
         <div class="xj-dark-glow"></div>
         <div class="xj-dark-inner">
-          <!-- Player principal -->
           <div class="xjd-player">
             <div class="xjd-disc" id="mp-disc"><i class="fas fa-star-and-crescent"></i></div>
             <div class="xjd-info">
@@ -986,31 +760,24 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
               <button class="mp-c" onclick="mpSeek(15)"><i class="fas fa-forward"></i></button>
             </div>
           </div>
-          <!-- Séparateur -->
           <div class="xjd-sep"></div>
-          <!-- Liste Xassida -->
           <div class="xj-list">
-            <div class="xj-item">
+            <div class="xj-item" onclick="openLivre(0)">
               <div class="xj-num">١</div>
               <div class="xj-info"><div class="xj-name-ar">مسالك الجنان</div><div class="xj-name-fr">Massalik al-Jinan</div></div>
-              <button class="xj-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button>
+              <button class="xj-play"><i class="fas fa-book-open"></i></button>
             </div>
-            <div class="xj-item">
+            <div class="xj-item" onclick="openLivre(1)">
               <div class="xj-num">٢</div>
               <div class="xj-info"><div class="xj-name-ar">تزوّد الشاكر</div><div class="xj-name-fr">Tazawwudu Shikhar</div></div>
-              <button class="xj-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button>
-            </div>
-            <div class="xj-item">
-              <div class="xj-num">٣</div>
-              <div class="xj-info"><div class="xj-name-ar">الجوهر النفيس</div><div class="xj-name-fr">Jawhar an-Nafis</div></div>
-              <button class="xj-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button>
+              <button class="xj-play"><i class="fas fa-book-open"></i></button>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ── CALENDRIER ISLAMIQUE ── -->
+    <!-- Calendrier islamique -->
     <div class="ac-section">
       <div class="ac-label"><i class="fas fa-moon"></i> Calendrier Islamique</div>
       <div class="islamic-cal">
@@ -1044,7 +811,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
       </div>
     </div>
 
-    <!-- ── LECTURE DU JOUR ── -->
+    <!-- Lecture du jour -->
     <div class="ac-section">
       <div class="ac-label-row">
         <div class="ac-label"><i class="fas fa-calendar-check"></i> Lecture du Jour</div>
@@ -1081,8 +848,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
         </div>
       </div>
     </div>
-
-  </div><!-- fin pg0 -->
+  </div>
 
   <!-- ══ PAGE CORAN & XASSIDA ══ -->
   <div class="page" id="pg1">
@@ -1090,7 +856,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
       <div class="p2-ht">القرآن والخصائد</div>
       <div class="p2-hs">Coran & Sass Wi — Programme de lecture</div>
     </div>
-    <!-- 2 cards seulement : Coran + Sass Wi, même couleur que Xassida d'origine -->
     <div class="main-cards-2">
       <div class="mc2" onclick="openSP('sp-coran')">
         <div class="mc2-inner">
@@ -1111,8 +876,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
         </div>
       </div>
     </div>
-
-    <!-- Xassida section en dessous -->
     <div class="sh" style="margin-top:4px;">
       <div class="sh-title"><i class="fas fa-scroll"></i> Xassida</div>
     </div>
@@ -1127,14 +890,13 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 
   <!-- ══ PAGE XAM-XAM ══ -->
   <div class="page" id="pg2">
-    <!-- Header sans la bannière "Connaissance et sagesse" -->
     <div class="xam-head-new">
       <div class="xam-hic"><i class="fas fa-star-and-crescent"></i></div>
       <div class="xam-ht">خَمْ خَمْ</div>
       <div class="xam-hs-new">Connaissance &amp; Sagesse Mouride</div>
     </div>
 
-    <!-- 3 cards cliquables -->
+    <!-- 3 cards -->
     <div class="xam-cards" id="xam-cards-list">
       <div class="xam-card" onclick="showXamSection('maj')">
         <div class="xam-card-inner">
@@ -1142,7 +904,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
           <div class="xam-card-iw"><i class="fas fa-book-open"></i></div>
           <div class="xam-card-txt">
             <div class="xam-card-lbl">Majalis</div>
-            <div class="xam-card-sub">Livres de Serigne Touba<br>Enseignements & Écrits</div>
+            <div class="xam-card-sub">11 livres de Serigne Touba<br>Enseignements & Écrits</div>
           </div>
           <div class="xam-card-arr"><i class="fas fa-chevron-right"></i></div>
         </div>
@@ -1158,31 +920,27 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
           <div class="xam-card-arr"><i class="fas fa-chevron-right"></i></div>
         </div>
       </div>
-      <div class="xam-card" onclick="showXamSection('wax')">
+      <div class="xam-card" onclick="showXamSection('culture')">
         <div class="xam-card-inner">
-          <div class="xam-card-glow" style="background:radial-gradient(#3d8ef0,transparent);"></div>
-          <div class="xam-card-iw"><i class="fas fa-microphone-lines"></i></div>
+          <div class="xam-card-glow" style="background:radial-gradient(#c8a84b,transparent);"></div>
+          <div class="xam-card-iw" style="background:rgba(200,168,75,.14);border-color:rgba(200,168,75,.25);"><i class="fas fa-star-and-crescent" style="color:var(--gold2)"></i></div>
           <div class="xam-card-txt">
-            <div class="xam-card-lbl">Waxtan</div>
-            <div class="xam-card-sub">Conférences islamiques<br>Enseignements des Cheikhs</div>
+            <div class="xam-card-lbl">Culture Mouride</div>
+            <div class="xam-card-sub">Valeurs, Pratiques & Traditions<br>de la Mouridiyya</div>
           </div>
           <div class="xam-card-arr"><i class="fas fa-chevron-right"></i></div>
         </div>
       </div>
     </div>
 
-    <!-- SECTION MAJALIS (caché par défaut) -->
+    <!-- SECTION MAJALIS -->
     <div class="xam-section" id="xs-maj">
       <button class="xam-back-btn" onclick="hideXamSection()"><i class="fas fa-arrow-left"></i> Retour</button>
-      <div class="maj-intro"><i class="fas fa-book-quran"></i><span>Livres de Serigne Touba — Cheikh Ahmadou Bamba</span></div>
-      <div class="mbook"><div class="mbook-body"><div class="mbook-ar">تزوّد الشاكر</div><div class="mbook-fr">Tazawwudu Shikhar</div><div class="mbook-desc">Prière et gratitude envers Allah</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
-      <div class="mbook"><div class="mbook-body"><div class="mbook-ar">نهج قضاء الحاجة</div><div class="mbook-fr">Nahju Kadaïl Hajah</div><div class="mbook-desc">Voie vers l'exaucement des vœux</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
-      <div class="mbook"><div class="mbook-body"><div class="mbook-ar">الجوهر النفيس</div><div class="mbook-fr">Jawhar an-Nafis</div><div class="mbook-desc">La perle précieuse</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
-      <div class="mbook"><div class="mbook-body"><div class="mbook-ar">مسالك الجنان</div><div class="mbook-fr">Massalik al-Jinan</div><div class="mbook-desc">Les voies du Paradis</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
-      <div class="mbook"><div class="mbook-body"><div class="mbook-ar">منير الصدور</div><div class="mbook-fr">Munawirsudur</div><div class="mbook-desc">La lumière des cœurs</div></div><div class="mbook-arrow"><i class="fas fa-chevron-right"></i></div></div>
+      <div class="maj-intro"><i class="fas fa-book-quran"></i><span>11 Livres de Cheikh Ahmadou Bamba</span></div>
+      <div class="maj-grid" id="maj-grid"></div>
     </div>
 
-    <!-- SECTION HISTOIRE (caché par défaut) -->
+    <!-- SECTION HISTOIRE -->
     <div class="xam-section" id="xs-hist">
       <button class="xam-back-btn" onclick="hideXamSection()"><i class="fas fa-arrow-left"></i> Retour</button>
       <div class="hhc" onclick="openSP('sp-stouba')">
@@ -1197,7 +955,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
           <i class="fas fa-chevron-right hhc-arr"></i>
         </div>
       </div>
-      <div class="sec-title"><i class="fas fa-crown"></i> Ndiabootou S. Bi — Les Khalifes</div>
+      <div class="sec-title" style="color:#fff"><i class="fas fa-crown" style="color:var(--gold2)"></i> Ndiabootou S. Bi — Les Khalifes</div>
       <div class="k-scroll">
         <div class="kchip" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">👑</div><div class="kchip-n">س. محمد مصطفى</div><div class="kchip-s">1er Khalife</div></div>
         <div class="kchip" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">🌟</div><div class="kchip-n">س. فلّو</div><div class="kchip-s">2e Khalife</div></div>
@@ -1206,7 +964,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
         <div class="kchip" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">💫</div><div class="kchip-n">س. عبد القادر</div><div class="kchip-s">5e Khalife</div></div>
         <div class="kchip" onclick="openSP('sp-ndiabootou')"><div class="kchip-av">🌙</div><div class="kchip-n">س. صالح</div><div class="kchip-s">6e Khalife</div></div>
       </div>
-      <div class="sec-title"><i class="fas fa-users"></i> Les Makk Gni</div>
       <div class="makk-card" onclick="openQuiz()">
         <div class="makk-ic"><i class="fas fa-star"></i></div>
         <div class="makk-b"><div class="makk-t">Grandes Figures Mourides</div><div class="makk-d">Personnalités qui ont façonné la Mouridiyya</div></div>
@@ -1214,18 +971,17 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
       </div>
     </div>
 
-    <!-- SECTION WAXTAN (caché par défaut) -->
-    <div class="xam-section" id="xs-wax">
+    <!-- SECTION CULTURE MOURIDE -->
+    <div class="xam-section" id="xs-culture">
       <button class="xam-back-btn" onclick="hideXamSection()"><i class="fas fa-arrow-left"></i> Retour</button>
-      <div class="wax-hdr">
-        <div class="wax-hdr-ic"><i class="fas fa-podcast"></i></div>
-        <div><div class="wax-hdr-t">Conférences Islamiques</div><div class="wax-hdr-s">Enseignements des Cheikhs Mourides</div></div>
+      <div class="culture-section" style="padding:0 0 18px">
+        <div class="culture-card"><div class="culture-ic"><i class="fas fa-handshake-angle"></i></div><div class="culture-b"><div class="culture-t">Xidma — الخدمة</div><div class="culture-d">La dévotion et le service au Cheikh</div></div><i class="fas fa-chevron-right culture-arr"></i></div>
+        <div class="culture-card"><div class="culture-ic"><i class="fas fa-mosque"></i></div><div class="culture-b"><div class="culture-t">Grand Magal de Touba</div><div class="culture-d">Le plus grand pèlerinage d'Afrique de l'Ouest</div></div><i class="fas fa-chevron-right culture-arr"></i></div>
+        <div class="culture-card"><div class="culture-ic"><i class="fas fa-seedling"></i></div><div class="culture-b"><div class="culture-t">Daara — دارة</div><div class="culture-d">École coranique et lieu de formation</div></div><i class="fas fa-chevron-right culture-arr"></i></div>
+        <div class="culture-card"><div class="culture-ic"><i class="fas fa-music"></i></div><div class="culture-b"><div class="culture-t">Khassaïd & Ndawrabine</div><div class="culture-d">Chants mystiques et rassemblements spirituels</div></div><i class="fas fa-chevron-right culture-arr"></i></div>
+        <div class="culture-card"><div class="culture-ic"><i class="fas fa-map-location-dot"></i></div><div class="culture-b"><div class="culture-t">Touba — La Ville Sainte</div><div class="culture-d">Histoire et signification de la cité bénie</div></div><i class="fas fa-chevron-right culture-arr"></i></div>
+        <div class="culture-card"><div class="culture-ic"><i class="fas fa-people-group"></i></div><div class="culture-b"><div class="culture-t">Dahira — الداهيرة</div><div class="culture-d">Organisation et fraternité mouride</div></div><i class="fas fa-chevron-right culture-arr"></i></div>
       </div>
-      <div class="wax-card"><div class="wax-num">01</div><div class="wax-av">🎙️</div><div class="wax-info"><div class="wax-name">سرين باس خالكوم</div><div class="wax-sub">S. Bass Xelcom</div><div class="wax-tags"><span>12 conf.</span><span>Fiqh</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
-      <div class="wax-card"><div class="wax-num">02</div><div class="wax-av">📿</div><div class="wax-info"><div class="wax-name">سرين الحاج</div><div class="wax-sub">S. Aladji</div><div class="wax-tags"><span>8 conf.</span><span>Tasawwuf</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
-      <div class="wax-card"><div class="wax-num">03</div><div class="wax-av">🌟</div><div class="wax-info"><div class="wax-name">سرين سام مباي</div><div class="wax-sub">S. Sam Mbaye</div><div class="wax-tags"><span>20 conf.</span><span>Sira</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
-      <div class="wax-card"><div class="wax-num">04</div><div class="wax-av">✨</div><div class="wax-info"><div class="wax-name">سرين أحمدو مباكي</div><div class="wax-sub">S. Ahmadou Mbacké</div><div class="wax-tags"><span>15 conf.</span><span>Adab</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
-      <div class="wax-card"><div class="wax-num">05</div><div class="wax-av">🌸</div><div class="wax-info"><div class="wax-name">سرين أفيا نياng</div><div class="wax-sub">S. Afia Niang</div><div class="wax-tags"><span>9 conf.</span><span>Tarbiya</span></div></div><button class="wax-play" onclick="togglePlay(this)"><i class="fas fa-play"></i></button></div>
     </div>
   </div>
 
@@ -1245,7 +1001,7 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 
 <div class="sp" id="sp-xpdf">
   <div class="sp-head"><button class="sp-back" onclick="closeSP('sp-xpdf')"><i class="fas fa-arrow-left"></i> Retour</button><div class="sp-title">خصائد PDF</div><div class="sp-sub">Bibliothèque des Xassida</div></div>
-  <div style="padding:18px;display:flex;flex-direction:column;gap:9px" id="xpdf-list"></div>
+  <div style="padding:18px" id="xpdf-list"></div>
 </div>
 
 <div class="sp" id="sp-sass">
@@ -1259,16 +1015,11 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
     <div class="map-box">
       <svg viewBox="0 0 300 230" style="width:100%;height:auto" xmlns="http://www.w3.org/2000/svg">
         <path d="M60 42L82 30L125 28L165 36L205 42L235 58L244 84L238 114L222 144L202 170L176 184L150 188L118 180L88 168L62 148L42 122L38 92L44 66Z" fill="#b9d9b0" stroke="#388e3c" stroke-width="1.5"/>
-        <ellipse cx="108" cy="74" rx="32" ry="24" fill="rgba(35,104,168,.18)" stroke="#2368a8" stroke-width="1.2" style="cursor:pointer" onclick="showR('dakar')"/>
-        <text x="108" y="78" text-anchor="middle" font-size="9" fill="#04101e" font-weight="bold" style="cursor:pointer" onclick="showR('dakar')">Dakar</text>
-        <ellipse cx="172" cy="102" rx="30" ry="23" fill="rgba(35,104,168,.18)" stroke="#2368a8" stroke-width="1.2" style="cursor:pointer" onclick="showR('diourbel')"/>
-        <text x="172" y="106" text-anchor="middle" font-size="9" fill="#04101e" font-weight="bold" style="cursor:pointer" onclick="showR('diourbel')">Diourbel</text>
-        <ellipse cx="113" cy="145" rx="29" ry="21" fill="rgba(35,104,168,.18)" stroke="#2368a8" stroke-width="1.2" style="cursor:pointer" onclick="showR('baol')"/>
-        <text x="113" y="149" text-anchor="middle" font-size="9" fill="#04101e" font-weight="bold" style="cursor:pointer" onclick="showR('baol')">Baol</text>
-        <ellipse cx="172" cy="158" rx="26" ry="19" fill="rgba(35,104,168,.18)" stroke="#2368a8" stroke-width="1.2" style="cursor:pointer" onclick="showR('cayor')"/>
-        <text x="172" y="162" text-anchor="middle" font-size="8" fill="#04101e" font-weight="bold" style="cursor:pointer" onclick="showR('cayor')">Cayor</text>
-        <text x="183" y="99" font-size="13">⭐</text>
-        <text x="183" y="112" font-size="6" fill="#04101e" font-weight="bold" text-anchor="middle">Touba</text>
+        <ellipse cx="108" cy="74" rx="32" ry="24" fill="rgba(35,104,168,.18)" stroke="#2368a8" stroke-width="1.2" style="cursor:pointer" onclick="showR('dakar')"/><text x="108" y="78" text-anchor="middle" font-size="9" fill="#04101e" font-weight="bold" style="cursor:pointer" onclick="showR('dakar')">Dakar</text>
+        <ellipse cx="172" cy="102" rx="30" ry="23" fill="rgba(35,104,168,.18)" stroke="#2368a8" stroke-width="1.2" style="cursor:pointer" onclick="showR('diourbel')"/><text x="172" y="106" text-anchor="middle" font-size="9" fill="#04101e" font-weight="bold" style="cursor:pointer" onclick="showR('diourbel')">Diourbel</text>
+        <ellipse cx="113" cy="145" rx="29" ry="21" fill="rgba(35,104,168,.18)" stroke="#2368a8" stroke-width="1.2" style="cursor:pointer" onclick="showR('baol')"/><text x="113" y="149" text-anchor="middle" font-size="9" fill="#04101e" font-weight="bold" style="cursor:pointer" onclick="showR('baol')">Baol</text>
+        <ellipse cx="172" cy="158" rx="26" ry="19" fill="rgba(35,104,168,.18)" stroke="#2368a8" stroke-width="1.2" style="cursor:pointer" onclick="showR('cayor')"/><text x="172" y="162" text-anchor="middle" font-size="8" fill="#04101e" font-weight="bold" style="cursor:pointer" onclick="showR('cayor')">Cayor</text>
+        <text x="183" y="99" font-size="13">⭐</text><text x="183" y="112" font-size="6" fill="#04101e" font-weight="bold" text-anchor="middle">Touba</text>
       </svg>
     </div>
     <div class="rbtns">
@@ -1295,7 +1046,6 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
       <div class="kcard" onclick="openQuiz()"><div class="kav">💫</div><div class="kn">س. عبد القادر</div><div class="ks">S. Abdou Khadre<br>5e Khalife</div></div>
       <div class="kcard" onclick="openQuiz()"><div class="kav">🌙</div><div class="kn">س. صالح مباكي</div><div class="ks">S. Saliou Mbacké<br>6e Khalife</div></div>
     </div>
-    <div style="text-align:center;margin-top:16px"><button class="qbtn" style="margin:0 auto" onclick="openQuiz()"><i class="fas fa-graduation-cap"></i> Tester vos connaissances</button></div>
   </div>
 </div>
 
@@ -1303,6 +1053,63 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
 <div class="sp" id="sp-maharidj"><div class="sp-head"><button class="sp-back" onclick="closeSP('sp-maharidj')"><i class="fas fa-arrow-left"></i> Retour</button><div class="sp-title">مهارج</div><div class="sp-sub">Maharidj</div></div><div style="padding:18px;color:var(--t3);display:flex;align-items:center;gap:7px"><i class="fas fa-clock" style="color:var(--b6)"></i> Disponible prochainement</div></div>
 <div class="sp" id="sp-mokal"><div class="sp-head"><button class="sp-back" onclick="closeSP('sp-mokal')"><i class="fas fa-arrow-left"></i> Retour</button><div class="sp-title">موكال</div><div class="sp-sub">Mokal Xassida</div></div><div style="padding:18px;color:var(--t3);display:flex;align-items:center;gap:7px"><i class="fas fa-clock" style="color:var(--b6)"></i> Disponible prochainement</div></div>
 <div class="sp" id="sp-kourel"><div class="sp-head"><button class="sp-back" onclick="closeSP('sp-kourel')"><i class="fas fa-arrow-left"></i> Retour</button><div class="sp-title">كوريل</div><div class="sp-sub">Kourel</div></div><div style="padding:18px;color:var(--t3);display:flex;align-items:center;gap:7px"><i class="fas fa-clock" style="color:var(--b6)"></i> Disponible prochainement</div></div>
+
+<!-- PANNEAU LIVRE ARABE PROFESSIONNEL -->
+<div id="sp-livre" style="position:fixed;inset:0;z-index:200;transform:translateX(100%);transition:transform .38s cubic-bezier(.4,0,.2,1);max-width:430px;margin:0 auto;left:0;right:0;overflow:hidden;">
+
+  <!-- IMAGE DE FOND FIXE -->
+  <div style="position:absolute;inset:0;background-image:url('data:image/jpeg;base64,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AFACAPPBBIAAECBNLPLAOFOIDBKJPCLHNPIHDHNMJEAJICCHADMFHPOPIAGAMKAIENHOHFBNKPPLDPODDKCAIBECEHPPKLLAHAFAACBAHOPDCMEGCPOJPABLAIIEPAAJPPOLGAPANCACFIBANENFACIDAGLHHMIDCLJJIDPPHHBAPAFAADIFDHGAIPFADGPCPPPPCPMCCCCDFPNCHBPEMECEAANPOKFAOEJEEFPPONPPIKAIAIPPOPLHLEFEEIAEPAIHKPHIPFKFMAFEGOEBKACCNFLGDGNFMCABENJEAEGEGNPHHKCAACHLAPEIGAPHOLDDNIDIACFAAGJAPEGDKFKBEAABLKHHMAIEFPCNBHCDPKEAAIJAAAEAKAHFEAAABNPIEPKAAAGPOJOPKHNAELGJLCIEIKLAHANMCBNKKAHPKAEEJPPADLAHOEFPPOAAAEOKOCFKGFBFEIAINCAAJAPPOIDEKPOBANFKCBCAAKMCKKGAEBAACCAEJBFFHPLCNKBLLIABNPKABAFJDCNKEAEKAAEDABKNACNOILJENIAAACANOLAAEBBAEKJIAMIDDCAFAFLAFLBPKAKICOEEBAAAAFHPDBBPOBCEENELKIAANAFIHBIFCFEIIEAAMEEKIHFOFPAABAIACDBAIIAKNFKOILEAANAAAEAGAIGPGEAHCAAAMLCAGEEAFJFGPFDKIABAAABIACJOIBADEPICAADEKAAEOCDKFMKAPMFBNAAABEAAAAAJGPBPIACECAEIAAABABPPAFGAAKMIBAJEGAAMAMKCENJBGAABBBCHIGIFNDHKJCJFEAIEIKNABBCAOOLFLACEJCCHENPIOIMHNEJAADIAICAHFBAGEAIIGPJAABHONCAPHAECEOIBDAEJACIAIIAIJBGBJOGHIEAAHGNMABEGCADJOABDAIKCCBIBIANAABFABNLAFDPOOBPAEJAIFPCLMMNAMAEGAABACIBAHNHFPKCCBDEAAJDABIFFPKNPKEBAGDAIOAIBIAEFOHOEABPABIAEIAEANHNHPLAIGLBIFANAAHLFNHBHKIAOBMJABAJFDAFONEOIAAENDJIGBHAKFGBPOHKJCPMKEDGAEICGFNPEDDBCAIAOODPPJMDJMPMHICNICMMIMMPFABHPNKBHLCBBMGHMGNKEIJFKBDDJHCBDAEBFNMEAPDPIBLPBBMAGBAHPBKLIAPMDPBHBPKPFMEOIANPPCBLEBBIAAALFFPJGKIAICPKPFBLJEPMAAKAANNCHPKAAJEBMNCPNNPJBEFLKJNMDMCCEAIICCGFJJKBICDFPAFBOIJECKIAEKONAAEGPALECLKFIMPLMAJGIJMAEBOAEAEDOAGPAEMLNNCCAKEBHAEEPOALBAEACAAFOIIABFPCKKCAJPEAGDIFAAFOAJPCNKOAIAJHDPOIAANEDIHKIAACBIFFLCIHPBMHLCELFCDHHNGNCEAAAICDGMAFAAFOIBKKIMICJFLAMNAJLPPJOPABAAEBIICOIAEOAJNPKAACFHOHPGEHPGFIDGFIAABABNKNGIAIIEAEKOKILIBMDMPICGILDGOBCCMABDJPIKMEAABAAKBIECEFDJPJIAGJEEPLMACEBDNJMAPIAAJPAAFACJIFENOBBNPNAIAAMBIABDODOABOGEAAEKNAIMAIKAJEBMKFPHIIGNAKHOPGMIGLIMICOAIBAAJABCBBLKCMBHPOJACDNMMMAELDOJBBAAGFEEGFJAGOGFIPFAANPHIAEJOLLFDGOBKIDCGBAKAAIAEEIGHJOOIAINPKAKAAIHOIDGIABPAJAAGIAAAADKEDKHMKKABNLLKCMACACABBCEFOEAAEAAAAJAIOEGPKAAOMHPPPNEANBEICAIJCCEKDIAABIFAAGBIOMAEAAANPPDBFAAADGKCADMFPOIAHPCAFDPJJHLAHCAEMPPNAEFKLOJDGAEMAEIIGFCEBHKOBMPCACJAABANPPMLJPKPDCAFCNCAIJIFDJEPPHKEEJAAJAEIMPPPIAHPPCAEANDFCAEABBAKAGGJOCCAADMIPLDFOPDPFOGCMABNGAGIIBGJJPHPOICJCBOLMMJECADOBHPACDGBAFGLGCHHKOAEPKAIAIOOJIAEAKAAFLLOGMEDIHONAODKAIABNKMLAAHIGNIEAEJAIIFAJLEBDPPCOAHCEBEEEFKPHMCCENKOAIBBABBBFHCPJENCPFAEFIHDELAFKIJAGEALOACDCBMAFANPKKPAIFFBFPNKFPPIIPJKAACAFGCAEAEGEJCGFBAGACIIFNHCOJAEPBHLNCIIABNPAALAOIEIBLFLNKFIBACEHGIMECMKMCDEAKACFPAGOHBAACANPNAJDHLBIGDGAJCBIIJAGMABACEOAEAGMAMAEABPAHAAFCABKOAFKCKAIBCBDHIIAMAIDHCFKCAGBPHADCADHEHGBOKBAIIABOOHBAAPAAFHBEIIEIFNPMEGIKOANIJOIFPHPPMOPLAAACDAAEBACAABHPIMGANKKKBMIGDDHPEMKBKGABBNIECEJIBNMNPOIDNJBKJBKCDICAIBCBKFECHALCGBCMHGCABAHPCLFBGCCMONONBBEDOKLCBLLLHLEJBAKEKFMHPP/aAAwDAQACAAMAAAAQg0YIYgAcAAgAAwAIAAgAAYo0cs8EQYkoc4oEQ0s4QUgA8g4AAAgAEUAAo0wo4IoMYMc4oE40c88gA8U4g40okMYEoQogAEoEAUE848oYc8Y8YMk4coAUsUQMM888EU4E8cA8sMgwMEw4w0okY0sMw4s0Ag0Yc48c08880c888I4oAA8Yoc88w888404s44AAYs8kgMsIIsE0s40sccgwocUM0Mcc4AUs44wEAIcMc8k48MAk0Yc84IEsogkcoIcos4kkE048Y0AE0AQgoss8gMM8Y8g0ssIgEM8s8M44kk8s8UwoAwgME0IEwMs8gosoUcUw8IIcQsUwsAg4g8UIMoAYg8g0II84s8gc08QgI4sc88Y8sYwM840sssc8AAAo8c8Y0sowY888wMU0sos8o808wE44c88s0oIQAQosoUUw4UYA0QgIAcgwgIMYs8I800g8wMokAEAcsE8Mc8csIgEgo4IUAAQwAEwwU08c4s0sgUAUQQoI88U8048gEAw0Msk0AEYA84Q8ccsA88YAAEQk848cg80oc48IsIow0cw8kQggMcw0QYYcwUAgg48U88o8wcowgk8cIk8wkA0AAAA0AM0000w4AI0g4UsY40s88IAEU8oQsYssoAAEIAAcU8c8cUAEAQgEs8wsc8sA8cgEg0cQEUoM8oskEs4U800YoQkwkwocE84sIYs8swskIUgoU0880gQ8E4sk8AgEQw0Ack080o88kY8csYw84Q4s884QUgwk8Ms4A0I4gcwY0s88cY888w8E8oos8884IAcsA088MEEEYEc0gocsQkYQ0cssU8E88oM04IUU8gcU8sscAA8wM8kIsoAAE888sscUcUUwo4osc8cIk08Y8EAEcwkUQ848IoU0408I8c8YUkcs488008IU4ookAQ0Q04UYc84IAU8488wgcwU08sU88sw84Us80IEcQksME88808IEQ88sQ4QM0kc8Mcww08o8wY8oQ4c88Es0Ess48888okA0kckI40ssIsQUc8os8ockEcoEIsccs88MssUIcoM4oc848c80w48ccgcMokkcA088I888s8k8ck8kQscc888MQ08kss88Q44wo00c848884c80YEc88Qs48088wsU88sE0wg4408c8o4I8884s88888okQwoc80s08sc888488Ag8okc8UMc48Ysk88M8AUcQkE4k884488UAkcogwkoQ0Yos8cscUI8440YsQgAc80sYwY4cIA0EIAgcsY88wc8c08go48kss8cUAc884kUI08Us8s0ccQ4w8sY80c8cc8cY4k8wEQIcs8kEgUYcgkk08gIk84w8cU004c4c8I888k8YIQ0ooEgQk4EsY8coA0QMMI8M8sk88480c4oIY0Ak00oQs0QkYw84cooAUIAUs48kw8cE8c4csw8wAYk88cg8s8sc8s8IgIgAQ8ckQ4co8I88kkoY0E0Q88o0s4848Yow8oEIsEc88sIwYYk4kU8EkIEE0Qwwokks0gsgY0k4IAsww4w8c8U84AskIQowI0cIw8c0c8c4MUg84kAIU4ko044MAwowcA000I8gc0AUw8w8s4skUs8EwAc8osY4M8w48AQ40kE8Is0AUwUokIoEUw88IAA04c4A4c88MQoIwwwcco84ocwA4kIs0cc8U88II0gUc88Ys4MM0AUIAo44kss4YYQs8oU8cc00ksYYAYc0woA8o0MQYs0UUsw0gE88so0cQs0QUoccAQoYYkcYM8s4gIs8sU4cw88MsUUk008Us4g8s0AEoQ48s80880o0c8IEg0ok0s800co4co88oE8UA00Qk8c8Yg8808880o88c008804YU8c0cgA4AAQ0EAc8wgkUUUEs884Msosg8o88oI84E0cMcwEoQ88osYccwYU0c488s4Ik0oc8sE8EAA4U80ookgAk8IIkocw44c88484AMI4U8ccs88okccQc80wcAc0wIU0g0k00M84wEQcMcs88488UoUM0socYQAc8kYsowss80s40Uks8Y8c8YA88o80YcosQk40IAI8c88M4c844YIU84QcM88sUI8cM8cU8YU4Uk4AgccgUwck4UE8ckUk4c0E8c488Y84048AU8E4gAEY8kwY88M8sQ0Uog488kosskoY8kEgM8EQc8IAgc84cMYQowoYMU8w0k48U88c8sscgc4AQc8cIAU8U8sY0oEc4sc4A8Y88kc8888wUos0kU0U84IQQU0M80808440s4Es88s8888Y8cAwEEo88EMgEAAIs8I4sc08cY00sUwc884co88gk8AUcs888IQAw4o8880oU08wMoAEc8gA08owAk4kU8g08sMAUI8soUUQkA48sM8sccko0s4gUU4MYMc0Y8848IQAMQYcYMUE8o0I08cYcowYsAEAU0wY88Y8scMAAAc88E8Ucs8Iwo08s8448U8kcYQ00880Qo8UAsUAwIMEk0M84Ik8kcc4kYYAgYEEEY04YM8MYs08gE8MkU0wk48okQk0ggUE8sgU0M8cEcAc8s8U884QEcgMswco4k8EwU8c84IIssc8gcwYcs8sY8ccs80wkYwAE4ksU0s4sssoIsss00sM4k8c4484444gwAAsI0U48s8YgwsQ8so0Y8ks8Ac80w04M8o8IAAUM8co4coAcQoAAccMgk8808oYU8s8sgsc0k84skM0ccoYEIAw8sA4g8U0cc84M088Q8Yg04AY4QEc4U480swAQss0MUMUws8U80sQ8kEks880sAEIs4wkY4ckoEkY04ccY8kM8480sE8s8wI8M8sssA8A88IQ040E8oU0U8c404ws8U8M8cw0UoU08ksEgo408gkMok4EU48cc84Ms44csU88ogIsccscoIAMYAUUEsYcQMcoAgEcQkko888Iw88sI00884kAcMkcMcUU4Mc0Q0owcsU8w884480s0sI44IMIQEcwIYogQwU0wc08c404U4U0g8Q0o40Mgk0848gA0Qo4k00ccEMA84swc0E04QQQgQ8Q48UsIgMgU/9oACAECAAE/AP8Az4P/2gAIAQMAAT8A/wDPg//aAAgBAQABPwKo2z6XzraRy042ZTibAtFD0hxGtpHLTjZlOJu8PSP/AN62kctONmU4myLTvSOwQ1lI5acbMpxN2UPSN1lI5acbMpxNk2/PpPJ1lI5acbMpxNoWnekOspHLTjZlOJvCh6MoaukctONmU4m0bY9INXSOWnGzKcTbFp3pHfnV0jlpxsynE3rkPR4oaqkctONmU4m2bbfSHsb4mC6i79Lv8oG5pHLTjZlOJuBa8+kPdC8JgvuQFRFzSOWnGzKcTfOQ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');background-size:cover;background-position:center top;"></div>
+
+  <!-- HEADER -->
+  <div class="livre-head" style="position:absolute;top:0;left:0;right:0;z-index:10;background:rgba(255,255,255,0.82);backdrop-filter:blur(14px);padding:14px 18px 10px;border-bottom:1px solid rgba(4,16,30,.08);display:flex;align-items:center;justify-content:space-between;">
+    <button onclick="closeLivre()" style="display:flex;align-items:center;gap:6px;color:var(--b5);font-size:.78rem;background:none;border:none;font-family:'Nunito',sans-serif;font-weight:800;cursor:pointer;"><i class="fas fa-arrow-left"></i> Retour</button>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;">
+      <div id="livre-titre-ar" style="font-family:'Amiri',serif;font-size:1rem;color:var(--b1);direction:rtl;font-weight:700;"></div>
+      <div id="livre-prog-txt" style="font-size:.58rem;color:var(--t3);font-weight:700;"></div>
+    </div>
+  </div>
+
+  <!-- SCROLL ZONE — transparent -->
+  <div id="livre-scroll" style="position:absolute;top:58px;bottom:160px;left:0;right:0;overflow-y:auto;padding:20px 18px 10px;">
+    <div style="text-align:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(4,16,30,.12);">
+      <div id="livre-title-display" style="font-family:'Amiri',serif;font-size:1.8rem;color:var(--b1);direction:rtl;line-height:1.3;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff;"></div>
+      <div style="font-size:.6rem;color:#3a3020;margin-top:4px;font-weight:700;text-shadow:0 0 6px #fff;">الشيخ أحمدو بمب امبا — رَحِمَهُ اللهُ</div>
+      <div style="width:50px;height:2px;background:linear-gradient(90deg,var(--b6),var(--b7));margin:8px auto 0;border-radius:2px;"></div>
+    </div>
+    <div style="text-align:center;font-family:'Amiri',serif;font-size:1.2rem;color:var(--b1);direction:rtl;margin-bottom:20px;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff;">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div id="livre-bayts"></div>
+  </div>
+
+  <!-- PLAYER FIXE EN BAS -->
+  <div class="livre-player" style="position:absolute;bottom:0;left:0;right:0;">
+    <div class="spectre" id="spectre" style="display:flex;align-items:flex-end;gap:2.5px;height:28px;margin-bottom:8px;justify-content:center;"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+      <div style="display:flex;align-items:center;gap:9px;">
+        <div id="lp-disc" style="width:32px;height:32px;border-radius:50%;background:conic-gradient(from 0deg,#1a3a5c,#0d2640,#1e5080,#0a1e35,#2368a8,#0a1e35);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <i class="fas fa-star-and-crescent" style="font-size:.68rem;color:var(--gold2);"></i>
+        </div>
+        <div>
+          <div id="lp-titre" style="font-family:'Amiri',serif;font-size:.82rem;color:#fff;direction:rtl;"></div>
+          <div id="lp-bayt-info" style="font-size:.55rem;color:rgba(255,255,255,.4);">Bayt 1</div>
+        </div>
+      </div>
+      <button class="lp-vitesse" id="lp-speed" onclick="cycleSpeed()">1x</button>
+    </div>
+    <div class="livre-pbar" onclick="livreSeekClick(event)">
+      <div class="livre-pfill" id="livre-pfill"></div>
+      <div class="livre-pdot" id="livre-pdot"></div>
+    </div>
+    <div class="livre-ptimes"><span id="lp-cur">0:00</span><span id="lp-tot">--:--</span></div>
+    <div class="livre-ctrls" style="margin-top:6px;">
+      <button class="lc" onclick="livreGoTo(livreCurBayt-1)"><i class="fas fa-backward-step"></i></button>
+      <button class="lc" onclick="livreGoTo(livreCurBayt-1)"><i class="fas fa-backward"></i></button>
+      <button class="lc lc-main" id="lc-main" onclick="livreTogglePlay()"><i class="fas fa-play" id="lc-icon"></i></button>
+      <button class="lc" onclick="livreGoTo(livreCurBayt+1)"><i class="fas fa-forward"></i></button>
+      <button class="lc" onclick="livreGoTo(livreCurBayt+1)"><i class="fas fa-forward-step"></i></button>
+    </div>
+  </div>
+
+</div>
 
 <!-- QUIZ MODAL -->
 <div class="moverlay" id="qmodal">
@@ -1324,242 +1131,430 @@ body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--t1);min-he
     <div class="smrow"><button class="smbtn smcanc" onclick="closeSM()">Annuler</button><button class="smbtn smconf" onclick="addTask()">Confirmer</button></div>
   </div>
 </div>
-
 <script>
-// ── INIT
-window.addEventListener('DOMContentLoaded',()=>{
-  setTimeout(()=>{
+
+window.addEventListener('DOMContentLoaded',function(){
+  setTimeout(function(){
     document.getElementById('oc1').classList.add('on');
-    setTimeout(()=>document.getElementById('oc2').classList.add('on'),180);
-    setTimeout(()=>document.getElementById('oc3').classList.add('on'),360);
-    setTimeout(()=>document.getElementById('ob-btn').classList.add('on'),620);
+    setTimeout(function(){document.getElementById('oc2').classList.add('on');},180);
+    setTimeout(function(){document.getElementById('oc3').classList.add('on');},360);
+    setTimeout(function(){document.getElementById('ob-btn').classList.add('on');},620);
   },500);
-  buildJuz(); buildXPDF(); buildSass(); buildCalendar();
+  buildJuz();buildXPDF();buildSass();buildCalendar();buildMajalis();buildSpectre();
+  if(window.speechSynthesis)window.speechSynthesis.getVoices();
   updateClock();
   setInterval(updateClock,1000);
-  setTimeout(initSA,300);
 });
 
 function launch(){
-  const o=document.getElementById('ob');
+  var o=document.getElementById('ob');
   o.style.transition='opacity .55s,transform .55s';
   o.style.opacity='0';o.style.transform='scale(0.97)';
-  setTimeout(()=>{o.style.display='none';document.getElementById('app').style.display='block';setTimeout(initSA,200);},540);
+  setTimeout(function(){o.style.display='none';document.getElementById('app').style.display='block';},540);
 }
 
-// ── HORLOGE LIVE
-const prayers=[
-  {name:'Fadiar',h:5,m:54},
-  {name:'Tisbar',h:13,m:0},
-  {name:'Takussan',h:17,m:30},
-  {name:'Timiss',h:19,m:53},
-  {name:'Guéé',h:20,m:53}
+var prayers=[
+  {name:'Fadiar',h:5,m:54},{name:'Tisbar',h:13,m:0},
+  {name:'Takussan',h:17,m:30},{name:'Timiss',h:19,m:53},{name:'Guee',h:20,m:53}
 ];
 function updateClock(){
-  const now=new Date();
-  const hh=now.getHours().toString().padStart(2,'0');
-  const mm=now.getMinutes().toString().padStart(2,'0');
-  document.getElementById('hero-time').textContent=hh+':'+mm;
-  // Find current/next prayer
-  const totalNow=now.getHours()*60+now.getMinutes();
-  let nextIdx=-1;
-  for(let i=0;i<prayers.length;i++){
-    const t=prayers[i].h*60+prayers[i].m;
-    if(totalNow<t){nextIdx=i;break;}
-  }
-  // Highlight current
-  document.querySelectorAll('.pcol').forEach((c,i)=>c.classList.remove('now'));
-  if(nextIdx>0){
-    document.getElementById('pc'+(nextIdx-1)).classList.add('now');
-  } else if(nextIdx===-1){
-    document.getElementById('pc4').classList.add('now');
-  }
-  // Countdown
+  var now=new Date();
+  document.getElementById('hero-time').textContent=now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
+  var totalNow=now.getHours()*60+now.getMinutes(),nextIdx=-1;
+  for(var i=0;i<prayers.length;i++){if(totalNow<prayers[i].h*60+prayers[i].m){nextIdx=i;break;}}
+  var ns=document.getElementById('hero-next-small');
   if(nextIdx!==-1){
-    const p=prayers[nextIdx];
-    const target=new Date();target.setHours(p.h,p.m,0,0);
-    const diff=Math.max(0,target-now);
-    const dh=Math.floor(diff/3600000).toString().padStart(2,'0');
-    const dm=Math.floor((diff%3600000)/60000).toString().padStart(2,'0');
-    const ds=Math.floor((diff%60000)/1000).toString().padStart(2,'0');
-    document.getElementById('hero-next').innerHTML=p.name+' dans <span id="hero-countdown">'+dh+':'+dm+':'+ds+'</span>';
-  } else {
-    document.getElementById('hero-next').innerHTML='Fadiar demain';
-  }
+    var p=prayers[nextIdx],target=new Date();target.setHours(p.h,p.m,0,0);
+    var diff=Math.max(0,target-now);
+    ns.textContent=p.name+' dans '+Math.floor(diff/3600000).toString().padStart(2,'0')+':'+Math.floor((diff%3600000)/60000).toString().padStart(2,'0')+':'+Math.floor((diff%60000)/1000).toString().padStart(2,'0');
+  } else {ns.textContent='Fadiar demain';}
 }
 
-// ── NAVIGATION
 function navTo(i){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('.ni').forEach(n=>n.classList.remove('on'));
+  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on');});
+  document.querySelectorAll('.ni').forEach(function(n){n.classList.remove('on');});
   document.getElementById('pg'+i).classList.add('on');
   document.getElementById('n'+i).classList.add('on');
   window.scrollTo(0,0);
-  // Reset xam sections when nav to xam
-  if(i===2) hideXamSection();
-  setTimeout(initSA,80);
+  if(i===2)hideXamSection();
 }
 function openSP(id){document.getElementById(id).classList.add('on');}
 function closeSP(id){document.getElementById(id).classList.remove('on');}
 
-// ── XAM-XAM sections
 function showXamSection(sec){
   document.getElementById('xam-cards-list').style.display='none';
-  document.querySelectorAll('.xam-section').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.xam-section').forEach(function(s){s.classList.remove('on');});
   document.getElementById('xs-'+sec).classList.add('on');
   window.scrollTo(0,0);
 }
 function hideXamSection(){
-  document.querySelectorAll('.xam-section').forEach(s=>s.classList.remove('on'));
-  document.getElementById('xam-cards-list').style.display='flex';
-  document.getElementById('xam-cards-list').style.flexDirection='column';
+  document.querySelectorAll('.xam-section').forEach(function(s){s.classList.remove('on');});
+  var el=document.getElementById('xam-cards-list');
+  el.style.display='flex';el.style.flexDirection='column';
   window.scrollTo(0,0);
 }
 
-// ── MINI PLAYER
-let mpPlaying=false,mpProg=0,mpTimer=null;
-const MP_TOT=222;
+// ── LIVRES DATA (bayts séparés par |||)
+var LIVRES=[
+  {num:'١',ar:'تزوّد الصغار إلى جنان الله',fr:'Tazawwudu Sikar',bayts:[
+    {ar:'يَقُولُ مَنْ لَيْسَ يَزَالُ يَحْمَدُ|||مَالِكَهُ الْعَبْدُ الْخَدِيمُ أَحْمَدُ'},
+    {ar:'الْحَمْدُ لِلَّهِ الَّذِي لِي أَحْسَنَا|||إِحْسَانَ مَنْ لَيْسَ يَزَالُ مُحْسِنَا'},
+    {ar:'أَحْمَدُهُ وَجَادَ بِالتَّوْحِيدِ|||وَأَخَوَيْهِ سُنَّةَ الْوَحِيدِ'},
+    {ar:'ثُمَّ الصَّلَاةُ وَالسَّلَامُ سَرْمَدَا|||عَلَى خَلِيلِهِ الْحَبِيبِ أَحْمَدَا'},
+    {ar:'وَآلِهِ مَعَ الصِّحَابِ الْمُؤْمِنِينْ|||الْمُسْلِمِينَ الْكُرَمَاءِ الْمُحْسِنِينْ'},
+    {ar:'سَمَّيْتُهُ تَزَوَّدَ الصِّغَارِ|||إِلَى جِنَانِ اللهِ ذِي الأَنْهَارِ'},
+    {ar:'وَاللهَ رَبِّي أَسْأَلُ الْقَبُولَا|||وَالأَمْنَةَ وَالتَّبْجِيلَا'},
+    {ar:'يَا أَيُّهَا الصِّبْيَانُ لَا تَشْتَغِلُوا|||عَنِ الْهُدَى وَبِالْعُلُومِ اشْتَغِلُوا'},
+    {ar:'فَاشْتَغِلُوا بِالْحِفْظِ وَالتِّلَاوَةِ|||وَاجْتَنِبُوا مَجَالِسَ الشَّقَاوَةِ'},
+    {ar:'وَلَازِمُوا مَجَالِسَ الْعُلَمَاءِ|||فَكُلُّ مَنْ بَادَرَ وَقْتَ الصَّغَرِ'},
+    {ar:'أَقْسَامُ دِينِ رَبِّنَا الْإِيمَانُ|||وَبَعْدَهُ الْإِسْلَامُ وَالْإِحْسَانُ'},
+    {ar:'إِيمَانُكُمْ يَا أَيُّهَا الصِّغَارُ|||بِمَنْ لَهُ الصِّغَارُ وَالْكِبَارُ'},
+    {ar:'أَنْ تُؤْمِنُوا بِاللهِ وَالْمَلَائِكَةِ|||وَيَوْمِهِ الْآخِرِ وَالرُّسُلِ الْكِرَامِ'},
+    {ar:'وَبَعْدَهُ الْإِسْلَامُ صَلَاةٌ وَزَكَاةٌ|||وَصِيَامٌ وَحَجٌّ وَشَهَادَةٌ'},
+    {ar:'وَثَالِثُهَا الْإِحْسَانُ أَنْ تَعْبُدَ اللهَ|||كَأَنَّكَ تَرَاهُ فَإِنَّهُ يَرَاكَ'},
+    {ar:'هُنَا انْتَهَى تَزَوَّدَ الصِّغَارِ|||بِحَمْدِ رَبِّي الْمَانِعِ الصِّغَارِ'}
+  ]},
+  {num:'٢',ar:'الجوهر النفيس',fr:'Jawhar an-Nafis',bayts:[
+    {ar:'الْجَوْهَرُ النَّفِيسُ فِي عِلْمِ التَّوْحِيدِ|||كِتَابٌ جَمَعَ الْأُصُولَ وَالتَّجْدِيدِ'},
+    {ar:'اللهُ وَاحِدٌ لَا شَرِيكَ لَهُ|||فِي مُلْكِهِ خَلَقَ الْخَلْقَ بِعِلْمِهِ'},
+    {ar:'صَمَدٌ لَمْ يَلِدْ وَلَمْ يُولَدْ|||وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ'},
+    {ar:'أَوَّلُ الْوَاجِبَاتِ مَعْرِفَةُ اللهِ|||بِالصِّفَاتِ الثُّبُوتِيَّةِ وَالسَّلْبِيَّةِ'},
+    {ar:'فَاعْلَمْ أَنَّ وُجُودَهُ وَاجِبٌ|||وَأَنَّ الْعَدَمَ عَنْهُ مُحَالٌ'}
+  ]},
+  {num:'٣',ar:'نهج قضاء الحاجة',fr:'Nahju Kadaïl Hajah',bayts:[
+    {ar:'نَهْجُ قَضَاءِ الْحَاجَةِ إِلَى رَبِّ الْعِبَادِ|||طَرِيقٌ وَاضِحٌ لِمَنْ طَلَبَ الرَّشَادَ'},
+    {ar:'إِذَا أَرَدْتَ حَاجَةً فَتَوَضَّأْ وَصَلِّ|||وَادْعُ اللهَ بِقَلْبٍ حَاضِرٍ لَا تُمِلِّ'},
+    {ar:'ثُمَّ صَلِّ عَلَى النَّبِيِّ الْكَرِيمِ|||وَاسْأَلِ اللهَ بِأَسْمَائِهِ الْعَظِيمِ'},
+    {ar:'فَإِنَّ اللهَ كَرِيمٌ لَا يَرُدُّ سَائِلًا|||إِذَا جَاءَهُ مُخْلِصًا غَيْرَ غَافِلِ'}
+  ]},
+  {num:'٤',ar:'منور الصدور',fr:'Mounawirus Sudur',bayts:[
+    {ar:'مُنَوِّرُ الصُّدُورِ بِنُورِ الْإِيمَانِ|||كِتَابٌ يَشْرَحُ الصُّدُورَ وَيُنِيرُ الْأَذْهَانَ'},
+    {ar:'مَنْ أَرَادَ نُورَ اللهِ فِي قَلْبِهِ|||فَلْيُدَاوِمْ عَلَى الذِّكْرِ فِي سِرِّهِ وَجَهْرِهِ'},
+    {ar:'النُّورُ يَدْخُلُ الْقَلْبَ بِالطَّاعَةِ وَالتَّقْوَى|||وَيَخْرُجُ مِنْهُ بِالْمَعَاصِي وَالدُّنْيَا'}
+  ]},
+  {num:'٥',ar:'مولاي أصدور',fr:'Moulayin Usudur',bayts:[
+    {ar:'مَوْلَايَ أُصُدُورُ مِنَ النُّورِ الْإِلَهِيِّ|||سِرٌّ مَكْنُونٌ فِي الْعَالَمِ الرُّوحَانِيِّ'},
+    {ar:'يَا مَوْلَايَ يَا قَائِدِي فِي طَرِيقِ الْحَقِّ|||أَنْتَ الدَّلِيلُ إِلَى رَبِّي فِي كُلِّ دَقِّ'},
+    {ar:'بِكَ أَسْتَعِينُ عَلَى الدُّنْيَا وَأَهْوَالِهَا|||وَبِكَ أَرْجُو النَّجَاةَ مِنْ جَمِيعِ أَحْوَالِهَا'}
+  ]},
+  {num:'٦',ar:'مخالص النيران',fr:'Maxalixun Niran',bayts:[
+    {ar:'مَخَالِصُ النِّيرَانِ وَنَجَاةُ أَهْلِ الْإِيمَانِ|||كِتَابٌ يُبَيِّنُ طُرُقَ النَّجَاةِ مِنَ النِّيرَانِ'},
+    {ar:'مَنْ خَافَ النَّارَ فَلْيَتَّقِ اللهَ حَقَّ التَّقْوَى|||وَلْيُحَافِظْ عَلَى الصَّلَوَاتِ الْخَمْسِ بِالتَّقْوَى'},
+    {ar:'اللَّهُمَّ أَجِرْنَا مِنَ النَّارِ بِرَحْمَتِكَ|||وَأَدْخِلْنَا الْجَنَّةَ بِفَضْلِكَ وَكَرَمِكَ'}
+  ]},
+  {num:'٧',ar:'مسالك الجنان',fr:'Massalik al-Jinan',bayts:[
+    {ar:'مَسَالِكُ الْجِنَانِ وَطُرُقُ الْفَوْزِ وَالرِّضْوَانِ|||كِتَابٌ مِنْ كَلَامِ الشَّيْخِ الرَّبَّانِي'},
+    {ar:'طُرُقُ الْجَنَّةِ كَثِيرَةٌ وَالْأَبْوَابُ مَفْتُوحَةٌ|||لِمَنْ صَدَقَ فِي نِيَّتِهِ وَعَمَلِهِ'},
+    {ar:'الصَّلَاةُ وَالصِّيَامُ وَالزَّكَاةُ وَالْحَجُّ|||هِيَ أَرْكَانُ الْإِسْلَامِ وَأَعْمِدَةُ الْفَرَجِ'},
+    {ar:'وَالذِّكْرُ الدَّائِمُ مِفْتَاحُ كُلِّ خَيْرٍ|||وَهُوَ الَّذِي يَفْتَحُ أَبْوَابَ الْجَنَّةِ وَالنَّيْرِ'}
+  ]},
+  {num:'٨',ar:'كنكتمان',fr:'Kunkatiman',bayts:[
+    {ar:'كُنْكَتِيمَانُ كَنْزٌ مِنْ كُنُوزِ الْعِلْمِ النَّافِعِ|||جَمَعَهُ الشَّيْخُ لِكُلِّ مُرِيدٍ طَالِعِ'},
+    {ar:'فِيهِ أَسْرَارُ الذِّكْرِ وَأَنْوَارُ الْعِبَادَةِ|||وَطَرِيقُ الْوُصُولِ إِلَى أَعْلَى دَرَجَاتِ السَّعَادَةِ'},
+    {ar:'الْعِلْمُ بِلَا عَمَلٍ كَالشَّجَرِ بِلَا ثَمَرٍ|||وَالْعَمَلُ بِلَا إِخْلَاصٍ كَالسِّرَاجِ بِلَا نَارٍ'}
+  ]},
+  {num:'٩',ar:'جالبة البهجة والسرور',fr:'Dialibatou Buroor',bayts:[
+    {ar:'جَالِبَةُ الْبَهْجَةِ وَالسُّرُورِ إِلَى الصُّدُورِ|||خَصِيدَةٌ جَمِيلَةٌ تَمْلَأُ الْقُلُوبَ بِالنُّورِ'},
+    {ar:'السُّرُورُ الْحَقِيقِيُّ فِي طَاعَةِ اللهِ تَعَالَى|||لَا فِي الدُّنْيَا وَزَخَارِفِهَا الزَّائِلَةِ'},
+    {ar:'مَنْ أَرَادَ الْبَهْجَةَ فَلْيَلْجَأْ إِلَى اللهِ|||وَلْيَكُنْ دَائِمَ الذِّكْرِ وَالشُّكْرِ لِلَّهِ'}
+  ]},
+  {num:'١٠',ar:'مواهب الخدوس',fr:'Mawahib al-Khudus',bayts:[
+    {ar:'مَوَاهِبُ الْخُدُوسِ مِنَ الْحَضْرَةِ الْإِلَهِيَّةِ|||عَطَايَا رَبَّانِيَّةٌ وَأَنْوَارٌ قُدْسِيَّةٌ'},
+    {ar:'اطْلُبِ الْمَوَاهِبَ مِنَ اللهِ لَا مِنْ سِوَاهُ|||وَاعْلَمْ أَنَّ الْخَيْرَ كُلَّهُ فِي تَقْوَاهُ'},
+    {ar:'يَا اللهُ يَا كَرِيمُ يَا وَاسِعَ الْعَطَاءِ|||أَعْطِنَا مِنْ مَوَاهِبِكَ مَا يُقَرِّبُنَا مِنَ الرَّجَاءِ'}
+  ]},
+  {num:'١١',ar:'تزوّد الصبيان',fr:'Tazawwudu Sbian',bayts:[
+    {ar:'تَزَوَّدَ الصِّبْيَانُ مِنَ الْعِلْمِ وَالْأَدَبِ|||فَإِنَّ الْعِلْمَ نُورٌ وَالْأَدَبَ أَشْرَفُ الرُّتَبِ'},
+    {ar:'يَا أَيُّهَا الصِّبْيَانُ الطَّالِبُونَ لِلْعِلْمِ|||اجْتَهِدُوا فِي طَلَبِهِ وَلَا تَيْأَسُوا مِنَ الْحِلْمِ'},
+    {ar:'أَوَّلُ الْعِلْمِ مَعْرِفَةُ اللهِ سُبْحَانَهُ|||وَثَانِيهِ مَعْرِفَةُ النَّبِيِّ شَأْنَهُ'},
+    {ar:'ثُمَّ الْأَدَبُ مَعَ الْوَالِدَيْنِ وَالْأُسْتَاذِ|||فَمَنْ فَعَلَ ذَلِكَ نَالَ الْفَوْزَ وَالْإِيجَادِ'}
+  ]}
+];
+
+function buildMajalis(){
+  var g=document.getElementById('maj-grid');
+  if(!g)return;g.innerHTML='';
+  LIVRES.forEach(function(l,i){
+    var d=document.createElement('div');
+    d.className='mbook-card';
+    d.innerHTML='<div class="mbook-num">'+l.num+'</div><div class="mbook-ar">'+l.ar+'</div><div class="mbook-fr">'+l.fr+'</div>';
+    d.onclick=(function(idx){return function(){openLivre(idx);};})(i);
+    g.appendChild(d);
+  });
+}
+
+// ── LECTEUR LIVRE TTS
+var livreIdx=0,livrePlaying=false,livreCurBayt=0,livreSpeed=1,spectreInterval=null;
+
+function openLivre(idx){
+  livreIdx=idx;
+  var l=LIVRES[idx];
+  if(window.speechSynthesis)window.speechSynthesis.cancel();
+  livrePlaying=false;livreCurBayt=0;
+  stopSpectre();
+  document.getElementById('livre-titre-ar').textContent=l.ar;
+  document.getElementById('lp-titre').textContent=l.ar;
+  document.getElementById('livre-title-display').textContent=l.ar;
+  document.getElementById('lc-icon').className='fas fa-play';
+  renderBayts(l);
+  livreProgressBar();
+  var sl=document.getElementById('sp-livre');sl.style.transform='translateX(0)';
+  document.getElementById('livre-scroll').scrollTop=0;
+}
+
+function renderBayts(l){
+  var c=document.getElementById('livre-bayts');
+  c.innerHTML='';
+  l.bayts.forEach(function(b,i){
+    var d=document.createElement('div');
+    d.className='bayt-row';
+    d.id='bayt-'+i;
+    var parts=b.ar.split('|||');
+    if(parts.length===2){
+      d.innerHTML='<div class="bayt-num">'+(i+1)+'</div><div class="bayt-text">'+parts[0]+'<span class="bayt-sep"> · </span>'+parts[1]+'</div>';
+    } else {
+      d.innerHTML='<div class="bayt-num">'+(i+1)+'</div><div class="bayt-text">'+b.ar+'</div>';
+    }
+    d.onclick=(function(ii){return function(){livreGoTo(ii);};})(i);
+    c.appendChild(d);
+  });
+  highlightBayt(0);
+  updateBaytInfo();
+}
+
+function livreGoTo(idx){
+  var l=LIVRES[livreIdx];
+  if(idx<0||idx>=l.bayts.length)return;
+  if(window.speechSynthesis)window.speechSynthesis.cancel();
+  livreCurBayt=idx;
+  highlightBayt(idx);updateBaytInfo();livreProgressBar();scrollToBayt(idx);
+  if(livrePlaying)speakBayt(idx);
+}
+function highlightBayt(idx){
+  document.querySelectorAll('.bayt-row').forEach(function(r,i){
+    r.classList.remove('bayt-active','bayt-done');
+    if(i<idx)r.classList.add('bayt-done');
+    if(i===idx)r.classList.add('bayt-active');
+  });
+}
+function scrollToBayt(idx){
+  var el=document.getElementById('bayt-'+idx);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function updateBaytInfo(){
+  var t=LIVRES[livreIdx].bayts.length;
+  var txt='Bayt '+(livreCurBayt+1)+' / '+t;
+  var bi=document.getElementById('lp-bayt-info');
+  var pt=document.getElementById('livre-prog-txt');
+  if(bi)bi.textContent=txt;if(pt)pt.textContent=txt;
+}
+function livreProgressBar(){
+  var l=LIVRES[livreIdx];
+  var p=l.bayts.length>1?(livreCurBayt/(l.bayts.length-1))*100:0;
+  document.getElementById('livre-pfill').style.width=p+'%';
+  document.getElementById('livre-pdot').style.left=p+'%';
+  var s=livreCurBayt*3;
+  document.getElementById('lp-cur').textContent=Math.floor(s/60)+':'+(s%60).toString().padStart(2,'0');
+  var tot=(l.bayts.length-1)*3;
+  document.getElementById('lp-tot').textContent=Math.floor(tot/60)+':'+(tot%60).toString().padStart(2,'0');
+}
+function livreSeekClick(e){
+  var l=LIVRES[livreIdx];
+  var rect=e.currentTarget.getBoundingClientRect();
+  var ratio=(e.clientX-rect.left)/rect.width;
+  livreGoTo(Math.round(ratio*(l.bayts.length-1)));
+}
+function speakBayt(idx){
+  if(!window.speechSynthesis)return;
+  window.speechSynthesis.cancel();
+  var l=LIVRES[livreIdx];
+  if(idx>=l.bayts.length){livreStop();return;}
+  var text=l.bayts[idx].ar.replace('|||',' ');
+  var utt=new SpeechSynthesisUtterance(text);
+  utt.lang='ar-SA';
+  utt.rate=livreSpeed===2?1.3:livreSpeed===1.5?1.15:livreSpeed===1.25?1.08:0.88;
+  utt.pitch=1;utt.volume=1;
+  var voices=window.speechSynthesis.getVoices();
+  var arVoice=voices.find(function(v){return v.lang&&v.lang.startsWith('ar');});
+  if(arVoice)utt.voice=arVoice;
+  utt.onstart=function(){highlightBayt(idx);updateBaytInfo();livreProgressBar();scrollToBayt(idx);startSpectre();};
+  utt.onend=function(){
+    if(livrePlaying){
+      livreCurBayt=idx+1;
+      if(livreCurBayt<l.bayts.length)speakBayt(livreCurBayt);
+      else livreStop();
+    }
+  };
+  utt.onerror=function(){if(livrePlaying)livreStop();};
+  window.speechSynthesis.speak(utt);
+}
+function livreTogglePlay(){
+  if(livrePlaying){livreStop();}
+  else{
+    livrePlaying=true;
+    document.getElementById('lc-icon').className='fas fa-pause';
+    speakBayt(livreCurBayt);
+  }
+}
+function livreStop(){
+  livrePlaying=false;
+  if(window.speechSynthesis)window.speechSynthesis.cancel();
+  document.getElementById('lc-icon').className='fas fa-play';
+  stopSpectre();
+}
+function closeLivre(){livreStop();document.getElementById('sp-livre').style.transform='translateX(100%)';}
+
+var speeds=[1,1.25,1.5,2];var speedIdx=0;
+function cycleSpeed(){
+  speedIdx=(speedIdx+1)%speeds.length;
+  livreSpeed=speeds[speedIdx];
+  document.getElementById('lp-speed').textContent=livreSpeed+'x';
+  if(livrePlaying){window.speechSynthesis.cancel();speakBayt(livreCurBayt);}
+}
+
+// ── SPECTRE
+function buildSpectre(){
+  var s=document.getElementById('spectre');
+  if(!s)return;s.innerHTML='';
+  for(var i=0;i<32;i++){
+    var b=document.createElement('div');
+    b.style.cssText='width:3px;border-radius:2px;background:linear-gradient(to top,var(--b7),var(--gold2));height:4px;transition:height .09s ease;opacity:.8;flex-shrink:0;';
+    s.appendChild(b);
+  }
+}
+function startSpectre(){
+  stopSpectre();
+  var disc=document.getElementById('lp-disc');
+  if(disc)disc.classList.add('spinning');
+  spectreInterval=setInterval(function(){
+    var bars=document.getElementById('spectre').children;
+    for(var i=0;i<bars.length;i++){
+      var wave=Math.sin(Date.now()/180+i*0.45)*0.5+0.5;
+      bars[i].style.height=Math.floor(wave*(Math.random()*0.5+0.5)*28+4)+'px';
+    }
+  },80);
+}
+function stopSpectre(){
+  clearInterval(spectreInterval);
+  var disc=document.getElementById('lp-disc');
+  if(disc)disc.classList.remove('spinning');
+  var bars=document.getElementById('spectre');
+  if(bars)Array.from(bars.children).forEach(function(b){b.style.height='4px';});
+}
+
+// ── MINI PLAYER ACCUEIL
+var mpPlaying=false,mpProg=0,mpTimer=null;var MP_TOT=222;
 function mpToggle(){
   mpPlaying=!mpPlaying;
-  const ico=document.getElementById('mp-icon');
-  const disc=document.getElementById('mp-disc');
-  if(mpPlaying){
-    ico.className='fas fa-pause';disc.classList.add('spinning');
-    mpTimer=setInterval(()=>{if(mpProg>=MP_TOT)mpProg=0;mpProg++;mpUI();},1000);
-  } else {
-    ico.className='fas fa-play';disc.classList.remove('spinning');
-    clearInterval(mpTimer);
-  }
+  var ico=document.getElementById('mp-icon');
+  var disc=document.getElementById('mp-disc');
+  if(mpPlaying){ico.className='fas fa-pause';disc.classList.add('spinning');mpTimer=setInterval(function(){if(mpProg>=MP_TOT)mpProg=0;mpProg++;mpUI();},1000);}
+  else{ico.className='fas fa-play';disc.classList.remove('spinning');clearInterval(mpTimer);}
 }
 function mpSeek(s){mpProg=Math.max(0,Math.min(MP_TOT,mpProg+s));mpUI();}
 function mpUI(){
-  const p=(mpProg/MP_TOT)*100;
+  var p=(mpProg/MP_TOT)*100;
   document.getElementById('mp-fill').style.width=p+'%';
   document.getElementById('mp-dot').style.left=p+'%';
-  const m=Math.floor(mpProg/60),s=(mpProg%60).toString().padStart(2,'0');
+  var m=Math.floor(mpProg/60),s=(mpProg%60).toString().padStart(2,'0');
   document.getElementById('mp-cur').textContent=m+':'+s;
 }
 
-// ── PLAY TOGGLE
-function togglePlay(btn){
-  const ip=btn.classList.contains('playing');
-  document.querySelectorAll('.wq-play,.wax-play').forEach(b=>{b.classList.remove('playing');b.innerHTML='<i class="fas fa-play"></i>';});
-  if(!ip){btn.classList.add('playing');btn.innerHTML='<i class="fas fa-pause"></i>';}
-}
-
-// ── DAILY CHECK
+// ── DAILY
 function checkDaily(item){item.classList.toggle('done');}
 function switchDaily(tab,btn){
-  document.querySelectorAll('.daily-tab').forEach(t=>t.classList.remove('on'));
-  document.querySelectorAll('.daily-list').forEach(c=>c.classList.remove('on'));
+  document.querySelectorAll('.daily-tab').forEach(function(t){t.classList.remove('on');});
+  document.querySelectorAll('.daily-list').forEach(function(c){c.classList.remove('on');});
   btn.classList.add('on');
   document.getElementById('daily-'+tab).classList.add('on');
 }
 
 // ── JUZ
-const jN=['الجزء الأول','الجزء الثاني','الجزء الثالث','الجزء الرابع','الجزء الخامس','الجزء السادس','الجزء السابع','الجزء الثامن','الجزء التاسع','الجزء العاشر','الحادي عشر','الثاني عشر','الثالث عشر','الرابع عشر','الخامس عشر','السادس عشر','السابع عشر','الثامن عشر','التاسع عشر','العشرون','الحادي والعشرون','الثاني والعشرون','الثالث والعشرون','الرابع والعشرون','الخامس والعشرون','السادس والعشرون','السابع والعشرون','الثامن والعشرون','التاسع والعشرون','الثلاثون'];
+var jN=['الجزء الأول','الجزء الثاني','الجزء الثالث','الجزء الرابع','الجزء الخامس','الجزء السادس','الجزء السابع','الجزء الثامن','الجزء التاسع','الجزء العاشر','الحادي عشر','الثاني عشر','الثالث عشر','الرابع عشر','الخامس عشر','السادس عشر','السابع عشر','الثامن عشر','التاسع عشر','العشرون','الحادي والعشرون','الثاني والعشرون','الثالث والعشرون','الرابع والعشرون','الخامس والعشرون','السادس والعشرون','السابع والعشرون','الثامن والعشرون','التاسع والعشرون','الثلاثون'];
 function buildJuz(){
-  const g=document.getElementById('juz-grid');g.innerHTML='';
-  for(let i=1;i<=30;i++)g.innerHTML+=`<div class="jitem"><div class="jnum">${i}</div><div class="jlbl">${jN[i-1]}</div><button class="jdl" onclick="alert('Juz ${i}')"><i class="fas fa-download"></i> PDF</button></div>`;
+  var g=document.getElementById('juz-grid');g.innerHTML='';
+  for(var i=1;i<=30;i++)(function(n){g.innerHTML+='<div class="jitem"><div class="jnum">'+n+'</div><div class="jlbl">'+jN[n-1]+'</div><button class="jdl" onclick="alert(\'Juz '+n+'\')"><i class="fas fa-download"></i> PDF</button></div>';})(i);
 }
 
 // ── XASSIDA PDF
-const xL=[{n:'مسالك الجنان',s:'Massalik al-Jinan'},{n:'الجوهر النفيس',s:'Jawhar an-Nafis'},{n:'تزوّد الشاكر',s:'Tazawwudu Shikhar'},{n:'نهج قضاء الحاجة',s:'Nahju Kadaïl Hajah'},{n:'منير الصدور',s:'Munawirsudur'},{n:'البردة الشريفة',s:'Burdah Charifa'}];
+var xL=[{n:'مسالك الجنان',s:'Massalik al-Jinan'},{n:'الجوهر النفيس',s:'Jawhar an-Nafis'},{n:'تزوّد الشاكر',s:'Tazawwudu Shikhar'},{n:'نهج قضاء الحاجة',s:'Nahju Kadail Hajah'},{n:'منير الصدور',s:'Munawirsudur'},{n:'البردة الشريفة',s:'Burdah Charifa'}];
 function buildXPDF(){
-  const l=document.getElementById('xpdf-list');l.innerHTML='';
-  xL.forEach((x,i)=>{
-    l.innerHTML+=`<div class="mbook"><div class="mbook-body"><div class="mbook-ar">${x.n}</div><div class="mbook-fr">${x.s}</div></div><button class="jdl" onclick="alert('PDF: ${x.s}')"><i class="fas fa-download"></i></button></div>`;
-  });
+  var l=document.getElementById('xpdf-list');l.innerHTML='';
+  xL.forEach(function(x){l.innerHTML+='<div class="xpdf-list-item"><div class="xpdf-body"><div class="xpdf-ar">'+x.n+'</div><div class="xpdf-fr">'+x.s+'</div></div><div class="xpdf-arrow"><i class="fas fa-download"></i></div></div>';});
 }
 
 // ── SASS WI
-let tasks=[];
+var tasks=[];
 try{tasks=JSON.parse(localStorage.getItem('sw')||'[]');}catch(e){}
 if(!tasks.length)tasks=[{id:1,n:'جزء عم',t:'coran',h:'06:00',d:false},{id:2,n:'مسالك الجنان',t:'xassida',h:'14:00',d:false}];
 function buildSass(){
-  const l=document.getElementById('sass-list');if(!l)return;l.innerHTML='';
-  tasks.forEach(t=>{
-    const d=document.createElement('div');d.className='stask'+(t.d?' done':'');
-    d.innerHTML=`<div class="stck" onclick="toggleT(${t.id})"><i class="fas fa-check"></i></div><div class="stbody"><div class="stn">${t.n}</div><div class="stt"><i class="fas fa-clock"></i> ${t.h}</div></div><span class="stbadge"><i class="fas fa-${t.t==='coran'?'quran':'scroll'}"></i> ${t.t==='coran'?'Coran':'Xassida'}</span>`;
+  var l=document.getElementById('sass-list');if(!l)return;l.innerHTML='';
+  tasks.forEach(function(t){
+    var d=document.createElement('div');d.className='stask'+(t.d?' done':'');
+    d.innerHTML='<div class="stck" onclick="toggleT('+t.id+')"><i class="fas fa-check"></i></div><div class="stbody"><div class="stn">'+t.n+'</div><div class="stt"><i class="fas fa-clock"></i> '+t.h+'</div></div><span class="stbadge"><i class="fas fa-'+(t.t==='coran'?'quran':'scroll')+'"></i> '+(t.t==='coran'?'Coran':'Xassida')+'</span>';
     l.appendChild(d);
   });
 }
-function toggleT(id){const t=tasks.find(x=>x.id===id);if(t){t.d=!t.d;try{localStorage.setItem('sw',JSON.stringify(tasks));}catch(e){}buildSass();}}
+function toggleT(id){var t=tasks.find(function(x){return x.id===id;});if(t){t.d=!t.d;try{localStorage.setItem('sw',JSON.stringify(tasks));}catch(e){}buildSass();}}
 function openSM(){document.getElementById('smoverlay').classList.add('on');}
 function closeSM(){document.getElementById('smoverlay').classList.remove('on');}
 function addTask(){
-  const n=document.getElementById('sm-n').value.trim();
-  const h=document.getElementById('sm-h').value.trim()||'08:00';
-  const t=document.getElementById('sm-t').value;
+  var n=document.getElementById('sm-n').value.trim();
+  var h=document.getElementById('sm-h').value.trim()||'08:00';
+  var t=document.getElementById('sm-t').value;
   if(!n)return;
-  tasks.push({id:Date.now(),n,t,h,d:false});
+  tasks.push({id:Date.now(),n:n,t:t,h:h,d:false});
   try{localStorage.setItem('sw',JSON.stringify(tasks));}catch(e){}
   buildSass();closeSM();
   document.getElementById('sm-n').value='';document.getElementById('sm-h').value='';
 }
 
-// ── CALENDRIER ISLAMIQUE
+// ── CALENDRIER
 function buildCalendar(){
-  const g=document.getElementById('ical-grid');
-  if(!g)return;
-  // Dhū al-Hijjah 1447 — commence un mardi (décalage 2)
-  const offset=2; // 0=dim,1=lun,2=mar...
-  const total=30;
-  const today=22; // jour actuel
-  const events=[1,9,10,27]; // événements (Wuquf Arafat=9, Aïd=10, etc.)
-  let html='';
-  for(let i=0;i<offset;i++) html+=`<div class="ical-day empty"></div>`;
-  for(let d=1;d<=total;d++){
-    let cls='ical-day';
-    if(d===today) cls+=' today';
-    else if(events.includes(d)) cls+=' event';
-    html+=`<div class="${cls}">${d}</div>`;
+  var g=document.getElementById('ical-grid');if(!g)return;
+  var offset=2,total=30,today=22,events=[1,9,10,27],html='';
+  for(var i=0;i<offset;i++)html+='<div class="ical-day empty"></div>';
+  for(var d=1;d<=total;d++){
+    var cls='ical-day';
+    if(d===today)cls+=' today';else if(events.indexOf(d)>=0)cls+=' event';
+    html+='<div class="'+cls+'">'+d+'</div>';
   }
   g.innerHTML=html;
 }
 
-
-const rD={
-  dakar:{t:'🏙️ Dakar',p:"Cheikh Ahmadou Bamba débarqua à Dakar en 1907 lors de son retour d'exil. Son rayonnement spirituel y attira des milliers de disciples."},
-  diourbel:{t:'⭐ Diourbel — Touba',p:"Diourbel abrite Touba, ville sainte fondée en 1887. La Grande Mosquée accueille des millions de pèlerins lors du Grand Magal."},
-  baol:{t:'🌄 Baol',p:"Le Baol est la région natale de Cheikh Ahmadou Bamba. Mbacké, sa ville natale, est un lieu de pèlerinage important."},
-  cayor:{t:'🌿 Cayor',p:"Cheikh Ahmadou Bamba résista non-violemment dans le Cayor, consolidant la dimension spirituelle du mouvement mouride."}
+// ── MAP
+var rD={
+  dakar:{t:'Dakar',p:"Cheikh Ahmadou Bamba debarqua a Dakar en 1907 lors de son retour d'exil."},
+  diourbel:{t:'Diourbel — Touba',p:"Diourbel abrite Touba, ville sainte fondee en 1887."},
+  baol:{t:'Baol',p:"Le Baol est la region natale de Cheikh Ahmadou Bamba."},
+  cayor:{t:'Cayor',p:"Cheikh Ahmadou Bamba resista non-violemment dans le Cayor."}
 };
 function showR(r){
   document.getElementById('rst-t').textContent=rD[r].t;
   document.getElementById('rst-p').textContent=rD[r].p;
   document.getElementById('rstory').classList.add('on');
-  document.querySelectorAll('.rbtn').forEach(b=>b.classList.remove('on'));
 }
 
 // ── QUIZ
-const QZ=[
-  {t:'Histoire',q:"En quelle année Cheikh Ahmadou Bamba fonda-t-il Touba ?",o:['1876','1887','1902','1920'],a:1},
-  {t:'Khalifes',q:"Quel est le nom du 1er Khalife Général ?",o:['S. Fallou','S. Bara','S. Mouhamadou Moustapha','S. Saliou'],a:2},
-  {t:'Xassida',q:"Quelle Xassida signifie 'Les Voies du Paradis' ?",o:['Jawhar an-Nafis','Massalik al-Jinan','Nahju','Tazawwudu'],a:1}
+var QZ=[
+  {t:'Histoire',q:"En quelle annee Cheikh Ahmadou Bamba fonda-t-il Touba ?",o:['1876','1887','1902','1920'],a:1},
+  {t:'Khalifes',q:"Quel est le nom du 1er Khalife General ?",o:['S. Fallou','S. Bara','S. Mouhamadou Moustapha','S. Saliou'],a:2},
+  {t:'Majalis',q:"Quelle Xassida signifie 'Les Voies du Paradis' ?",o:['Jawhar an-Nafis','Massalik al-Jinan','Nahju','Tazawwudu'],a:1}
 ];
-let cq=null;
 function openQuiz(){
-  cq=QZ[Math.floor(Math.random()*QZ.length)];
+  var cq=QZ[Math.floor(Math.random()*QZ.length)];
   document.getElementById('q-title').textContent=cq.t;
   document.getElementById('q-q').textContent=cq.q;
-  const od=document.getElementById('q-opts');od.innerHTML='';
-  cq.o.forEach((o,i)=>{
-    const b=document.createElement('button');b.className='qopt';b.textContent=o;
-    b.onclick=()=>document.querySelectorAll('.qopt').forEach((x,j)=>{x.onclick=null;x.classList.add(j===cq.a?'ok':'no');});
+  var od=document.getElementById('q-opts');od.innerHTML='';
+  cq.o.forEach(function(o,i){
+    var b=document.createElement('button');b.className='qopt';b.textContent=o;
+    b.onclick=(function(ii){return function(){document.querySelectorAll('.qopt').forEach(function(x,j){x.onclick=null;x.classList.add(j===cq.a?'ok':'no');});};})(i);
     od.appendChild(b);
   });
   document.getElementById('qmodal').classList.add('on');
 }
 function closeQuiz(){document.getElementById('qmodal').classList.remove('on');}
 
-// ── SCROLL ANIMATIONS
-function initSA(){
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
-  },{threshold:0.08});
-  document.querySelectorAll('.sa:not(.vis)').forEach(el=>obs.observe(el));
-}
 </script>
 </body>
 </html>
